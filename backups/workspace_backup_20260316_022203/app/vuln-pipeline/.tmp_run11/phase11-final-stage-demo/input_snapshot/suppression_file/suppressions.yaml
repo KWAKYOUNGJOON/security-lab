@@ -1,0 +1,6 @@
+suppressions:
+  - id: accepted-error-disclosure
+    weakness_family: Error/Stack Trace Disclosure
+    host: portal.example.com
+    status: accepted_risk
+    note: Internal debug endpoint is known and tracked separately.

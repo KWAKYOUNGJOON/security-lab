@@ -1,0 +1,25 @@
+{
+  "zip_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\delivery\\customer_submission_v1.0.zip",
+  "included_files": [
+    "deliverables/full_report_customer_customer_v1.0.md",
+    "deliverables/full_report_customer_customer_v1.0.docx",
+    "deliverables/executive_onepager_customer_v1.0.md",
+    "deliverables/executive_onepager_customer_v1.0.docx",
+    "deliverables/remediation_tracker_customer_v1.0.csv",
+    "deliverables/remediation_tracker_customer_v1.0.md",
+    "delivery/final_delivery_manifest.json",
+    "delivery/customer_submission_manifest.json",
+    "delivery/customer_submission_checksums.json"
+  ],
+  "excluded_files": [
+    "artifacts/raw/*",
+    "report_data/review_queue.*",
+    "report_data/override_template.yaml",
+    "deliverables/analyst_handoff*",
+    "report_data/*decisions*",
+    "internal-only appendix"
+  ],
+  "package_type": "customer_submission",
+  "included_files_policy": "customer-facing outputs only",
+  "submission_gate_status": "fail"
+}

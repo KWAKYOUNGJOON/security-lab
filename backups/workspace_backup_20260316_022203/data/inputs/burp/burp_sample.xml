@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues burpVersion="2026.1">
+  <issue protocol="https" port="443">
+    <name>SQL Injection</name>
+    <host>demo.example.com</host>
+    <path>https://demo.example.com/users/123?userId=123</path>
+    <severity>High</severity>
+    <confidence>Certain</confidence>
+    <issueDetail>Unsanitized user input reaches a SQL query.</issueDetail>
+    <remediationBackground>Use parameterized queries and server-side validation.</remediationBackground>
+    <requestresponse>
+      <request>GET /users/123?userId=123 HTTP/1.1
+Host: demo.example.com
+Cookie: session=secret
+</request>
+      <response>HTTP/1.1 500 Internal Server Error
+Content-Type: text/html
+
+SQL syntax error near '123'
+</response>
+    </requestresponse>
+  </issue>
+</issues>
+

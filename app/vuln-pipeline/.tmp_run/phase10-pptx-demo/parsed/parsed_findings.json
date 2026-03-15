@@ -1,0 +1,272 @@
+[
+  {
+    "source": "burp",
+    "source_file": "D:\\취약점 진단\\data\\inputs\\burp\\burp_sample.xml",
+    "parser": "burp_xml",
+    "raw_id": "1",
+    "kind": "finding",
+    "title": "SQL Injection",
+    "description": "Unsanitized user input reaches a SQL query.",
+    "asset": {
+      "url": "https://demo.example.com/users/123?userId=123",
+      "host": "demo.example.com",
+      "path": "/users/123",
+      "normalized_path": "/users/123",
+      "method": null,
+      "query_keys": [],
+      "port": 443,
+      "scheme": "https"
+    },
+    "raw_severity": "High",
+    "raw_confidence": "Certain",
+    "tags": [],
+    "references": [],
+    "metadata": {
+      "serial_number": null,
+      "type_index": null,
+      "location": null,
+      "issue_background": null,
+      "issue_detail": "Unsanitized user input reaches a SQL query.",
+      "variations": []
+    },
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Captured HTTP request from Burp issue export.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_request.txt",
+          "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [
+          "Replay the saved request artifact against the same endpoint."
+        ],
+        "artifact_links": [
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_request.txt",
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Captured HTTP response from Burp issue export.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_response.txt",
+          "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 500 Internal Server Error"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_response.txt",
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_response.txt"
+        ]
+      }
+    ],
+    "remediation": [
+      "Use parameterized queries and server-side validation."
+    ],
+    "status": "needs_review"
+  },
+  {
+    "source": "nuclei",
+    "source_file": "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+    "parser": "nuclei_jsonl",
+    "raw_id": "directory-listing",
+    "kind": "finding",
+    "title": "Directory Listing",
+    "description": "Directory listing was enabled.",
+    "asset": {
+      "url": "https://demo.example.com/files/abcdef1234567890abcdef1234567890/",
+      "host": "demo.example.com",
+      "path": "/files/abcdef1234567890abcdef1234567890/",
+      "normalized_path": "/files/abcdef1234567890abcdef1234567890/",
+      "method": null,
+      "query_keys": [],
+      "port": null,
+      "scheme": null
+    },
+    "raw_severity": "low",
+    "raw_confidence": null,
+    "tags": [
+      "listing",
+      "exposure"
+    ],
+    "references": [
+      "directory-listing"
+    ],
+    "metadata": {
+      "template_id": "directory-listing",
+      "template_path": "http/misconfig/listing.yaml",
+      "matcher_name": "body-index-of",
+      "curl_command": null,
+      "extracted_results": [
+        "Index of /files"
+      ],
+      "response_highlights": [
+        "Index of /files"
+      ]
+    },
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+          "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+          "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><title>Index of /files</title></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://demo.example.com/files/abcdef1234567890abcdef1234567890/",
+        "artifact": null,
+        "highlights": [
+          "body-index-of",
+          "Index of /files"
+        ],
+        "extracted_results": [
+          "Index of /files"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review"
+  },
+  {
+    "source": "nuclei",
+    "source_file": "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+    "parser": "nuclei_jsonl",
+    "raw_id": "xss-detect",
+    "kind": "finding",
+    "title": "Reflected XSS",
+    "description": "Potential reflected XSS.",
+    "asset": {
+      "url": "https://demo.example.com/search?q=%3Csvg%3E",
+      "host": "demo.example.com",
+      "path": "/search",
+      "normalized_path": "/search",
+      "method": null,
+      "query_keys": [],
+      "port": null,
+      "scheme": null
+    },
+    "raw_severity": "medium",
+    "raw_confidence": null,
+    "tags": [
+      "xss"
+    ],
+    "references": [
+      "xss-detect"
+    ],
+    "metadata": {
+      "template_id": "xss-detect",
+      "template_path": "http/xss/test.yaml",
+      "matcher_name": "reflected-payload",
+      "curl_command": null,
+      "extracted_results": [
+        "<svg>"
+      ],
+      "response_highlights": [
+        "<svg>"
+      ]
+    },
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+          "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_response.txt",
+          "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><body><svg></body></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_response.txt",
+          ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://demo.example.com/search?q=%3Csvg%3E",
+        "artifact": null,
+        "highlights": [
+          "reflected-payload",
+          "<svg>"
+        ],
+        "extracted_results": [
+          "<svg>"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review"
+  }
+]

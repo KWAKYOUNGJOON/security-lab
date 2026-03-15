@@ -1,0 +1,8 @@
+{
+  "ingested": {
+    "burp": [],
+    "nuclei": [],
+    "httpx": []
+  },
+  "warnings": []
+}

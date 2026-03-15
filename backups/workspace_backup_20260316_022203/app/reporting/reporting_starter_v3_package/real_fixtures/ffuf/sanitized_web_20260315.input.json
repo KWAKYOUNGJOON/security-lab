@@ -1,0 +1,21 @@
+{
+  "commandline": "ffuf -u https://portal.example.co.kr/FUZZ -w wordlist.txt -of json -o result.json",
+  "time": "2026-03-15T09:00:00+09:00",
+  "results": [
+    {
+      "input": {
+        "FUZZ": "LmVudg=="
+      },
+      "position": 1,
+      "status": 200,
+      "length": 88,
+      "words": 10,
+      "lines": 4,
+      "content-type": "text/plain",
+      "redirectlocation": "",
+      "url": "https://portal.example.co.kr/.env",
+      "duration": 54321,
+      "resultfile": ""
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+entries:
+  - id: 입력값 검증 취약점
+    title_ko: 웹 입력값 검증 미흡
+    summary_ko: 입력값에 대한 형식, 길이, 허용값 검증이 부족한 상태입니다.
+    risk_ko: 다양한 인젝션과 우회 취약점의 기반이 됩니다.
+    validation_points_ko:
+      - 서버 측 검증이 일관되게 적용되는지 확인합니다.
+    remediation_ko:
+      - 허용 목록 기반 검증과 공통 검증 모듈을 적용합니다.
+    references: ["KISA 웹 입력값 검증 항목"]
+  - id: 스크립트 실행
+    title_ko: 스크립트 실행 취약점
+    summary_ko: 사용자 입력이 스크립트로 실행될 수 있는 상태입니다.
+    risk_ko: 세션 탈취와 사용자 기만으로 이어질 수 있습니다.
+    validation_points_ko:
+      - 출력 인코딩과 CSP 적용 여부를 확인합니다.
+    remediation_ko:
+      - 컨텍스트 기반 인코딩을 적용합니다.
+    references: ["KISA 스크립트 실행 항목"]
+  - id: 경로 조작
+    title_ko: 경로 조작 취약점
+    summary_ko: 파일 경로나 경계 검증이 부족한 상태입니다.
+    risk_ko: 내부 파일 노출 가능성이 있습니다.
+    validation_points_ko:
+      - 경로 정규화와 루트 경계 검증을 확인합니다.
+    remediation_ko:
+      - 기준 디렉터리 고정과 허용 목록을 적용합니다.
+    references: ["KISA 경로 조작 항목"]
+  - id: 파일 포함
+    title_ko: 파일 포함 취약점
+    summary_ko: 외부 입력으로 포함 파일이 바뀌는 상태입니다.
+    risk_ko: 파일 노출 또는 코드 실행으로 이어질 수 있습니다.
+    validation_points_ko:
+      - 포함 경로의 사용자 제어 여부를 확인합니다.
+    remediation_ko:
+      - 동적 파일 포함을 제한합니다.
+    references: ["KISA 파일 포함 항목"]
+  - id: 리다이렉트 조작
+    title_ko: 리다이렉트 조작
+    summary_ko: 리다이렉트 대상 검증이 미흡한 상태입니다.
+    risk_ko: 피싱과 사용자 기만에 악용될 수 있습니다.
+    validation_points_ko:
+      - redirect 대상이 외부 URL을 허용하는지 확인합니다.
+    remediation_ko:
+      - 내부 경로와 허용 목록만 사용합니다.
+    references: ["KISA 리다이렉트 항목"]
+  - id: 서버사이드 요청 위조
+    title_ko: 서버사이드 요청 위조
+    summary_ko: 서버가 외부 입력으로 임의 대상과 통신할 수 있는 상태입니다.
+    risk_ko: 내부 서비스 노출이 가능합니다.
+    validation_points_ko:
+      - 내부 주소 차단과 허용 목록 적용 여부를 확인합니다.
+    remediation_ko:
+      - 목적지 검증과 outbound 통제를 적용합니다.
+    references: ["KISA SSRF 항목"]
+  - id: 접근통제 미흡
+    title_ko: 접근통제 미흡
+    summary_ko: 객체 또는 기능 접근에 필요한 권한 검사가 누락된 상태입니다.
+    risk_ko: 다른 사용자의 데이터 접근이 가능할 수 있습니다.
+    validation_points_ko:
+      - 객체 단위 권한 검사를 확인합니다.
+    remediation_ko:
+      - 권한 검사를 공통 계층에서 수행합니다.
+    references: ["KISA 접근통제 항목"]
+  - id: 디렉터리 노출
+    title_ko: 디렉터리 노출
+    summary_ko: 디렉터리 목록이 외부에 표시되는 상태입니다.
+    risk_ko: 파일 구조와 잔존 파일 정보가 노출됩니다.
+    validation_points_ko:
+      - 인덱스 페이지 노출 여부를 확인합니다.
+    remediation_ko:
+      - 인덱싱을 비활성화합니다.
+    references: ["KISA 디렉터리 노출 항목"]
+  - id: 오류 정보 노출
+    title_ko: 오류 정보 노출
+    summary_ko: 예외와 내부 메시지가 외부에 노출되는 상태입니다.
+    risk_ko: 추가 공격 단서가 제공됩니다.
+    validation_points_ko:
+      - 운영 환경 오류 처리 정책을 확인합니다.
+    remediation_ko:
+      - 상세 오류는 내부 로그로만 남깁니다.
+    references: ["KISA 오류 정보 노출 항목"]
+  - id: 쿠키 보안속성 누락
+    title_ko: 쿠키 보안 속성 누락
+    summary_ko: HttpOnly 또는 Secure 속성이 적절히 적용되지 않은 상태입니다.
+    risk_ko: 세션 탈취 가능성이 커집니다.
+    validation_points_ko:
+      - 인증 쿠키의 보안 속성 적용 여부를 확인합니다.
+    remediation_ko:
+      - 보안 속성을 기본값으로 강제합니다.
+    references: ["KISA 쿠키 속성 항목"]
+  - id: 파일 업로드 검증 미흡
+    title_ko: 파일 업로드 검증 미흡
+    summary_ko: 업로드 대상 파일에 대한 검증이 부족한 상태입니다.
+    risk_ko: 악성 파일 업로드와 실행으로 이어질 수 있습니다.
+    validation_points_ko:
+      - 파일 형식과 저장 위치를 확인합니다.
+    remediation_ko:
+      - 업로드 정책과 저장소 분리를 적용합니다.
+    references: ["KISA 파일 업로드 항목"]
+

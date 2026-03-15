@@ -1,0 +1,19 @@
+{
+  "input_file_count": 3,
+  "parsed_finding_count": 3,
+  "normalized_finding_count": 3,
+  "issue_count": 2,
+  "suppressed_count": 0,
+  "false_positive_count": 0,
+  "overridden_count": 3,
+  "unmapped_cwe_count": 0,
+  "low_confidence_count": 0,
+  "high_severity_count": 1,
+  "evidence_missing_count": 0,
+  "review_queue_count": 1,
+  "packaging_success": false,
+  "qa_warnings": [
+    "no comparison baseline available",
+    "rule conflicts observed during mapping"
+  ]
+}

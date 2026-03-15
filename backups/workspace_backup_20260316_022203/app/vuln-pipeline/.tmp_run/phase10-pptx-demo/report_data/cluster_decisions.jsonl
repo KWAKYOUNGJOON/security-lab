@@ -1,0 +1,5 @@
+{"finding_id": "F-0001", "action": "cluster_candidate", "cluster_key": "SQL Injection|demo.example.com|/users/{id}|userid|CWE-89", "false_positive": false}
+{"finding_id": "F-0002", "action": "cluster_candidate", "cluster_key": "Directory Listing|demo.example.com|/files/{hex}/|body-index-of|CWE-548", "false_positive": true}
+{"finding_id": "F-0003", "action": "cluster_candidate", "cluster_key": "XSS|demo.example.com|/search|q|CWE-79", "false_positive": false}
+{"issue_id": "I-0001", "cluster_key": "SQL Injection|demo.example.com|/users/{id}|userid|CWE-89", "instances": ["F-0001"], "affected_assets": ["demo.example.com"], "title": "Confirmed SQL Injection"}
+{"issue_id": "I-0002", "cluster_key": "XSS|demo.example.com|/search|q|CWE-79", "instances": ["F-0003"], "affected_assets": ["demo.example.com"], "title": "reflected xss"}

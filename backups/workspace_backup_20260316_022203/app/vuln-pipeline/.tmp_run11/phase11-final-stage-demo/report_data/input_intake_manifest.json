@@ -1,0 +1,93 @@
+{
+  "entries": [
+    {
+      "source_path": "tests\\fixtures\\realish\\burp_complex.xml",
+      "selected_for_run": true,
+      "rejection_reason": null,
+      "detected_tool": "burp",
+      "file_size": 1432,
+      "modified_time": "2026-03-15T01:52:48+00:00",
+      "sha256": "2fe72ae7aed094b8384d58d7cb90b42ca2c91050aa2038d06f67dcf70b72f3fb",
+      "sample_like": false,
+      "copied_or_referenced": "copied",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\burp\\burp_complex.xml",
+      "source_category": "explicit_or_directory_ingest"
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\nuclei_rich.jsonl",
+      "selected_for_run": true,
+      "rejection_reason": null,
+      "detected_tool": "nuclei",
+      "file_size": 2427,
+      "modified_time": "2026-03-15T01:52:48+00:00",
+      "sha256": "59dfccc750fa33e2f1245e238148ca0728c28c5edcdc800ff17c99d90182e8cb",
+      "sample_like": false,
+      "copied_or_referenced": "copied",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\nuclei\\nuclei_rich.jsonl",
+      "source_category": "explicit_or_directory_ingest"
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\httpx_rich.jsonl",
+      "selected_for_run": true,
+      "rejection_reason": null,
+      "detected_tool": "httpx",
+      "file_size": 1042,
+      "modified_time": "2026-03-15T01:52:48+00:00",
+      "sha256": "7d3c83559765a6e72e60f3e66153eb6e14d72e45017c8ad353901050bf9486f4",
+      "sample_like": false,
+      "copied_or_referenced": "copied",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\httpx\\httpx_rich.jsonl",
+      "source_category": "explicit_or_directory_ingest"
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\override_realish.yaml",
+      "selected_for_run": true,
+      "rejection_reason": null,
+      "detected_tool": "override_file",
+      "file_size": 349,
+      "modified_time": "2026-03-15T01:52:48+00:00",
+      "sha256": "05a32c8b14490eab44ab2d5bf8e5caa4344b360e33808ffc63f2177a0b08841a",
+      "sample_like": true,
+      "copied_or_referenced": "copied",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\override_file\\override_realish.yaml",
+      "source_category": "explicit_or_directory_ingest"
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\suppressions.yaml",
+      "selected_for_run": true,
+      "rejection_reason": null,
+      "detected_tool": "suppression_file",
+      "file_size": 220,
+      "modified_time": "2026-03-15T03:53:10+00:00",
+      "sha256": "022ad64335f8ec652a7bd72961ad5c6dcb97ee6622c10c83795de2dd6eb6565f",
+      "sample_like": false,
+      "copied_or_referenced": "copied",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\suppression_file\\suppressions.yaml",
+      "source_category": "explicit_or_directory_ingest"
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\review_resolution.yaml",
+      "selected_for_run": true,
+      "rejection_reason": null,
+      "detected_tool": "review_resolution_file",
+      "file_size": 692,
+      "modified_time": "2026-03-15T05:19:24+00:00",
+      "sha256": "4c18895f950657eefec77be37163f1a085c463853e4b814e78574e655a73f404",
+      "sample_like": false,
+      "copied_or_referenced": "copied",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\review_resolution_file\\review_resolution.yaml",
+      "source_category": "explicit_or_directory_ingest"
+    }
+  ],
+  "selected_run_inputs": [
+    "tests\\fixtures\\realish\\burp_complex.xml",
+    "tests\\fixtures\\realish\\httpx_rich.jsonl",
+    "tests\\fixtures\\realish\\nuclei_rich.jsonl",
+    "tests\\fixtures\\realish\\override_realish.yaml",
+    "tests\\fixtures\\realish\\review_resolution.yaml",
+    "tests\\fixtures\\realish\\suppressions.yaml"
+  ],
+  "selection_status": "explicit_or_directory_ingest",
+  "stage_real_inputs": true,
+  "snapshot_root": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot"
+}

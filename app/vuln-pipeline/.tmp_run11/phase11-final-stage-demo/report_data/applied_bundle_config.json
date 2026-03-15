@@ -1,0 +1,23 @@
+{
+  "bundle_path": "configs\\customer_bundles\\default_customer_release.yaml",
+  "bundle_values": {
+    "branding_file": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+    "report_profile": "customer",
+    "report_template": "default_customer",
+    "deliverable_profile": "customer_pack",
+    "readiness_policy": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml",
+    "remediation_policy_dir": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\remediation_policy",
+    "require_pptx": false,
+    "package_policy": "customer_submission_default"
+  },
+  "effective": {
+    "branding_file": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+    "report_profile": "customer",
+    "report_template": "default_customer",
+    "deliverable_profile": "customer_pack",
+    "readiness_policy": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml",
+    "remediation_policy_dir": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\remediation_policy",
+    "require_pptx": false,
+    "package_policy": "customer_submission_default"
+  }
+}

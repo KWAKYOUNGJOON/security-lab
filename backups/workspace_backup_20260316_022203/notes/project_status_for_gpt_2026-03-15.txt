@@ -1,0 +1,169 @@
+프로젝트 상태 요약
+작성일: 2026-03-15
+기준 루트: D:\취약점 진단
+목적: GPT에게 현재 프로젝트 구조와 진행 상태를 빠르게 주입하기 위한 요약 문서
+
+[1. 프로젝트 목적]
+- 이 프로젝트는 웹 취약점 스캔 결과를 수집, 정규화, 분석하고 보고서와 납품 패키지로 변환하는 로컬 파이프라인이다.
+- 목표 입력은 Burp XML, nuclei JSON/JSONL, httpx JSONL, 수동 메모/오버라이드/억제 파일이다.
+- 목표 출력은 Markdown 보고서, DOCX 보고서, 고객용 산출물, 내부 보관용 산출물, 최종 ZIP 패키지이다.
+
+[2. 현재 기본 구조]
+- app/scanner/hexstrike-ai
+  - 스캐너 또는 분석 엔진 원본 코드 보관 위치
+  - 현재 전체 파이프라인의 주 개발 중심은 아님
+
+- app/reporting/reporting_starter_v3_package
+  - 기존 보고서 생성 패키지 원본
+  - parser, report generator, docx generator, 테스트가 존재
+  - 레거시/참고용 성격이 강함
+
+- app/vuln-pipeline
+  - 현재 프로젝트의 실질적인 메인 구현체
+  - CLI, 파서, 정규화, 매핑, 점수화, dedupe, 보고서 생성, 패키징, 운영 체크 기능이 모두 이 안에 있음
+  - 가장 중요하게 봐야 할 폴더
+
+- data/inputs
+  - 샘플 입력과 수동 입력 파일이 들어 있음
+  - burp, nuclei, httpx, manual 하위 폴더 사용
+
+- data/inputs/real
+  - 실제 운영 입력을 넣기 위한 폴더
+  - burp, nuclei, httpx, manual 하위 폴더가 준비돼 있음
+  - 현재는 실제 입력 파일이 거의 없고 .gitkeep 수준이라 실데이터 리허설이 막혀 있음
+
+- data/fixtures/real_fixtures
+  - 실제 또는 정제된 테스트 입력 보관 예정 위치
+  - 아직 활용 정리가 덜 됨
+
+- outputs/runs
+  - 실행별 산출물 저장 위치
+  - phase2 ~ phase12까지 다수의 실행 결과가 누적돼 있어 개발 진행 흔적이 잘 남아 있음
+
+- notes
+  - 폴더 역할 설명, 운영 메모, TODO성 문서를 보관
+
+- reports
+  - 템플릿/초안/최종본/증적 관리를 위해 잡아둔 구조
+  - 현재는 실사용 흔적이 적고 구조만 준비된 상태에 가까움
+
+- knowledge / reference
+  - reference는 원본 참고자료, knowledge는 재가공 지식 자산이라는 역할 구분이 문서화돼 있음
+
+- 보고서
+  - 과거 한글 폴더 구조를 유지하고 있음
+  - 하드코딩된 경로 참조 가능성 때문에 즉시 제거하지 않고 남겨둔 상태
+
+[3. 현재 구현 중심]
+- 현재 핵심은 app/vuln-pipeline 이다.
+- CLI 엔트리포인트는 vuln_pipeline.cli.main 이다.
+- 주요 기능 흐름은 다음과 같다.
+  1. 입력 수집
+  2. 실제 입력 자동 선택 또는 기본 입력 사용
+  3. preflight 점검
+  4. Burp/nuclei/httpx 파싱
+  5. findings 정규화
+  6. 매핑 규칙 적용
+  7. 점수화 및 우선순위 산정
+  8. dedupe 및 issue cluster 생성
+  9. override/suppression/review resolution 적용
+  10. report context 생성
+  11. Markdown/DOCX 보고서 생성
+  12. 고객용/내부용 deliverables 생성
+  13. release readiness / submission gate / privacy audit 수행
+  14. customer submission zip / internal archive zip 생성
+
+[4. 현재까지 완료된 내용]
+- Burp XML, nuclei JSON/JSONL, httpx JSONL 파서 구현 완료
+- findings normalize, mapping, scoring, dedupe 흐름 구현 완료
+- review queue 생성 기능 구현 완료
+- override, suppression, review resolution 반영 기능 구현 완료
+- Markdown 보고서 생성 기능 구현 완료
+- DOCX 보고서 생성 기능 구현 완료
+- 고객용/내부용 보고 컨텍스트 분리 기능 구현 완료
+- 고객용 full report / onepager / remediation tracker / 발표 자료 outline/data 생성 기능 구현 완료
+- analyst handoff, review closure checklist, submission memo 등 운영성 deliverable 생성 기능 구현 완료
+- run diff 비교 기능 구현 완료
+- QA metrics 생성 기능 구현 완료
+- preflight 문서 생성 기능 구현 완료
+- 실데이터 자동 선택 및 입력 해시/인테이크 매니페스트 생성 기능 구현 완료
+- stage-real-inputs 스냅샷 복사 기능 구현 완료
+- customer bundle 설정 적용 기능 구현 완료
+- privacy audit 기능 구현 완료
+- archive-only 내부 보관 패키지 재생성 기능 구현 완료
+- PPTX capability check 및 fallback 정보 생성 기능 구현 완료
+- release readiness 평가 기능 구현 완료
+- submission gate 기능 구현 완료
+- customer submission zip / internal archive zip 분리 생성 기능 구현 완료
+
+[5. 성공적으로 검증된 내용]
+- 2026-03-15 기준 app/vuln-pipeline 에서 python -m pytest 실행 결과:
+  - 총 42개 테스트 통과
+  - 실패 0
+
+- 테스트가 검증하는 범위
+  - 기본 파이프라인 통합
+  - normalize / mapping / scoring
+  - reporting 기능
+  - operational 기능
+  - phase9 기능
+  - phase10 기능
+  - phase11 기능
+  - phase12 기능
+
+- 성공 실행 산출물도 실제로 존재함
+  - outputs/runs/phase9-final-demo-v9 에서 고객용/내부용 산출물과 ZIP 패키지가 생성돼 있음
+  - release_readiness.json 은 status=ready
+  - submission_gate.json 은 status=pass
+  - customer_submission_v9.0.zip 생성됨
+  - internal_archive_v9.0.zip 생성됨
+
+- 즉, 샘플/데모 입력 기준으로는 end-to-end 흐름이 이미 성립한다.
+
+[6. 현재 진행 상황의 핵심 해석]
+- 프로젝트는 아이디어 단계가 아니라 작동하는 파이프라인 단계까지 와 있다.
+- 단순 parser 수준을 넘어서 운영 체크, 납품 패키징, 고객/내부 분리, 감사성 산출물까지 구현돼 있다.
+- 최근 phase9, phase10, phase11, phase12로 갈수록 실제 운영 투입 전 점검 기능이 추가된 상태다.
+- 현재 저장소에서 "가장 완성도가 높은 부분"은 vuln-pipeline 이고, 다른 폴더들은 레거시 또는 참고 자산 비중이 크다.
+
+[7. 현재 막힌 내용]
+- 가장 큰 막힘은 코드가 아니라 실데이터 부재다.
+- outputs/runs/phase12-real-rehearsal 및 phase12-real-preflight 결과를 보면 다음 상태다.
+  - status: blocked
+  - 이유: data/inputs/real/burp, nuclei, httpx 에 실제 입력 파일이 없음
+  - 결과: real rehearsal 문서가 blocked 상태로 생성됨
+
+- 현재 실질적인 blocker
+  - real scan inputs are not ready
+
+- 즉, 실제 고객/운영 입력을 data/inputs/real/* 에 배치하지 않으면 최신 리허설 단계는 진행되지 않는다.
+
+[8. 구조/운영 측면에서 아직 정리되지 않은 부분]
+- app/scanner/hexstrike-ai 의 실행 진입점과 의존성 정리 미완료
+- app/reporting/reporting_starter_v3_package parser 검증 정리 미완료
+- data/fixtures/real_fixtures 민감정보 비식별 점검 미완료
+- data/schemas 에 취약점 통합 결과 스키마 정리 미완료
+- outputs/runs 생성 규칙과 실행별 메타데이터 문서화 미완료
+- reports/templates 표준 템플릿 구조 확정 미완료
+- knowledge/mappings/owasp_kisa_mapping.yaml 보강 미완료
+- knowledge/checklists/web_assessment_checklist.md 서비스 유형별 세분화 미완료
+- scripts/run 과 scripts/setup 역할 분리 정리 미완료
+- 한글 폴더 "보고서" 를 유지한 상태에서 깨지는 참조가 없는지 점검 필요
+- app/reporting 내부 real_fixtures 와 data/fixtures/real_fixtures 의 역할 중복 정리 필요
+
+[9. 현재 프로젝트를 한 줄로 요약하면]
+- "샘플 데이터 기준으로는 고객 납품까지 가능한 취약점 보고 파이프라인이 완성돼 있고, 실제 데이터 투입 전 운영 정리와 실입력 확보가 남아 있는 상태"이다.
+
+[10. 다음 우선순위]
+1. data/inputs/real/burp, nuclei, httpx, manual 에 실제 입력 파일 배치
+2. phase12 real preflight / rehearsal 재실행
+3. blocked 상태 해소 후 최종 고객 릴리스 흐름 재검증
+4. 레거시 폴더와 신규 구조의 역할 정리
+5. TODO 문서에 남은 구조/문서화/보안 점검 항목 마무리
+
+[11. GPT에게 전달할 때 중요한 포인트]
+- 현재 메인 코드는 app/vuln-pipeline 이다.
+- 이 저장소는 이미 동작하는 수준의 end-to-end 파이프라인을 가진다.
+- 실제 blocker는 구현 부족보다는 실데이터 입력 부재와 구조 정리 미완료다.
+- phase9-final-demo-v9 는 성공 사례로 볼 수 있다.
+- phase12-real-rehearsal 은 최신 리허설 상태를 보여 주지만 실제 입력이 없어 blocked 상태다.

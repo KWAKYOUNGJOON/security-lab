@@ -1,0 +1,115 @@
+{
+  "families": {
+    "default": {
+      "family_base": 0.0,
+      "exploitability": 0.0,
+      "impact": 0.0,
+      "exposure": 0.0,
+      "business_modifier": 0.0
+    },
+    "SQL Injection": {
+      "family_base": 4.0,
+      "exploitability": 2.0,
+      "impact": 2.5,
+      "exposure": 0.8,
+      "business_modifier": 0.3
+    },
+    "Command Injection": {
+      "family_base": 4.2,
+      "exploitability": 2.2,
+      "impact": 2.6,
+      "exposure": 0.7,
+      "business_modifier": 0.3
+    },
+    "XSS": {
+      "family_base": 2.6,
+      "exploitability": 1.2,
+      "impact": 1.2,
+      "exposure": 0.5,
+      "business_modifier": 0.2
+    },
+    "Path Traversal": {
+      "family_base": 3.0,
+      "exploitability": 1.8,
+      "impact": 1.8,
+      "exposure": 0.7,
+      "business_modifier": 0.2
+    },
+    "File Inclusion": {
+      "family_base": 3.5,
+      "exploitability": 2.0,
+      "impact": 2.0,
+      "exposure": 0.8,
+      "business_modifier": 0.2
+    },
+    "Open Redirect": {
+      "family_base": 1.5,
+      "exploitability": 1.0,
+      "impact": 0.8,
+      "exposure": 0.4,
+      "business_modifier": 0.1
+    },
+    "SSRF": {
+      "family_base": 3.8,
+      "exploitability": 2.0,
+      "impact": 2.1,
+      "exposure": 0.8,
+      "business_modifier": 0.2
+    },
+    "IDOR/BOLA": {
+      "family_base": 3.0,
+      "exploitability": 1.4,
+      "impact": 1.8,
+      "exposure": 0.7,
+      "business_modifier": 0.2
+    },
+    "Directory Listing": {
+      "family_base": 0.8,
+      "exploitability": 0.6,
+      "impact": 0.7,
+      "exposure": 0.4,
+      "business_modifier": 0.0
+    },
+    "Error/Stack Trace Disclosure": {
+      "family_base": 1.0,
+      "exploitability": 0.5,
+      "impact": 0.8,
+      "exposure": 0.5,
+      "business_modifier": 0.0
+    },
+    "Missing HttpOnly": {
+      "family_base": 1.0,
+      "exploitability": 0.5,
+      "impact": 0.7,
+      "exposure": 0.4,
+      "business_modifier": 0.0
+    },
+    "Missing Secure cookie flag": {
+      "family_base": 1.2,
+      "exploitability": 0.5,
+      "impact": 0.8,
+      "exposure": 0.5,
+      "business_modifier": 0.0
+    },
+    "Unrestricted File Upload": {
+      "family_base": 3.4,
+      "exploitability": 2.0,
+      "impact": 2.0,
+      "exposure": 0.7,
+      "business_modifier": 0.2
+    }
+  },
+  "confidence": {
+    "defaults": {
+      "burp": 0.6,
+      "nuclei": 0.55,
+      "httpx": 0.25
+    },
+    "burp": {
+      "certain": 0.95,
+      "firm": 0.8,
+      "tentative": 0.55
+    }
+  }
+}
+

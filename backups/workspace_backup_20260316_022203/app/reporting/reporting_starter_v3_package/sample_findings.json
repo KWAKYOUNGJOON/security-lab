@@ -1,0 +1,89 @@
+{
+  "report_meta": {
+    "project_name": "예시 쇼핑몰 웹 취약점 진단 보고서",
+    "target": "https://www.example.org",
+    "generated_at": "2026-03-15T00:05:00+09:00",
+    "assessment_scope": [
+      "웹 애플리케이션",
+      "웹 서버 설정",
+      "인증 및 접근통제",
+      "입력값 검증"
+    ],
+    "customer": "예시 쇼핑몰 운영팀",
+    "author": "홍길동",
+    "template": "kisa_web",
+    "references": {
+      "kisa_guide": "주요정보통신기반시설 기술적 취약점 분석·평가 방법 상세가이드",
+      "owasp": "OWASP Top 10"
+    }
+  },
+  "findings": [
+    {
+      "id": "WEB-001",
+      "title": "관리자 페이지 노출",
+      "category": "정보노출",
+      "severity": "medium",
+      "confidence": "high",
+      "status": "confirmed",
+      "asset": "https://www.example.org",
+      "host": "www.example.org",
+      "url": "https://www.example.org/admin",
+      "method": "GET",
+      "parameter": null,
+      "port": 443,
+      "description": "외부 네트워크에서 관리자 로그인 페이지에 직접 접근할 수 있는 것이 확인되었습니다.",
+      "impact": "관리자 인터페이스가 공개되면 브루트포스, 계정 추측, 관리 기능 탐색 등 추가 공격 가능성이 증가합니다.",
+      "severity_reason": [
+        "외부에서 직접 접근 가능",
+        "관리자 인증 인터페이스 노출",
+        "직접적인 인증 우회는 확인되지 않음"
+      ],
+      "evidence": [
+        {
+          "type": "text",
+          "content": "GET /admin 요청 시 200 OK 응답과 관리자 로그인 화면 확인",
+          "path": null
+        },
+        {
+          "type": "screenshot",
+          "content": "관리자 로그인 페이지 캡처",
+          "path": "evidence/web-001-admin-login.png"
+        }
+      ],
+      "reproduction_steps": [
+        "브라우저에서 https://www.example.org/admin 경로에 접속합니다.",
+        "관리자 로그인 화면이 외부에서 직접 노출되는지 확인합니다."
+      ],
+      "recommendation": [
+        "관리자 페이지 접근을 허용된 IP로 제한합니다.",
+        "다단계 인증(MFA)을 적용합니다.",
+        "기본 관리자 경로 노출을 최소화하고 접근 로그 모니터링을 강화합니다."
+      ],
+      "references": {
+        "owasp": [
+          "A01",
+          "A05"
+        ],
+        "kisa": [
+          "III. 서비스 구성 > 접근통제",
+          "X. Web Application > 정보 노출"
+        ],
+        "cwe": [
+          "CWE-200"
+        ]
+      },
+      "tools": [
+        "httpx",
+        "burp",
+        "manual"
+      ],
+      "raw_source": [
+        "scans/httpx.json",
+        "burp/issues.xml"
+      ],
+      "manual_verified": true,
+      "duplicate_group": null,
+      "notes": "워드프레스 관리자 인터페이스로 추정"
+    }
+  ]
+}

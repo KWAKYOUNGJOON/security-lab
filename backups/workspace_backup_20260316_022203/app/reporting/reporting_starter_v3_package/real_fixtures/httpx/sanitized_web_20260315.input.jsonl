@@ -1,0 +1,1 @@
+{"input": "portal.example.co.kr/admin", "host": "portal.example.co.kr", "url": "https://portal.example.co.kr/admin", "port": "443", "scheme": "https", "status_code": 200, "title": "Admin Portal", "webserver": "nginx", "header": {"server": "nginx"}}

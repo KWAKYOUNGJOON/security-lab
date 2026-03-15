@@ -1,0 +1,1295 @@
+{
+  "bundle": {
+    "schema_version": "1.2",
+    "run_id": "phase10-pptx-demo",
+    "generated_at": "2026-03-15T08:26:36+00:00",
+    "input_files": [
+      "D:\\취약점 진단\\data\\inputs\\burp\\burp_sample.xml",
+      "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+      "D:\\취약점 진단\\data\\inputs\\httpx\\httpx_sample.jsonl"
+    ],
+    "findings": [
+      {
+        "schema_version": "1.0",
+        "run_id": "phase10-pptx-demo",
+        "finding_id": "F-0001",
+        "source": "burp",
+        "asset": {
+          "url": "https://demo.example.com/users/123?userId=123",
+          "host": "demo.example.com",
+          "path": "/users/123",
+          "normalized_path": "/users/{id}",
+          "method": "GET",
+          "query_keys": [
+            "userid"
+          ],
+          "port": 443,
+          "scheme": "https"
+        },
+        "classification": {
+          "weakness_family": "SQL Injection",
+          "primary_cwe": "CWE-89",
+          "related_cwes": [],
+          "owasp_top10_2025": [
+            "A03 Injection"
+          ],
+          "kisa_categories": [
+            "입력값 검증 취약점"
+          ],
+          "parameter_or_sink": "userid",
+          "matched_rule_id": "sql-injection"
+        },
+        "severity": {
+          "raw": "High",
+          "score": 8.7,
+          "level": "High",
+          "rationale": [
+            "family_base=4.0",
+            "exploitability=2.0",
+            "impact=2.5",
+            "exposure=0.8",
+            "business_modifier=0.3"
+          ],
+          "overridden": true
+        },
+        "confidence": {
+          "raw": "Certain",
+          "score": 0.98,
+          "level": "High",
+          "rationale": [
+            "source_default=0.6",
+            "burp_raw=certain"
+          ],
+          "analyst_override": 0.98,
+          "overridden": true
+        },
+        "dedup": {
+          "exact_fingerprint": "4d062c99cc98",
+          "cluster_fingerprint": "86da078397c1",
+          "cluster_key": "SQL Injection|demo.example.com|/users/{id}|userid|CWE-89",
+          "duplicate_of": null,
+          "is_duplicate": false,
+          "false_positive": false
+        },
+        "title": "Confirmed SQL Injection",
+        "description": "Unsanitized user input reaches a SQL query.",
+        "evidence": [
+          {
+            "type": "request",
+            "summary": "Captured HTTP request from Burp issue export.",
+            "artifact": {
+              "kind": "request",
+              "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_request.txt",
+              "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_request.txt",
+              "inline": null
+            },
+            "highlights": [],
+            "extracted_results": [],
+            "reproduction_steps": [
+              "Replay the saved request artifact against the same endpoint."
+            ],
+            "artifact_links": [
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_request.txt",
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_request.txt"
+            ]
+          },
+          {
+            "type": "response",
+            "summary": "Captured HTTP response from Burp issue export.",
+            "artifact": {
+              "kind": "response",
+              "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_response.txt",
+              "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_response.txt",
+              "inline": null
+            },
+            "highlights": [
+              "HTTP/1.1 500 Internal Server Error"
+            ],
+            "extracted_results": [],
+            "reproduction_steps": [],
+            "artifact_links": [
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_response.txt",
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_response.txt"
+            ]
+          }
+        ],
+        "remediation": [
+          "Use parameterized queries."
+        ],
+        "status": "needs_review",
+        "tags": [],
+        "references": [
+          "CWE-89"
+        ],
+        "raw": {
+          "raw_id": "1",
+          "kind": "finding",
+          "metadata": {
+            "serial_number": null,
+            "type_index": null,
+            "location": null,
+            "issue_background": null,
+            "issue_detail": "Unsanitized user input reaches a SQL query.",
+            "variations": []
+          },
+          "raw_title": "SQL Injection",
+          "source_file": "D:\\취약점 진단\\data\\inputs\\burp\\burp_sample.xml",
+          "enrichment": {
+            "httpx": [
+              "httpx status=200 tech=nginx,python",
+              "httpx status=200 tech=nginx"
+            ]
+          }
+        },
+        "analyst": {
+          "note": "Manually confirmed with replay.",
+          "override": {
+            "finding_id": "F-0001",
+            "override_title": "Confirmed SQL Injection",
+            "override_primary_cwe": "CWE-89",
+            "override_related_cwes": [],
+            "override_owasp_top10_2025": [
+              "A03 Injection"
+            ],
+            "override_kisa_categories": [
+              "입력값 검증 취약점"
+            ],
+            "override_severity_score": 8.7,
+            "override_severity_level": "High",
+            "override_confidence": 0.98,
+            "false_positive": false,
+            "analyst_note": "Manually confirmed with replay.",
+            "manual_remediation": [
+              "Use parameterized queries."
+            ]
+          }
+        }
+      },
+      {
+        "schema_version": "1.0",
+        "run_id": "phase10-pptx-demo",
+        "finding_id": "F-0002",
+        "source": "nuclei",
+        "asset": {
+          "url": "https://demo.example.com/files/abcdef1234567890abcdef1234567890/",
+          "host": "demo.example.com",
+          "path": "/files/abcdef1234567890abcdef1234567890/",
+          "normalized_path": "/files/{hex}/",
+          "method": "GET",
+          "query_keys": [],
+          "port": null,
+          "scheme": "https"
+        },
+        "classification": {
+          "weakness_family": "Directory Listing",
+          "primary_cwe": "CWE-548",
+          "related_cwes": [],
+          "owasp_top10_2025": [
+            "A05 Security Misconfiguration"
+          ],
+          "kisa_categories": [
+            "디렉터리 노출"
+          ],
+          "parameter_or_sink": "body-index-of",
+          "matched_rule_id": "directory-listing"
+        },
+        "severity": {
+          "raw": "low",
+          "score": 2.8,
+          "level": "Low",
+          "rationale": [
+            "family_base=0.8",
+            "exploitability=0.6",
+            "impact=0.7",
+            "exposure=0.4",
+            "business_modifier=0.0",
+            "evidence_bonus=0.3"
+          ],
+          "overridden": false
+        },
+        "confidence": {
+          "raw": null,
+          "score": 0.8,
+          "level": "Medium",
+          "rationale": [
+            "source_default=0.55",
+            "extracted_results_bonus=0.15",
+            "artifact_bonus=0.10"
+          ],
+          "analyst_override": null,
+          "overridden": false
+        },
+        "dedup": {
+          "exact_fingerprint": "ba0807db391d",
+          "cluster_fingerprint": "be7c38f5ae54",
+          "cluster_key": "Directory Listing|demo.example.com|/files/{hex}/|body-index-of|CWE-548",
+          "duplicate_of": null,
+          "is_duplicate": false,
+          "false_positive": true
+        },
+        "title": "directory listing",
+        "description": "Directory listing was enabled.",
+        "evidence": [
+          {
+            "type": "request",
+            "summary": "Nuclei request captured in result output.",
+            "artifact": {
+              "kind": "request",
+              "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+              "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt",
+              "inline": null
+            },
+            "highlights": [],
+            "extracted_results": [],
+            "reproduction_steps": [],
+            "artifact_links": [
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt"
+            ]
+          },
+          {
+            "type": "response",
+            "summary": "Nuclei response captured in result output.",
+            "artifact": {
+              "kind": "response",
+              "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+              "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt",
+              "inline": null
+            },
+            "highlights": [
+              "HTTP/1.1 200 OK",
+              "Content-Type: text/html",
+              "<html><title>Index of /files</title></html>"
+            ],
+            "extracted_results": [],
+            "reproduction_steps": [],
+            "artifact_links": [
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt"
+            ]
+          },
+          {
+            "type": "match",
+            "summary": "Nuclei matched at https://demo.example.com/files/abcdef1234567890abcdef1234567890/",
+            "artifact": null,
+            "highlights": [
+              "body-index-of",
+              "Index of /files"
+            ],
+            "extracted_results": [
+              "Index of /files"
+            ],
+            "reproduction_steps": [
+              "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+            ],
+            "artifact_links": []
+          }
+        ],
+        "remediation": [],
+        "status": "needs_review",
+        "tags": [
+          "exposure",
+          "listing"
+        ],
+        "references": [
+          "CWE-548",
+          "directory-listing"
+        ],
+        "raw": {
+          "raw_id": "directory-listing",
+          "kind": "finding",
+          "metadata": {
+            "template_id": "directory-listing",
+            "template_path": "http/misconfig/listing.yaml",
+            "matcher_name": "body-index-of",
+            "curl_command": null,
+            "extracted_results": [
+              "Index of /files"
+            ],
+            "response_highlights": [
+              "Index of /files"
+            ]
+          },
+          "raw_title": "Directory Listing",
+          "source_file": "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+          "enrichment": {
+            "httpx": [
+              "httpx status=200 tech=nginx,python",
+              "httpx status=200 tech=nginx"
+            ]
+          }
+        },
+        "analyst": {
+          "note": "Listing path is an approved static file share.",
+          "override": {
+            "finding_id": "F-0002",
+            "false_positive": true,
+            "analyst_note": "Listing path is an approved static file share."
+          }
+        }
+      },
+      {
+        "schema_version": "1.0",
+        "run_id": "phase10-pptx-demo",
+        "finding_id": "F-0003",
+        "source": "nuclei",
+        "asset": {
+          "url": "https://demo.example.com/search?q=%3Csvg%3E",
+          "host": "demo.example.com",
+          "path": "/search",
+          "normalized_path": "/search",
+          "method": "GET",
+          "query_keys": [
+            "q"
+          ],
+          "port": null,
+          "scheme": "https"
+        },
+        "classification": {
+          "weakness_family": "XSS",
+          "primary_cwe": "CWE-79",
+          "related_cwes": [],
+          "owasp_top10_2025": [
+            "A03 Injection"
+          ],
+          "kisa_categories": [
+            "스크립트 실행"
+          ],
+          "parameter_or_sink": "q",
+          "matched_rule_id": "reflected-xss-specific"
+        },
+        "severity": {
+          "raw": "medium",
+          "score": 6.0,
+          "level": "Medium",
+          "rationale": [
+            "family_base=2.6",
+            "exploitability=1.2",
+            "impact=1.2",
+            "exposure=0.5",
+            "business_modifier=0.2",
+            "evidence_bonus=0.3"
+          ],
+          "overridden": false
+        },
+        "confidence": {
+          "raw": null,
+          "score": 0.8,
+          "level": "Medium",
+          "rationale": [
+            "source_default=0.55",
+            "extracted_results_bonus=0.15",
+            "artifact_bonus=0.10"
+          ],
+          "analyst_override": null,
+          "overridden": false
+        },
+        "dedup": {
+          "exact_fingerprint": "2914a214ff42",
+          "cluster_fingerprint": "e80d0d167c4f",
+          "cluster_key": "XSS|demo.example.com|/search|q|CWE-79",
+          "duplicate_of": null,
+          "is_duplicate": false,
+          "false_positive": false
+        },
+        "title": "reflected xss",
+        "description": "Potential reflected XSS.",
+        "evidence": [
+          {
+            "type": "request",
+            "summary": "Nuclei request captured in result output.",
+            "artifact": {
+              "kind": "request",
+              "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+              "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt",
+              "inline": null
+            },
+            "highlights": [],
+            "extracted_results": [],
+            "reproduction_steps": [],
+            "artifact_links": [
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt"
+            ]
+          },
+          {
+            "type": "response",
+            "summary": "Nuclei response captured in result output.",
+            "artifact": {
+              "kind": "response",
+              "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_response.txt",
+              "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_response.txt",
+              "inline": null
+            },
+            "highlights": [
+              "HTTP/1.1 200 OK",
+              "Content-Type: text/html",
+              "<html><body><svg></body></html>"
+            ],
+            "extracted_results": [],
+            "reproduction_steps": [],
+            "artifact_links": [
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_response.txt",
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_response.txt"
+            ]
+          },
+          {
+            "type": "match",
+            "summary": "Nuclei matched at https://demo.example.com/search?q=%3Csvg%3E",
+            "artifact": null,
+            "highlights": [
+              "reflected-payload",
+              "<svg>"
+            ],
+            "extracted_results": [
+              "<svg>"
+            ],
+            "reproduction_steps": [
+              "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+            ],
+            "artifact_links": []
+          }
+        ],
+        "remediation": [],
+        "status": "needs_review",
+        "tags": [
+          "xss"
+        ],
+        "references": [
+          "CWE-79",
+          "xss-detect"
+        ],
+        "raw": {
+          "raw_id": "xss-detect",
+          "kind": "finding",
+          "metadata": {
+            "template_id": "xss-detect",
+            "template_path": "http/xss/test.yaml",
+            "matcher_name": "reflected-payload",
+            "curl_command": null,
+            "extracted_results": [
+              "<svg>"
+            ],
+            "response_highlights": [
+              "<svg>"
+            ]
+          },
+          "raw_title": "Reflected XSS",
+          "source_file": "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+          "enrichment": {
+            "httpx": [
+              "httpx status=200 tech=nginx,python",
+              "httpx status=200 tech=nginx"
+            ]
+          }
+        },
+        "analyst": {}
+      }
+    ],
+    "issues": [
+      {
+        "issue_id": "I-0001",
+        "cluster_key": "SQL Injection|demo.example.com|/users/{id}|userid|CWE-89",
+        "title": "Confirmed SQL Injection",
+        "weakness_family": "SQL Injection",
+        "affected_assets": [
+          "demo.example.com"
+        ],
+        "instances": [
+          "F-0001"
+        ],
+        "primary_cwe": "CWE-89",
+        "related_cwes": [],
+        "severity": {
+          "raw": null,
+          "score": 8.7,
+          "level": "High",
+          "rationale": [
+            "cluster=max(member severity)"
+          ],
+          "overridden": false
+        },
+        "confidence": {
+          "raw": null,
+          "score": 0.98,
+          "level": "High",
+          "rationale": [
+            "cluster=average(member confidence)"
+          ],
+          "analyst_override": null,
+          "overridden": false
+        },
+        "evidence_summary": [
+          "Captured HTTP request from Burp issue export.",
+          "artifact: .tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_request.txt",
+          "artifact: .tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_request.txt"
+        ],
+        "remediation": [
+          "Use parameterized queries."
+        ],
+        "references": [
+          "CWE-89"
+        ],
+        "classification": {
+          "weakness_family": "SQL Injection",
+          "primary_cwe": "CWE-89",
+          "related_cwes": [],
+          "owasp_top10_2025": [
+            "A03 Injection"
+          ],
+          "kisa_categories": [
+            "입력값 검증 취약점"
+          ],
+          "parameter_or_sink": "userid",
+          "matched_rule_id": "sql-injection"
+        },
+        "false_positive": false,
+        "suppressed": false,
+        "suppression_status": null,
+        "suppression_note": null,
+        "analyst_note": "Manually confirmed with replay.",
+        "recommended_owner": "Backend Dev",
+        "target_due": "14d",
+        "affected_instance_count": 1
+      },
+      {
+        "issue_id": "I-0002",
+        "cluster_key": "XSS|demo.example.com|/search|q|CWE-79",
+        "title": "Reflected XSS (Needs Developer Fix)",
+        "weakness_family": "XSS",
+        "affected_assets": [
+          "demo.example.com"
+        ],
+        "instances": [
+          "F-0003"
+        ],
+        "primary_cwe": "CWE-79",
+        "related_cwes": [],
+        "severity": {
+          "raw": null,
+          "score": 6.0,
+          "level": "Medium",
+          "rationale": [
+            "cluster=max(member severity)"
+          ],
+          "overridden": false
+        },
+        "confidence": {
+          "raw": null,
+          "score": 0.8,
+          "level": "Medium",
+          "rationale": [
+            "cluster=average(member confidence)"
+          ],
+          "analyst_override": null,
+          "overridden": false
+        },
+        "evidence_summary": [
+          "Nuclei request captured in result output.",
+          "artifact: .tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+          "artifact: .tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt"
+        ],
+        "remediation": [],
+        "references": [
+          "CWE-79",
+          "xss-detect"
+        ],
+        "classification": {
+          "weakness_family": "XSS",
+          "primary_cwe": "CWE-79",
+          "related_cwes": [],
+          "owasp_top10_2025": [
+            "A03 Injection"
+          ],
+          "kisa_categories": [
+            "스크립트 실행"
+          ],
+          "parameter_or_sink": "q",
+          "matched_rule_id": "reflected-xss-specific"
+        },
+        "false_positive": false,
+        "suppressed": false,
+        "suppression_status": null,
+        "suppression_note": null,
+        "analyst_note": "User-controlled payload is reflected without encoding.",
+        "recommended_owner": "Frontend Dev",
+        "target_due": "30d",
+        "affected_instance_count": 1
+      }
+    ],
+    "observations": [
+      {
+        "host": "demo.example.com",
+        "title": "Demo App",
+        "status_code": 200,
+        "tech": [
+          "nginx",
+          "python"
+        ],
+        "webserver": "nginx"
+      },
+      {
+        "host": "demo.example.com",
+        "title": "Search",
+        "status_code": 200,
+        "tech": [
+          "nginx"
+        ],
+        "webserver": "nginx"
+      }
+    ],
+    "summary": {
+      "parsed_findings": 3,
+      "deduped_findings": 3,
+      "issues": 2,
+      "observations": 2,
+      "false_positive_issues": 0,
+      "suppressed_issues": 0
+    },
+    "false_positive_findings": [
+      {
+        "schema_version": "1.0",
+        "run_id": "phase10-pptx-demo",
+        "finding_id": "F-0002",
+        "source": "nuclei",
+        "asset": {
+          "url": "https://demo.example.com/files/abcdef1234567890abcdef1234567890/",
+          "host": "demo.example.com",
+          "path": "/files/abcdef1234567890abcdef1234567890/",
+          "normalized_path": "/files/{hex}/",
+          "method": "GET",
+          "query_keys": [],
+          "port": null,
+          "scheme": "https"
+        },
+        "classification": {
+          "weakness_family": "Directory Listing",
+          "primary_cwe": "CWE-548",
+          "related_cwes": [],
+          "owasp_top10_2025": [
+            "A05 Security Misconfiguration"
+          ],
+          "kisa_categories": [
+            "디렉터리 노출"
+          ],
+          "parameter_or_sink": "body-index-of",
+          "matched_rule_id": "directory-listing"
+        },
+        "severity": {
+          "raw": "low",
+          "score": 2.8,
+          "level": "Low",
+          "rationale": [
+            "family_base=0.8",
+            "exploitability=0.6",
+            "impact=0.7",
+            "exposure=0.4",
+            "business_modifier=0.0",
+            "evidence_bonus=0.3"
+          ],
+          "overridden": false
+        },
+        "confidence": {
+          "raw": null,
+          "score": 0.8,
+          "level": "Medium",
+          "rationale": [
+            "source_default=0.55",
+            "extracted_results_bonus=0.15",
+            "artifact_bonus=0.10"
+          ],
+          "analyst_override": null,
+          "overridden": false
+        },
+        "dedup": {
+          "exact_fingerprint": "ba0807db391d",
+          "cluster_fingerprint": "be7c38f5ae54",
+          "cluster_key": "Directory Listing|demo.example.com|/files/{hex}/|body-index-of|CWE-548",
+          "duplicate_of": null,
+          "is_duplicate": false,
+          "false_positive": true
+        },
+        "title": "directory listing",
+        "description": "Directory listing was enabled.",
+        "evidence": [
+          {
+            "type": "request",
+            "summary": "Nuclei request captured in result output.",
+            "artifact": {
+              "kind": "request",
+              "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+              "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt",
+              "inline": null
+            },
+            "highlights": [],
+            "extracted_results": [],
+            "reproduction_steps": [],
+            "artifact_links": [
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt"
+            ]
+          },
+          {
+            "type": "response",
+            "summary": "Nuclei response captured in result output.",
+            "artifact": {
+              "kind": "response",
+              "raw_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+              "redacted_path": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt",
+              "inline": null
+            },
+            "highlights": [
+              "HTTP/1.1 200 OK",
+              "Content-Type: text/html",
+              "<html><title>Index of /files</title></html>"
+            ],
+            "extracted_results": [],
+            "reproduction_steps": [],
+            "artifact_links": [
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+              ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt"
+            ]
+          },
+          {
+            "type": "match",
+            "summary": "Nuclei matched at https://demo.example.com/files/abcdef1234567890abcdef1234567890/",
+            "artifact": null,
+            "highlights": [
+              "body-index-of",
+              "Index of /files"
+            ],
+            "extracted_results": [
+              "Index of /files"
+            ],
+            "reproduction_steps": [
+              "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+            ],
+            "artifact_links": []
+          }
+        ],
+        "remediation": [],
+        "status": "needs_review",
+        "tags": [
+          "exposure",
+          "listing"
+        ],
+        "references": [
+          "CWE-548",
+          "directory-listing"
+        ],
+        "raw": {
+          "raw_id": "directory-listing",
+          "kind": "finding",
+          "metadata": {
+            "template_id": "directory-listing",
+            "template_path": "http/misconfig/listing.yaml",
+            "matcher_name": "body-index-of",
+            "curl_command": null,
+            "extracted_results": [
+              "Index of /files"
+            ],
+            "response_highlights": [
+              "Index of /files"
+            ]
+          },
+          "raw_title": "Directory Listing",
+          "source_file": "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+          "enrichment": {
+            "httpx": [
+              "httpx status=200 tech=nginx,python",
+              "httpx status=200 tech=nginx"
+            ]
+          }
+        },
+        "analyst": {
+          "note": "Listing path is an approved static file share.",
+          "override": {
+            "finding_id": "F-0002",
+            "false_positive": true,
+            "analyst_note": "Listing path is an approved static file share."
+          }
+        }
+      }
+    ],
+    "false_positive_issues": [],
+    "suppressed_issues": [],
+    "override_summary": {
+      "applied": 3,
+      "targets": [
+        "F-0001",
+        "F-0002",
+        "I-0002"
+      ]
+    },
+    "suppression_summary": {
+      "applied": 2,
+      "statuses": []
+    },
+    "comparison_summary": {
+      "compared_run_id": null,
+      "new_issues": [],
+      "resolved_issues": [],
+      "changed_issues": [],
+      "unchanged_issues": [],
+      "available": false
+    },
+    "qa_metrics": {
+      "input_file_count": 3,
+      "parsed_finding_count": 3,
+      "normalized_finding_count": 3,
+      "issue_count": 2,
+      "suppressed_count": 0,
+      "false_positive_count": 0,
+      "overridden_count": 3,
+      "unmapped_cwe_count": 0,
+      "low_confidence_count": 0,
+      "high_severity_count": 1,
+      "evidence_missing_count": 0,
+      "review_queue_count": 1,
+      "packaging_success": false,
+      "qa_warnings": [
+        "no comparison baseline available",
+        "rule conflicts observed during mapping"
+      ]
+    },
+    "report_profile": "customer",
+    "report_template": "default_customer",
+    "document_meta": {
+      "branding_applied": true,
+      "branding_source": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+      "cover_title": "Customer Security Assessment Report",
+      "subtitle": "Final customer submission package",
+      "organization_name": "Security Operations",
+      "client_name": "Internal Client",
+      "project_name": "Web Vulnerability Assessment",
+      "report_version": "v1.0",
+      "approver_name": "TBD",
+      "approver_title": "Security Lead",
+      "contact_email": "security@example.local",
+      "footer_notice": "Confidential - customer distribution copy",
+      "engagement_name": "Security Review",
+      "analyst_name": "Analyst Team",
+      "delivery_date": "",
+      "compared_run_id": null,
+      "run_mode": "single",
+      "run_id": "phase10-pptx-demo"
+    }
+  },
+  "profile": {
+    "id": "customer",
+    "title_suffix": "Customer",
+    "show_raw_artifacts": false,
+    "show_analyst_note": false,
+    "show_trace_paths": false,
+    "show_artifact_index": true,
+    "show_false_positive_details": false,
+    "show_internal_paths": false,
+    "tone": "polished",
+    "repro_detail": "restrained"
+  },
+  "template": {
+    "id": "default_customer",
+    "cover_title": "Customer Security Assessment Report",
+    "cover_subtitle": "Final customer submission package",
+    "executive_summary_prefix": "고객 공유를 위해 핵심 영향과 우선 조치 사항 중심으로 정리했습니다.",
+    "info_fields": [
+      "project_name",
+      "client_name",
+      "engagement_name",
+      "analyst_name",
+      "organization_name",
+      "report_version",
+      "delivery_date",
+      "approver_name",
+      "contact_email",
+      "run_id",
+      "compared_run_id",
+      "run_mode",
+      "generated_at"
+    ],
+    "appendix_sections": [
+      "override",
+      "false_positive",
+      "suppressed",
+      "artifact_index",
+      "decision_trace"
+    ],
+    "remediation_headings": {
+      "immediate": "우선 조치",
+      "structural": "구조 개선",
+      "validation": "조치 후 확인"
+    },
+    "approval_block": true
+  },
+  "document_meta": {
+    "project_name": "Web Vulnerability Assessment",
+    "client_name": "Internal Client",
+    "engagement_name": "Security Review",
+    "analyst_name": "Analyst Team",
+    "organization_name": "Security Operations",
+    "report_version": "v1.0",
+    "delivery_date": "2026-03-15",
+    "approver_name": "TBD",
+    "contact_email": "security@example.local",
+    "run_id": "phase10-pptx-demo",
+    "generated_at": "2026-03-15T08:26:36+00:00",
+    "compared_run_id": "N/A",
+    "run_mode": "single",
+    "cover_title": "Customer Security Assessment Report",
+    "subtitle": "Final customer submission package",
+    "footer_notice": "Confidential - customer distribution copy",
+    "logo_path_optional": "",
+    "approver_title": "Security Lead",
+    "branding_applied": "true"
+  },
+  "narratives": [
+    {
+      "issue": {
+        "issue_id": "I-0001",
+        "cluster_key": "SQL Injection|demo.example.com|/users/{id}|userid|CWE-89",
+        "title": "Confirmed SQL Injection",
+        "weakness_family": "SQL Injection",
+        "affected_assets": [
+          "demo.example.com"
+        ],
+        "instances": [
+          "F-0001"
+        ],
+        "primary_cwe": "CWE-89",
+        "related_cwes": [],
+        "severity": {
+          "raw": null,
+          "score": 8.7,
+          "level": "High",
+          "rationale": [
+            "cluster=max(member severity)"
+          ],
+          "overridden": false
+        },
+        "confidence": {
+          "raw": null,
+          "score": 0.98,
+          "level": "High",
+          "rationale": [
+            "cluster=average(member confidence)"
+          ],
+          "analyst_override": null,
+          "overridden": false
+        },
+        "evidence_summary": [
+          "Captured HTTP request from Burp issue export.",
+          "artifact: .tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_request.txt",
+          "artifact: .tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_request.txt"
+        ],
+        "remediation": [
+          "Use parameterized queries."
+        ],
+        "references": [
+          "CWE-89"
+        ],
+        "classification": {
+          "weakness_family": "SQL Injection",
+          "primary_cwe": "CWE-89",
+          "related_cwes": [],
+          "owasp_top10_2025": [
+            "A03 Injection"
+          ],
+          "kisa_categories": [
+            "입력값 검증 취약점"
+          ],
+          "parameter_or_sink": "userid",
+          "matched_rule_id": "sql-injection"
+        },
+        "false_positive": false,
+        "suppressed": false,
+        "suppression_status": null,
+        "suppression_note": null,
+        "analyst_note": "Manually confirmed with replay.",
+        "recommended_owner": "Backend Dev",
+        "target_due": "14d",
+        "affected_instance_count": 1
+      },
+      "narrative": {
+        "summary_line": "Confirmed SQL Injection 이슈가 demo.example.com 자산에서 확인되었으며 우선 조치가 권고됩니다.",
+        "overview": "사용자 입력이 SQL 구문으로 해석되어 의도하지 않은 데이터 조회나 변경이 발생할 수 있는 취약점입니다.",
+        "why_it_matters": "인증 우회, 민감정보 조회, 데이터 변조로 이어질 수 있어 업무 영향이 큽니다.",
+        "repro_points": [
+          "Replay the saved request artifact against the same endpoint.",
+          "HTTP/1.1 500 Internal Server Error"
+        ],
+        "impact_scope": "현재 클러스터 기준으로 1개 자산, 1개 인스턴스에 영향이 있습니다.",
+        "quick_fix": [
+          "Use parameterized queries."
+        ],
+        "structural_fix": [
+          "입력값 형식 검증과 최소 권한 DB 계정을 함께 적용합니다."
+        ],
+        "validation_after_fix": [
+          "입력값이 쿼리 문자열에 직접 연결되는지 확인합니다.",
+          "에러 메시지, 응답 차이, 비정상 데이터 노출 여부를 확인합니다."
+        ],
+        "caution": "동일 유형 입력 경로와 유사 기능까지 함께 점검하는 것이 좋습니다.",
+        "reference_labels": [
+          "CWE-89",
+          "OWASP Top 10 2025 A03",
+          "KISA 웹 입력값 검증 항목"
+        ],
+        "analyst_note": "Manually confirmed with replay."
+      }
+    },
+    {
+      "issue": {
+        "issue_id": "I-0002",
+        "cluster_key": "XSS|demo.example.com|/search|q|CWE-79",
+        "title": "Reflected XSS (Needs Developer Fix)",
+        "weakness_family": "XSS",
+        "affected_assets": [
+          "demo.example.com"
+        ],
+        "instances": [
+          "F-0003"
+        ],
+        "primary_cwe": "CWE-79",
+        "related_cwes": [],
+        "severity": {
+          "raw": null,
+          "score": 6.0,
+          "level": "Medium",
+          "rationale": [
+            "cluster=max(member severity)"
+          ],
+          "overridden": false
+        },
+        "confidence": {
+          "raw": null,
+          "score": 0.8,
+          "level": "Medium",
+          "rationale": [
+            "cluster=average(member confidence)"
+          ],
+          "analyst_override": null,
+          "overridden": false
+        },
+        "evidence_summary": [
+          "Nuclei request captured in result output.",
+          "artifact: .tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+          "artifact: .tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt"
+        ],
+        "remediation": [],
+        "references": [
+          "CWE-79",
+          "xss-detect"
+        ],
+        "classification": {
+          "weakness_family": "XSS",
+          "primary_cwe": "CWE-79",
+          "related_cwes": [],
+          "owasp_top10_2025": [
+            "A03 Injection"
+          ],
+          "kisa_categories": [
+            "스크립트 실행"
+          ],
+          "parameter_or_sink": "q",
+          "matched_rule_id": "reflected-xss-specific"
+        },
+        "false_positive": false,
+        "suppressed": false,
+        "suppression_status": null,
+        "suppression_note": null,
+        "analyst_note": "User-controlled payload is reflected without encoding.",
+        "recommended_owner": "Frontend Dev",
+        "target_due": "30d",
+        "affected_instance_count": 1
+      },
+      "narrative": {
+        "summary_line": "Reflected XSS (Needs Developer Fix) 이슈가 demo.example.com 자산에서 확인되었으며 우선 조치가 권고됩니다.",
+        "overview": "사용자 입력이 적절히 인코딩되지 않고 브라우저에 반영되어 스크립트 실행이 가능해지는 취약점입니다.",
+        "why_it_matters": "세션 탈취, 화면 변조, 사용자 행위 대행으로 이어질 수 있습니다.",
+        "repro_points": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "impact_scope": "현재 클러스터 기준으로 1개 자산, 1개 인스턴스에 영향이 있습니다.",
+        "quick_fix": [
+          "출력 위치별 인코딩 규칙을 적용합니다."
+        ],
+        "structural_fix": [
+          "CSP, 템플릿 자동 이스케이프, 입력값 검증을 함께 적용합니다."
+        ],
+        "validation_after_fix": [
+          "입력값이 HTML, 속성, 스크립트 컨텍스트에 그대로 반영되는지 확인합니다.",
+          "보안 헤더와 템플릿 인코딩 정책이 일관되게 적용되는지 확인합니다."
+        ],
+        "caution": "동일 유형 입력 경로와 유사 기능까지 함께 점검하는 것이 좋습니다.",
+        "reference_labels": [
+          "CWE-79",
+          "OWASP Top 10 2025 A03",
+          "KISA 스크립트 실행 항목"
+        ],
+        "analyst_note": "User-controlled payload is reflected without encoding."
+      }
+    }
+  ],
+  "severity_stats": {
+    "High": 1,
+    "Medium": 1
+  },
+  "family_stats": {
+    "SQL Injection": 1,
+    "XSS": 1
+  },
+  "asset_groups": {
+    "demo.example.com": [
+      {
+        "issue_id": "I-0001",
+        "title": "Confirmed SQL Injection",
+        "severity": "High"
+      },
+      {
+        "issue_id": "I-0002",
+        "title": "Reflected XSS (Needs Developer Fix)",
+        "severity": "Medium"
+      }
+    ]
+  },
+  "executive_summary": "고객 공유를 위해 핵심 영향과 우선 조치 사항 중심으로 정리했습니다. 이번 실행에서는 총 2건의 보고 대상 이슈가 확인되었고 High 이상은 1건입니다. 우선 조치 대상은 Confirmed SQL Injection, Reflected XSS (Needs Developer Fix)이며, 현재 1개 자산 범위에서 영향이 확인되었습니다. false positive 1건은 본문에서 제외했습니다. suppression 0건은 운영 기준에 따라 별도 관리합니다. 본 결과는 analyst review가 필요한 자동 분석 산출물입니다. 고객 공유용으로는 핵심 영향과 개선 우선순위 중심으로 정리했습니다.",
+  "action_plan": {
+    "즉시 조치 권고": [
+      "Use parameterized queries.",
+      "출력 위치별 인코딩 규칙을 적용합니다."
+    ],
+    "단기 개선": [
+      "입력값 형식 검증과 최소 권한 DB 계정을 함께 적용합니다.",
+      "CSP, 템플릿 자동 이스케이프, 입력값 검증을 함께 적용합니다."
+    ],
+    "중장기 개선": [
+      "입력값이 쿼리 문자열에 직접 연결되는지 확인합니다.",
+      "에러 메시지, 응답 차이, 비정상 데이터 노출 여부를 확인합니다.",
+      "입력값이 HTML, 속성, 스크립트 컨텍스트에 그대로 반영되는지 확인합니다.",
+      "보안 헤더와 템플릿 인코딩 정책이 일관되게 적용되는지 확인합니다."
+    ]
+  },
+  "remediation_plan": [
+    {
+      "issue_id": "I-0001",
+      "title": "Confirmed SQL Injection",
+      "severity": "High",
+      "immediate": "Use parameterized queries.",
+      "structural": "입력값 형식 검증과 최소 권한 DB 계정을 함께 적용합니다.",
+      "validation": "입력값이 쿼리 문자열에 직접 연결되는지 확인합니다.; 에러 메시지, 응답 차이, 비정상 데이터 노출 여부를 확인합니다.",
+      "owner": "",
+      "due": "",
+      "immediate_heading": "우선 조치",
+      "structural_heading": "구조 개선",
+      "validation_heading": "조치 후 확인"
+    },
+    {
+      "issue_id": "I-0002",
+      "title": "Reflected XSS (Needs Developer Fix)",
+      "severity": "Medium",
+      "immediate": "출력 위치별 인코딩 규칙을 적용합니다.",
+      "structural": "CSP, 템플릿 자동 이스케이프, 입력값 검증을 함께 적용합니다.",
+      "validation": "입력값이 HTML, 속성, 스크립트 컨텍스트에 그대로 반영되는지 확인합니다.; 보안 헤더와 템플릿 인코딩 정책이 일관되게 적용되는지 확인합니다.",
+      "owner": "",
+      "due": "",
+      "immediate_heading": "우선 조치",
+      "structural_heading": "구조 개선",
+      "validation_heading": "조치 후 확인"
+    }
+  ],
+  "comparison_summary": {
+    "compared_run_id": null,
+    "new_issues": [],
+    "resolved_issues": [],
+    "changed_issues": [],
+    "unchanged_issues": [],
+    "available": false
+  },
+  "qa_metrics": {
+    "input_file_count": 3,
+    "parsed_finding_count": 3,
+    "normalized_finding_count": 3,
+    "issue_count": 2,
+    "suppressed_count": 0,
+    "false_positive_count": 0,
+    "overridden_count": 3,
+    "unmapped_cwe_count": 0,
+    "low_confidence_count": 0,
+    "high_severity_count": 1,
+    "evidence_missing_count": 0,
+    "review_queue_count": 1,
+    "packaging_success": false,
+    "qa_warnings": [
+      "no comparison baseline available",
+      "rule conflicts observed during mapping"
+    ]
+  },
+  "appendix": {
+    "override_targets": [
+      "F-0001",
+      "F-0002",
+      "I-0002"
+    ],
+    "false_positive_findings": [
+      {
+        "finding_id": "F-0002",
+        "title": "directory listing"
+      }
+    ],
+    "suppressed_issues": [],
+    "artifact_index": [
+      {
+        "finding_id": "F-0001",
+        "type": "request",
+        "raw": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_request.txt",
+        "redacted": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_request.txt"
+      },
+      {
+        "finding_id": "F-0001",
+        "type": "response",
+        "raw": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_response.txt",
+        "redacted": ".tmp_run\\phase10-pptx-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_response.txt"
+      },
+      {
+        "finding_id": "F-0002",
+        "type": "request",
+        "raw": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+        "redacted": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt"
+      },
+      {
+        "finding_id": "F-0002",
+        "type": "response",
+        "raw": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+        "redacted": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt"
+      },
+      {
+        "finding_id": "F-0003",
+        "type": "request",
+        "raw": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+        "redacted": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt"
+      },
+      {
+        "finding_id": "F-0003",
+        "type": "response",
+        "raw": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_response.txt",
+        "redacted": ".tmp_run\\phase10-pptx-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_response.txt"
+      }
+    ],
+    "trace_files": [
+      "final_report_bundle.json",
+      "mapping_decisions.jsonl",
+      "scoring_decisions.jsonl",
+      "override_decisions.jsonl",
+      "cluster_decisions.jsonl",
+      "suppression_decisions.jsonl",
+      "review_queue.jsonl",
+      "review_resolution_applied.jsonl",
+      "review_closure_status.json",
+      "qa_metrics.json",
+      "remediation_policy_decisions.json",
+      "ingest_manifest.json"
+    ]
+  }
+}

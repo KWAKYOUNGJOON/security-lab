@@ -1,0 +1,77 @@
+[
+  {
+    "source": "httpx",
+    "source_file": "D:\\취약점 진단\\data\\inputs\\httpx\\httpx_sample.jsonl",
+    "parser": "httpx_jsonl",
+    "raw_id": "1",
+    "kind": "observation",
+    "title": "Demo App",
+    "description": "Observed https://demo.example.com/ status=200 tech=nginx,python",
+    "asset": {
+      "url": "https://demo.example.com/",
+      "host": "demo.example.com",
+      "path": null,
+      "normalized_path": null,
+      "method": "GET",
+      "query_keys": [],
+      "port": 443,
+      "scheme": "https"
+    },
+    "raw_severity": null,
+    "raw_confidence": null,
+    "tags": [
+      "nginx",
+      "python"
+    ],
+    "references": [],
+    "metadata": {
+      "status_code": 200,
+      "webserver": "nginx",
+      "content_type": "text/html",
+      "headers": {
+        "server": "nginx",
+        "content-type": "text/html"
+      }
+    },
+    "evidence": [],
+    "remediation": [],
+    "status": "observed"
+  },
+  {
+    "source": "httpx",
+    "source_file": "D:\\취약점 진단\\data\\inputs\\httpx\\httpx_sample.jsonl",
+    "parser": "httpx_jsonl",
+    "raw_id": "2",
+    "kind": "observation",
+    "title": "Search",
+    "description": "Observed https://demo.example.com/search status=200 tech=nginx",
+    "asset": {
+      "url": "https://demo.example.com/search",
+      "host": "demo.example.com",
+      "path": null,
+      "normalized_path": null,
+      "method": "GET",
+      "query_keys": [],
+      "port": 443,
+      "scheme": "https"
+    },
+    "raw_severity": null,
+    "raw_confidence": null,
+    "tags": [
+      "nginx"
+    ],
+    "references": [],
+    "metadata": {
+      "status_code": 200,
+      "webserver": "nginx",
+      "content_type": "text/html",
+      "headers": {
+        "server": "nginx",
+        "content-type": "text/html"
+      }
+    },
+    "evidence": [],
+    "remediation": [],
+    "status": "observed"
+  }
+]

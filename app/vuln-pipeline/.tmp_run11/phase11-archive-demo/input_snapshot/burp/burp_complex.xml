@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues burpVersion="2026.1">
+  <issue protocol="https" port="443">
+    <serialNumber>101</serialNumber>
+    <typeIndex>512</typeIndex>
+    <name>Error disclosure</name>
+    <host>portal.example.com</host>
+    <path>https://portal.example.com/api/v1/report/550e8400-e29b-41d4-a716-446655440000</path>
+    <severity>Medium</severity>
+    <confidence>Firm</confidence>
+    <issueBackground>운영 환경에서 상세 예외 정보가 외부 응답에 포함되고 있습니다.</issueBackground>
+    <issueDetail>Framework stack trace and SQL syntax error strings were reflected in the response.</issueDetail>
+    <remediationBackground>운영 환경의 상세 오류 메시지 노출을 차단하십시오.</remediationBackground>
+    <variations>
+      <variation>
+        <description>Stack trace snippet returned in 500 response</description>
+      </variation>
+      <variation>
+        <description>SQL syntax error string reflected</description>
+      </variation>
+    </variations>
+    <requestresponse>
+      <request>GET /api/v1/report/550e8400-e29b-41d4-a716-446655440000 HTTP/1.1
+Host: portal.example.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload
+</request>
+      <response>HTTP/1.1 500 Internal Server Error
+Content-Type: text/html
+
+java.lang.NullPointerException
+SQL syntax error near 'select'
+</response>
+    </requestresponse>
+  </issue>
+</issues>
+

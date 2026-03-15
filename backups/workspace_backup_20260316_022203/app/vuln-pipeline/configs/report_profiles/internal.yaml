@@ -1,0 +1,11 @@
+id: internal
+title_suffix: Internal
+show_raw_artifacts: true
+show_analyst_note: true
+show_trace_paths: true
+show_artifact_index: true
+show_false_positive_details: true
+show_internal_paths: true
+tone: technical
+repro_detail: detailed
+

@@ -1,0 +1,10 @@
+{
+  "dependency_found": false,
+  "import_check": false,
+  "import_error": "python-pptx not installed",
+  "expected_output_path": ".tmp_run\\phase10-archive-demo\\deliverables\\presentation_briefing_customer_pack_v1.0.pptx",
+  "fallback_path": ".tmp_run\\phase10-archive-demo\\deliverables\\presentation_briefing_customer_pack_v1.0_fallback.json",
+  "install_hint": "python -m pip install python-pptx",
+  "require_pptx_would_block": false,
+  "status": "warning"
+}

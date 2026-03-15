@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vuln-pipeline"
+version = "0.1.0"
+description = "Local vulnerability parsing, normalization, clustering, and Markdown reporting pipeline."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "python-docx>=1.1.2",
+  "PyYAML>=6.0.2",
+  "python-pptx>=0.6.23"
+]
+
+[project.scripts]
+vuln-pipeline = "vuln_pipeline.cli.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

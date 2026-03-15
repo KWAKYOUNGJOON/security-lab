@@ -1,0 +1,14 @@
+policy_name: customer_release
+allow_high_severity: true
+allow_low_confidence_unresolved: false
+review_queue_allowed_count: 0
+unmapped_ratio_threshold: 0.2
+override_required: true
+compare_baseline_required: false
+customer_redaction_required: true
+package_required: true
+allow_deferred: false
+allow_confirmed_high_untreated: false
+high_severity_result: warn
+review_queue_result: warn
+compare_baseline_result: warn

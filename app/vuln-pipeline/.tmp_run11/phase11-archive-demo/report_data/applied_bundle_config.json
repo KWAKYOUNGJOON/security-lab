@@ -1,0 +1,14 @@
+{
+  "bundle_path": null,
+  "bundle_values": {},
+  "effective": {
+    "branding_file": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+    "report_profile": "internal",
+    "report_template": "default_internal",
+    "deliverable_profile": "customer_pack",
+    "readiness_policy": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml",
+    "remediation_policy_dir": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\remediation_policy",
+    "require_pptx": false,
+    "package_policy": "default"
+  }
+}

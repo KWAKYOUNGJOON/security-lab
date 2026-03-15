@@ -1,0 +1,3 @@
+{"issue_id": "I-0001", "cluster_key": "Error/Stack Trace Disclosure|portal.example.com|/api/v1/report/{uuid}|none|CWE-209", "action": "suppressed", "status": "accepted_risk", "matched_rule": "accepted-error-disclosure", "match_reasons": ["host", "weakness_family"]}
+{"issue_id": "I-0002", "cluster_key": "XSS|portal.example.com|/search|q|CWE-79", "action": "active", "status": null, "matched_rule": null, "match_reasons": []}
+{"issue_id": "I-0003", "cluster_key": "IDOR/BOLA|portal.example.com|/files/1|id|CWE-639", "action": "active", "status": null, "matched_rule": null, "match_reasons": []}

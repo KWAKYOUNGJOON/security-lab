@@ -1,0 +1,36 @@
+{
+  "compared_run_id": "phase10-pptx-demo",
+  "new_issues": [
+    {
+      "issue_id": "I-0002",
+      "cluster_key": "XSS|portal.example.com|/search|q|CWE-79",
+      "title": "reflected xss",
+      "severity_level": "Medium",
+      "confidence_level": "Medium"
+    },
+    {
+      "issue_id": "I-0003",
+      "cluster_key": "IDOR/BOLA|portal.example.com|/files/1|id|CWE-639",
+      "title": "potential input reflection",
+      "severity_level": "High",
+      "confidence_level": "Medium"
+    }
+  ],
+  "resolved_issues": [
+    {
+      "issue_id": "I-0001",
+      "cluster_key": "SQL Injection|demo.example.com|/users/{id}|userid|CWE-89",
+      "title": "Confirmed SQL Injection",
+      "severity_level": "High"
+    },
+    {
+      "issue_id": "I-0002",
+      "cluster_key": "XSS|demo.example.com|/search|q|CWE-79",
+      "title": "Reflected XSS (Needs Developer Fix)",
+      "severity_level": "Medium"
+    }
+  ],
+  "changed_issues": [],
+  "unchanged_issues": [],
+  "available": true
+}

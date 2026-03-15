@@ -1,0 +1,10 @@
+overrides: []
+draft_candidates: []
+notes:
+- This file is intentionally safe by default. The pipeline reads only overrides.
+- Do not place this template under data/inputs/real/manual.
+bootstrap_metadata:
+  source_run_root: null
+  source_review_queue: null
+  review_row_count: 0
+  unresolved_row_count: 0

@@ -1,0 +1,143 @@
+{
+  "report_meta": {
+    "project_name": "https://www.example.org 웹 취약점 진단 보고서",
+    "target": "https://www.example.org",
+    "generated_at": "2026-03-15T03:09:44.789195+09:00",
+    "assessment_scope": [
+      "웹 애플리케이션",
+      "경로 탐색",
+      "자동 진단 결과"
+    ],
+    "customer": null,
+    "author": "pytest",
+    "template": "kisa_web",
+    "references": {
+      "kisa_guide": "주요정보통신기반시설 기술적 취약점 분석·평가 방법 상세가이드",
+      "owasp": "OWASP Top 10"
+    }
+  },
+  "findings": [
+    {
+      "id": "WEB-001",
+      "title": "관리자 또는 민감 경로 발견",
+      "category": "노출경로",
+      "severity": "medium",
+      "confidence": "medium",
+      "status": "needs_review",
+      "asset": "https://www.example.org/admin",
+      "host": null,
+      "url": "https://www.example.org/admin",
+      "method": "GET",
+      "parameter": null,
+      "port": null,
+      "description": "ffuf 디렉터리/파일 탐색 결과, 주목할 만한 경로가 응답한 것이 확인되었습니다.",
+      "impact": "민감 경로나 파일이 노출된 경우 관리자 인터페이스 접근, 설정 정보 노출, 추가 공격면 탐색 위험이 존재합니다.",
+      "severity_reason": [
+        "ffuf status: 200",
+        "유효한 응답으로 판단된 경로"
+      ],
+      "evidence": [
+        {
+          "type": "text",
+          "content": "url: https://www.example.org/admin",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "status: 200",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "size: 1324 bytes",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "input: {\"FUZZ\": \"admin\"}",
+          "path": null
+        }
+      ],
+      "reproduction_steps": [
+        "브라우저 또는 curl로 https://www.example.org/admin 경로에 직접 접근합니다.",
+        "동일한 상태 코드와 응답 본문이 재현되는지 확인합니다."
+      ],
+      "recommendation": [
+        "불필요한 민감 경로와 파일은 제거하거나 외부 접근을 차단합니다.",
+        "관리자 인터페이스에는 접근통제와 인증 강화를 적용합니다.",
+        "운영 중 필요한 경로인지 서비스 담당자와 함께 검토합니다."
+      ],
+      "references": {},
+      "tools": [
+        "ffuf"
+      ],
+      "raw_source": [
+        "scan_ffuf.json"
+      ],
+      "manual_verified": false,
+      "duplicate_group": "https://www.example.org/admin",
+      "notes": null
+    },
+    {
+      "id": "WEB-002",
+      "title": "민감 파일 또는 백업 파일 노출 가능성",
+      "category": "정보노출",
+      "severity": "high",
+      "confidence": "medium",
+      "status": "needs_review",
+      "asset": "https://www.example.org/.env",
+      "host": null,
+      "url": "https://www.example.org/.env",
+      "method": "GET",
+      "parameter": null,
+      "port": null,
+      "description": "ffuf 디렉터리/파일 탐색 결과, 주목할 만한 경로가 응답한 것이 확인되었습니다.",
+      "impact": "민감 경로나 파일이 노출된 경우 관리자 인터페이스 접근, 설정 정보 노출, 추가 공격면 탐색 위험이 존재합니다.",
+      "severity_reason": [
+        "ffuf status: 200",
+        "유효한 응답으로 판단된 경로"
+      ],
+      "evidence": [
+        {
+          "type": "text",
+          "content": "url: https://www.example.org/.env",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "status: 200",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "size: 84 bytes",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "input: {\"FUZZ\": \".env\"}",
+          "path": null
+        }
+      ],
+      "reproduction_steps": [
+        "브라우저 또는 curl로 https://www.example.org/.env 경로에 직접 접근합니다.",
+        "동일한 상태 코드와 응답 본문이 재현되는지 확인합니다."
+      ],
+      "recommendation": [
+        "불필요한 민감 경로와 파일은 제거하거나 외부 접근을 차단합니다.",
+        "관리자 인터페이스에는 접근통제와 인증 강화를 적용합니다.",
+        "운영 중 필요한 경로인지 서비스 담당자와 함께 검토합니다."
+      ],
+      "references": {},
+      "tools": [
+        "ffuf"
+      ],
+      "raw_source": [
+        "scan_ffuf.json"
+      ],
+      "manual_verified": false,
+      "duplicate_group": "https://www.example.org/.env",
+      "notes": null
+    }
+  ]
+}

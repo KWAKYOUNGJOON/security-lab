@@ -1,0 +1,10 @@
+{
+  "status": "fallback",
+  "pptx_generated": false,
+  "reason": "missing dependency: No module named 'pptx'",
+  "missing_dependency_reason": "No module named 'pptx'",
+  "install_hint": "pip install python-pptx",
+  "expected_output": ".tmp_run\\phase10-pptx-demo\\deliverables\\presentation_briefing_customer_v1.0.pptx",
+  "source_presentation_data": ".tmp_run\\phase10-pptx-demo\\deliverables\\presentation_data_customer_v1.0.json",
+  "expected_minimum_slide_count": 8
+}

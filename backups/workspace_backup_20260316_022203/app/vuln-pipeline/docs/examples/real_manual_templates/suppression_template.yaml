@@ -1,0 +1,6 @@
+# Copy reviewed rows from draft_candidates into suppressions only after approval.
+suppressions: []
+draft_candidates: []
+notes:
+  - This file is intentionally safe by default. The pipeline reads only suppressions.
+  - Do not place this template under data/inputs/real/manual.

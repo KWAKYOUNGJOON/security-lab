@@ -1,0 +1,29 @@
+id: default_internal
+cover_title: 웹 취약점 진단 보고서
+cover_subtitle: 내부 분석용 상세 보고서
+executive_summary_prefix: 내부 검토용으로 기술 근거와 운영 판단 포인트를 함께 정리했습니다.
+info_fields:
+  - project_name
+  - client_name
+  - engagement_name
+  - analyst_name
+  - organization_name
+  - report_version
+  - delivery_date
+  - approver_name
+  - contact_email
+  - run_id
+  - compared_run_id
+  - run_mode
+  - generated_at
+appendix_sections:
+  - override
+  - false_positive
+  - suppressed
+  - artifact_index
+  - decision_trace
+remediation_headings:
+  immediate: 즉시 조치
+  structural: 근본 개선
+  validation: 조치 후 확인사항
+approval_block: false

@@ -1,0 +1,28 @@
+id: default_customer
+cover_title: 고객 제출용 요약 보고서
+cover_subtitle: 고객 제출용 정제 보고서
+executive_summary_prefix: 고객 공유를 위해 핵심 영향과 우선 조치 사항 중심으로 정리했습니다.
+info_fields:
+  - project_name
+  - client_name
+  - engagement_name
+  - analyst_name
+  - organization_name
+  - report_version
+  - delivery_date
+  - approver_name
+  - contact_email
+  - run_id
+  - compared_run_id
+  - run_mode
+  - generated_at
+appendix_sections:
+  - override
+  - false_positive
+  - suppressed
+  - artifact_index
+remediation_headings:
+  immediate: 우선 조치
+  structural: 구조 개선
+  validation: 조치 후 확인
+approval_block: true

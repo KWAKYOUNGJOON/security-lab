@@ -1,0 +1,11 @@
+ M AGENTS.md
+ M app/vuln-pipeline/docs/real_input_format_reference.md
+ M app/vuln-pipeline/scripts/run_phase12_iteration.ps1
+ M app/vuln-pipeline/src/vuln_pipeline/cli/phase12_operator_workspace.py
+ M app/vuln-pipeline/tests/test_phase12_features.py
+ M notes/phase12-real-rehearsal-runbook.md
+ M notes/real-inputs-intake-checklist.md
+?? app/vuln-pipeline/src/vuln_pipeline/cli/phase12_apply_reconciliation.py
+?? app/vuln-pipeline/src/vuln_pipeline/cli/phase12_apply_signoff.py
+?? app/vuln-pipeline/src/vuln_pipeline/cli/phase12_evidence_pack.py
+?? backups/

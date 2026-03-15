@@ -1,0 +1,47 @@
+{
+  "run_id": "phase11-archive-demo",
+  "archive_only": true,
+  "archive_zip_path": ".tmp_run11\\phase11-archive-demo\\delivery\\internal_archive_v1.0.zip",
+  "source_run_id": "phase11-final-stage-demo",
+  "reused_artifacts": [
+    "reports",
+    "deliverables",
+    "report_data",
+    "comparison"
+  ],
+  "regenerated_files": [
+    "delivery/internal_archive_manifest.json",
+    "delivery/internal_archive_checksums.json",
+    "delivery/internal_archive_v1.0.zip"
+  ],
+  "skipped_customer_outputs": [
+    "delivery/customer_submission_<version>.zip",
+    "delivery/customer_submission_manifest.json",
+    "delivery/customer_submission_checksums.json"
+  ],
+  "recorded_at": "2026-03-15T09:26:05+00:00",
+  "execution_options": {
+    "run_id": "phase11-archive-demo",
+    "burp_dir": "D:\\취약점 진단\\data\\inputs\\burp",
+    "nuclei_dir": "D:\\취약점 진단\\data\\inputs\\nuclei",
+    "httpx_dir": "D:\\취약점 진단\\data\\inputs\\httpx",
+    "manual_dir": "D:\\취약점 진단\\data\\inputs\\manual",
+    "real_burp_dir": "D:\\취약점 진단\\data\\inputs\\real\\burp",
+    "real_nuclei_dir": "D:\\취약점 진단\\data\\inputs\\real\\nuclei",
+    "real_httpx_dir": "D:\\취약점 진단\\data\\inputs\\real\\httpx",
+    "real_manual_dir": "D:\\취약점 진단\\data\\inputs\\real\\manual",
+    "override_file": "tests\\fixtures\\realish\\override_realish.yaml",
+    "suppression_file": "tests\\fixtures\\realish\\suppressions.yaml",
+    "review_resolution_file": "tests\\fixtures\\realish\\review_resolution.yaml",
+    "branding_file": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+    "readiness_policy": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml",
+    "compare_to_run": "phase11-final-stage-demo",
+    "report_template": "default_internal",
+    "deliverable_profile": "customer_pack",
+    "customer_bundle": "",
+    "require_pptx": false,
+    "archive_only": true,
+    "stage_real_inputs": true,
+    "package_policy": "default"
+  }
+}

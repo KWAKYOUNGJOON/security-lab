@@ -1,0 +1,239 @@
+{
+  "status": "incomplete",
+  "tools": {
+    "burp": {
+      "directory": "D:\\취약점 진단\\data\\inputs\\burp",
+      "selected_path": null,
+      "reason": "no_eligible_candidates",
+      "evaluated_candidates": [
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\burp\\burp_sample.xml",
+          "eligible": false,
+          "reasons": [
+            "excluded_name"
+          ],
+          "size": 772,
+          "modified_time": "2026-03-15T01:08:56+00:00",
+          "sha256": "d00d347137ee354453f68b24dbd0e497ba499be64ff5a5a090efd87cbe08ac22",
+          "sample_like": true
+        }
+      ],
+      "selection_rule": {
+        "latest_modified_first": true,
+        "minimum_size": 256,
+        "allowed_extensions": [
+          ".xml"
+        ],
+        "excluded_name_parts": [
+          "sample",
+          "fixture",
+          "test",
+          "realish"
+        ]
+      },
+      "source_priority": "legacy_fallback",
+      "fallback_available": false
+    },
+    "nuclei": {
+      "directory": "D:\\취약점 진단\\data\\inputs\\nuclei",
+      "selected_path": null,
+      "reason": "no_eligible_candidates",
+      "evaluated_candidates": [
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+          "eligible": false,
+          "reasons": [
+            "excluded_name"
+          ],
+          "size": 1059,
+          "modified_time": "2026-03-15T01:08:56+00:00",
+          "sha256": "7015bc08b9415386f37036377e56ead405a84bb93284863c2d3a72f267bad67a",
+          "sample_like": true
+        }
+      ],
+      "selection_rule": {
+        "latest_modified_first": true,
+        "minimum_size": 128,
+        "allowed_extensions": [
+          ".json",
+          ".jsonl"
+        ],
+        "excluded_name_parts": [
+          "sample",
+          "fixture",
+          "test",
+          "realish"
+        ]
+      },
+      "source_priority": "legacy_fallback",
+      "fallback_available": false
+    },
+    "httpx": {
+      "directory": "D:\\취약점 진단\\data\\inputs\\httpx",
+      "selected_path": null,
+      "reason": "no_eligible_candidates",
+      "evaluated_candidates": [
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\httpx\\httpx_sample.jsonl",
+          "eligible": false,
+          "reasons": [
+            "excluded_name"
+          ],
+          "size": 560,
+          "modified_time": "2026-03-15T01:08:56+00:00",
+          "sha256": "6908cbd30615a9c632ac6390457f5179a3e804d0d14fe3c4eb71ba0270f9a8e7",
+          "sample_like": true
+        }
+      ],
+      "selection_rule": {
+        "latest_modified_first": true,
+        "minimum_size": 128,
+        "allowed_extensions": [
+          ".jsonl"
+        ],
+        "excluded_name_parts": [
+          "sample",
+          "fixture",
+          "test",
+          "realish"
+        ]
+      },
+      "source_priority": "legacy_fallback",
+      "fallback_available": false
+    }
+  },
+  "manual_support": {
+    "override_file": {
+      "directory": "D:\\취약점 진단\\data\\inputs\\manual",
+      "selected_path": null,
+      "reason": "no_eligible_candidates",
+      "evaluated_candidates": [
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\manual\\review_resolution.yaml",
+          "eligible": false,
+          "reasons": [
+            "name_pattern_mismatch"
+          ],
+          "size": 306,
+          "modified_time": "2026-03-15T05:19:31+00:00",
+          "sha256": "4b559737e499807de4ef2469ccbcdc61e3cd9bee2bfcff03909fcc00d8f6a74a",
+          "sample_like": false
+        },
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\manual\\sample_override.yaml",
+          "eligible": false,
+          "reasons": [
+            "excluded_name"
+          ],
+          "size": 746,
+          "modified_time": "2026-03-15T01:27:07+00:00",
+          "sha256": "a872856881aaa4cfebb50b78a6ba9ef09a15947feb7aa43edc91f22d4fb62b5e",
+          "sample_like": true
+        },
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\manual\\suppressions.yaml",
+          "eligible": false,
+          "reasons": [
+            "name_pattern_mismatch"
+          ],
+          "size": 235,
+          "modified_time": "2026-03-15T03:53:17+00:00",
+          "sha256": "abd81c258ee5b66fd93bae72eab1cb5b34e21c9f19f8c869a39ba67e30a5e689",
+          "sample_like": false
+        }
+      ],
+      "source_priority": "legacy_fallback",
+      "fallback_available": false
+    },
+    "suppression_file": {
+      "directory": "D:\\취약점 진단\\data\\inputs\\manual",
+      "selected_path": "D:\\취약점 진단\\data\\inputs\\manual\\suppressions.yaml",
+      "reason": "selected_latest_eligible",
+      "evaluated_candidates": [
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\manual\\review_resolution.yaml",
+          "eligible": false,
+          "reasons": [
+            "name_pattern_mismatch"
+          ],
+          "size": 306,
+          "modified_time": "2026-03-15T05:19:31+00:00",
+          "sha256": "4b559737e499807de4ef2469ccbcdc61e3cd9bee2bfcff03909fcc00d8f6a74a",
+          "sample_like": false
+        },
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\manual\\sample_override.yaml",
+          "eligible": false,
+          "reasons": [
+            "excluded_name",
+            "name_pattern_mismatch"
+          ],
+          "size": 746,
+          "modified_time": "2026-03-15T01:27:07+00:00",
+          "sha256": "a872856881aaa4cfebb50b78a6ba9ef09a15947feb7aa43edc91f22d4fb62b5e",
+          "sample_like": true
+        },
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\manual\\suppressions.yaml",
+          "eligible": true,
+          "reasons": [
+            "eligible"
+          ],
+          "size": 235,
+          "modified_time": "2026-03-15T03:53:17+00:00",
+          "sha256": "abd81c258ee5b66fd93bae72eab1cb5b34e21c9f19f8c869a39ba67e30a5e689",
+          "sample_like": false
+        }
+      ],
+      "source_priority": "legacy_fallback",
+      "fallback_available": false
+    },
+    "review_resolution_file": {
+      "directory": "D:\\취약점 진단\\data\\inputs\\manual",
+      "selected_path": "D:\\취약점 진단\\data\\inputs\\manual\\review_resolution.yaml",
+      "reason": "selected_latest_eligible",
+      "evaluated_candidates": [
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\manual\\review_resolution.yaml",
+          "eligible": true,
+          "reasons": [
+            "eligible"
+          ],
+          "size": 306,
+          "modified_time": "2026-03-15T05:19:31+00:00",
+          "sha256": "4b559737e499807de4ef2469ccbcdc61e3cd9bee2bfcff03909fcc00d8f6a74a",
+          "sample_like": false
+        },
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\manual\\sample_override.yaml",
+          "eligible": false,
+          "reasons": [
+            "excluded_name",
+            "name_pattern_mismatch"
+          ],
+          "size": 746,
+          "modified_time": "2026-03-15T01:27:07+00:00",
+          "sha256": "a872856881aaa4cfebb50b78a6ba9ef09a15947feb7aa43edc91f22d4fb62b5e",
+          "sample_like": true
+        },
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\manual\\suppressions.yaml",
+          "eligible": false,
+          "reasons": [
+            "name_pattern_mismatch"
+          ],
+          "size": 235,
+          "modified_time": "2026-03-15T03:53:17+00:00",
+          "sha256": "abd81c258ee5b66fd93bae72eab1cb5b34e21c9f19f8c869a39ba67e30a5e689",
+          "sample_like": false
+        }
+      ],
+      "source_priority": "legacy_fallback",
+      "fallback_available": false
+    }
+  },
+  "selected_run_inputs": [],
+  "notes": [
+    "No eligible real input files were found in the configured input directories."
+  ]
+}

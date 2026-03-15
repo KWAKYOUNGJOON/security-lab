@@ -1,0 +1,14 @@
+{
+  "ingested": {
+    "burp": [
+      "D:\\취약점 진단\\data\\inputs\\burp\\burp_sample.xml"
+    ],
+    "nuclei": [
+      "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl"
+    ],
+    "httpx": [
+      "D:\\취약점 진단\\data\\inputs\\httpx\\httpx_sample.jsonl"
+    ]
+  },
+  "warnings": []
+}

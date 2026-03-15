@@ -1,0 +1,40 @@
+{
+  "final_ready": false,
+  "readiness_status": "ready",
+  "release_candidate_ref": null,
+  "included_files": [
+    ".tmp_run\\phase10-archive-demo\\deliverables\\full_report_internal_customer_v1.0.md",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\full_report_internal_customer_v1.0.docx",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\full_report_customer_customer_v1.0.md",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\full_report_customer_customer_v1.0.docx",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\executive_onepager_customer_v1.0.md",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\executive_onepager_customer_v1.0.docx",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\remediation_tracker_customer_v1.0.csv",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\remediation_tracker_customer_v1.0.md",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\analyst_handoff_customer_v1.0.md",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\presentation_outline_customer_v1.0.md",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\presentation_data_customer_v1.0.json",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\presentation_briefing_customer_v1.0_fallback.json",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\review_closure_checklist_customer_v1.0.md",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\submission_memo.md",
+    ".tmp_run\\phase10-archive-demo\\deliverables\\real_data_rehearsal_summary.md"
+  ],
+  "excluded_files": [],
+  "delivery_version": "v1.0",
+  "approval_metadata": {
+    "approver_name": "TBD",
+    "approver_title": "Security Lead",
+    "delivery_date": "",
+    "contact_email": "security@example.local"
+  },
+  "closeout_summary": {
+    "resolved_review_count": 2,
+    "accepted_risk_count": 0,
+    "remaining_blocker_count": 0
+  },
+  "review_resolution_file_ref": "tests\\fixtures\\realish\\review_resolution.yaml",
+  "submission_gate": {
+    "status": "pending"
+  },
+  "blocking_reasons": []
+}

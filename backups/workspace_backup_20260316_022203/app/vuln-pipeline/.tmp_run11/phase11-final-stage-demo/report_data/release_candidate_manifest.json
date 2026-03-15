@@ -1,0 +1,27 @@
+{
+  "run_id": "phase11-final-stage-demo",
+  "candidate_status": "candidate_ready",
+  "readiness_status": "ready",
+  "unresolved_review_count": 0,
+  "high_severity_count": 1,
+  "compare_to_run": null,
+  "package_ref": ".tmp_run11\\phase11-final-stage-demo\\delivery\\report_bundle_phase11-final-stage-demo.zip",
+  "generated_deliverables": [
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_internal_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_internal_customer_v1.0.docx",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_customer_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_customer_customer_v1.0.docx",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\executive_onepager_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\executive_onepager_customer_v1.0.docx",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\remediation_tracker_customer_v1.0.csv",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\remediation_tracker_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\analyst_handoff_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_outline_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_data_customer_v1.0.json",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_briefing_customer_v1.0_fallback.json",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\review_closure_checklist_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\submission_memo.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\real_data_rehearsal_summary.md"
+  ],
+  "blocking_reasons": []
+}

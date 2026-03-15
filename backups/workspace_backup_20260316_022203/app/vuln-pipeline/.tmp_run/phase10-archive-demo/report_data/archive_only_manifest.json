@@ -1,0 +1,22 @@
+{
+  "run_id": "phase10-archive-demo",
+  "archive_only": true,
+  "archive_zip_path": ".tmp_run\\phase10-archive-demo\\delivery\\internal_archive_v1.0.zip",
+  "recorded_at": "2026-03-15T08:27:22+00:00",
+  "execution_options": {
+    "run_id": "phase10-archive-demo",
+    "burp_dir": "D:\\취약점 진단\\data\\inputs\\burp",
+    "nuclei_dir": "D:\\취약점 진단\\data\\inputs\\nuclei",
+    "httpx_dir": "D:\\취약점 진단\\data\\inputs\\httpx",
+    "manual_dir": "D:\\취약점 진단\\data\\inputs\\manual",
+    "override_file": "tests\\fixtures\\realish\\override_realish.yaml",
+    "suppression_file": "tests\\fixtures\\realish\\suppressions.yaml",
+    "review_resolution_file": "tests\\fixtures\\realish\\review_resolution.yaml",
+    "branding_file": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+    "readiness_policy": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml",
+    "compare_to_run": "",
+    "report_template": "default_internal",
+    "deliverable_profile": "customer_pack",
+    "customer_bundle": ""
+  }
+}

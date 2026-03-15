@@ -1,0 +1,121 @@
+[
+  {
+    "source": "httpx",
+    "source_file": "tests\\fixtures\\realish\\httpx_rich.jsonl",
+    "parser": "httpx_jsonl",
+    "raw_id": "1",
+    "kind": "observation",
+    "title": "Portal Home",
+    "description": "Observed https://portal.example.com/ status=200 tech=nginx,python,react",
+    "asset": {
+      "url": "https://portal.example.com/",
+      "host": "portal.example.com",
+      "path": null,
+      "normalized_path": null,
+      "method": "GET",
+      "query_keys": [],
+      "port": 443,
+      "scheme": "https"
+    },
+    "raw_severity": null,
+    "raw_confidence": null,
+    "tags": [
+      "nginx",
+      "python",
+      "react"
+    ],
+    "references": [],
+    "metadata": {
+      "status_code": 200,
+      "webserver": "nginx",
+      "content_type": "text/html",
+      "headers": {
+        "server": "nginx",
+        "content-type": "text/html",
+        "x-frame-options": "DENY",
+        "strict-transport-security": "max-age=31536000"
+      }
+    },
+    "evidence": [],
+    "remediation": [],
+    "status": "observed"
+  },
+  {
+    "source": "httpx",
+    "source_file": "tests\\fixtures\\realish\\httpx_rich.jsonl",
+    "parser": "httpx_jsonl",
+    "raw_id": "2",
+    "kind": "observation",
+    "title": "Search Portal",
+    "description": "Observed https://portal.example.com/search status=200 tech=nginx,python",
+    "asset": {
+      "url": "https://portal.example.com/search",
+      "host": "portal.example.com",
+      "path": null,
+      "normalized_path": null,
+      "method": "GET",
+      "query_keys": [],
+      "port": 443,
+      "scheme": "https"
+    },
+    "raw_severity": null,
+    "raw_confidence": null,
+    "tags": [
+      "nginx",
+      "python"
+    ],
+    "references": [],
+    "metadata": {
+      "status_code": 200,
+      "webserver": "nginx",
+      "content_type": "text/html",
+      "headers": {
+        "server": "nginx",
+        "content-type": "text/html",
+        "cache-control": "no-store"
+      }
+    },
+    "evidence": [],
+    "remediation": [],
+    "status": "observed"
+  },
+  {
+    "source": "httpx",
+    "source_file": "tests\\fixtures\\realish\\httpx_rich.jsonl",
+    "parser": "httpx_jsonl",
+    "raw_id": "3",
+    "kind": "observation",
+    "title": "Error Page",
+    "description": "Observed https://portal.example.com/api/v1/report status=500 tech=nginx,python",
+    "asset": {
+      "url": "https://portal.example.com/api/v1/report",
+      "host": "portal.example.com",
+      "path": null,
+      "normalized_path": null,
+      "method": "GET",
+      "query_keys": [],
+      "port": 443,
+      "scheme": "https"
+    },
+    "raw_severity": null,
+    "raw_confidence": null,
+    "tags": [
+      "nginx",
+      "python"
+    ],
+    "references": [],
+    "metadata": {
+      "status_code": 500,
+      "webserver": "nginx",
+      "content_type": "application/json",
+      "headers": {
+        "server": "nginx",
+        "content-type": "application/json",
+        "x-request-id": "req-12345"
+      }
+    },
+    "evidence": [],
+    "remediation": [],
+    "status": "observed"
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "status": "not_ready",
+  "policy_name": "customer_release",
+  "policy_path": "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml",
+  "checks": [
+    {
+      "name": "high_severity_issue_exists",
+      "result": "pass",
+      "recommended_action": ""
+    },
+    {
+      "name": "low_confidence_unresolved_exists",
+      "result": "pass",
+      "recommended_action": ""
+    },
+    {
+      "name": "unmapped_cwe_ratio_ok",
+      "result": "pass",
+      "recommended_action": ""
+    },
+    {
+      "name": "review_queue_within_limit",
+      "result": "warn",
+      "recommended_action": "Review queue is above allowed threshold. Remaining review items should be triaged."
+    },
+    {
+      "name": "override_provided",
+      "result": "pass",
+      "recommended_action": ""
+    },
+    {
+      "name": "compare_baseline_available",
+      "result": "pass",
+      "recommended_action": ""
+    },
+    {
+      "name": "deferred_items_allowed",
+      "result": "pass",
+      "recommended_action": ""
+    },
+    {
+      "name": "confirmed_high_unresolved",
+      "result": "pass",
+      "recommended_action": ""
+    },
+    {
+      "name": "package_created",
+      "result": "fail",
+      "recommended_action": "Delivery package was not created."
+    },
+    {
+      "name": "customer_redaction_applied",
+      "result": "pass",
+      "recommended_action": ""
+    }
+  ],
+  "unresolved_review_items": 1,
+  "accepted_risk_items": 0,
+  "deferred_items": 0,
+  "confirmed_items": 1,
+  "blocker_summary": [
+    "review_queue_within_limit",
+    "package_created"
+  ],
+  "summary": {
+    "failed_count": 1,
+    "warning_count": 1,
+    "recommendation": "Delivery should be held until blocking items are resolved."
+  }
+}

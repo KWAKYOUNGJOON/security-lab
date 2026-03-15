@@ -1,0 +1,131 @@
+[
+  {
+    "issue_id": "I-0001",
+    "cluster_key": "SQL Injection|demo.example.com|/users/{id}|userid|CWE-89",
+    "title": "Confirmed SQL Injection",
+    "weakness_family": "SQL Injection",
+    "affected_assets": [
+      "demo.example.com"
+    ],
+    "instances": [
+      "F-0001"
+    ],
+    "primary_cwe": "CWE-89",
+    "related_cwes": [],
+    "severity": {
+      "raw": null,
+      "score": 8.7,
+      "level": "High",
+      "rationale": [
+        "cluster=max(member severity)"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": null,
+      "score": 0.98,
+      "level": "High",
+      "rationale": [
+        "cluster=average(member confidence)"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "evidence_summary": [
+      "Captured HTTP request from Burp issue export.",
+      "artifact: .tmp_run11\\phase11-pptx-bundle-demo\\artifacts\\burp\\raw\\burp_001_sql-injection_request.txt",
+      "artifact: .tmp_run11\\phase11-pptx-bundle-demo\\artifacts\\burp\\redacted\\burp_001_sql-injection_request.txt"
+    ],
+    "remediation": [
+      "Use parameterized queries."
+    ],
+    "references": [
+      "CWE-89"
+    ],
+    "classification": {
+      "weakness_family": "SQL Injection",
+      "primary_cwe": "CWE-89",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A03 Injection"
+      ],
+      "kisa_categories": [
+        "입력값 검증 취약점"
+      ],
+      "parameter_or_sink": "userid",
+      "matched_rule_id": "sql-injection"
+    },
+    "false_positive": false,
+    "suppressed": false,
+    "suppression_status": null,
+    "suppression_note": null,
+    "analyst_note": "Manually confirmed with replay.",
+    "recommended_owner": "Backend Dev",
+    "target_due": "14d",
+    "affected_instance_count": 1
+  },
+  {
+    "issue_id": "I-0002",
+    "cluster_key": "XSS|demo.example.com|/search|q|CWE-79",
+    "title": "Reflected XSS (Needs Developer Fix)",
+    "weakness_family": "XSS",
+    "affected_assets": [
+      "demo.example.com"
+    ],
+    "instances": [
+      "F-0003"
+    ],
+    "primary_cwe": "CWE-79",
+    "related_cwes": [],
+    "severity": {
+      "raw": null,
+      "score": 6.0,
+      "level": "Medium",
+      "rationale": [
+        "cluster=max(member severity)"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": null,
+      "score": 0.8,
+      "level": "Medium",
+      "rationale": [
+        "cluster=average(member confidence)"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "evidence_summary": [
+      "Nuclei request captured in result output.",
+      "artifact: .tmp_run11\\phase11-pptx-bundle-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+      "artifact: .tmp_run11\\phase11-pptx-bundle-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt"
+    ],
+    "remediation": [],
+    "references": [
+      "CWE-79",
+      "xss-detect"
+    ],
+    "classification": {
+      "weakness_family": "XSS",
+      "primary_cwe": "CWE-79",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A03 Injection"
+      ],
+      "kisa_categories": [
+        "스크립트 실행"
+      ],
+      "parameter_or_sink": "q",
+      "matched_rule_id": "reflected-xss-specific"
+    },
+    "false_positive": false,
+    "suppressed": false,
+    "suppression_status": null,
+    "suppression_note": null,
+    "analyst_note": "User-controlled payload is reflected without encoding.",
+    "recommended_owner": "Frontend Dev",
+    "target_due": "30d",
+    "affected_instance_count": 1
+  }
+]

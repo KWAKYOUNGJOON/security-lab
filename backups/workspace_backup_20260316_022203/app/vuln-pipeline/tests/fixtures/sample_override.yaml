@@ -1,0 +1,20 @@
+overrides:
+  - finding_id: F-0001
+    override_title: Confirmed SQL Injection
+    override_primary_cwe: CWE-89
+    override_related_cwes: []
+    override_owasp_top10_2025: ["A03 Injection"]
+    override_kisa_categories: ["입력값 검증 취약점"]
+    override_severity_score: 8.7
+    override_severity_level: High
+    override_confidence: 0.98
+    false_positive: false
+    analyst_note: Manually confirmed with replay.
+    manual_remediation:
+      - Use parameterized queries.
+  - finding_id: F-0002
+    false_positive: true
+    analyst_note: Listing path is an approved static file share.
+  - issue_id: I-0002
+    override_title: Reflected XSS (Needs Developer Fix)
+    analyst_note: User-controlled payload is reflected without encoding.

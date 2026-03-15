@@ -1,0 +1,36 @@
+mappings:
+  - id: MAP-001
+    owasp: A01:2021 Broken Access Control
+    kisa: 접근통제 미흡
+    internal_check: 수평 및 수직 권한 상승 점검
+    notes: 직접 객체 참조와 관리자 기능 우회 포함
+
+  - id: MAP-002
+    owasp: A02:2021 Cryptographic Failures
+    kisa: 중요정보 평문 저장 또는 전송
+    internal_check: 전송구간 및 저장구간 암호화 점검
+    notes: 쿠키 보호 속성과 민감정보 마스킹 포함
+
+  - id: MAP-003
+    owasp: A03:2021 Injection
+    kisa: 입력값 검증 부재
+    internal_check: SQLi, CMDi, XSS, SSTI 점검
+    notes: 파일 업로드와 경로 조작도 함께 확인
+
+  - id: MAP-004
+    owasp: A05:2021 Security Misconfiguration
+    kisa: 보안 설정 오류
+    internal_check: 디버그 노출, 기본 설정, 불필요 서비스 점검
+    notes: 예외 메시지, 헤더, 디렉터리 리스팅 포함
+
+  - id: MAP-005
+    owasp: A07:2021 Identification and Authentication Failures
+    kisa: 인증 절차 취약
+    internal_check: 계정 정책, 세션 정책, MFA 점검
+    notes: 계정 열거와 세션 고정 포함
+
+  - id: MAP-006
+    owasp: A09:2021 Security Logging and Monitoring Failures
+    kisa: 로그 및 추적성 부족
+    internal_check: 보안 이벤트 감사 로그 점검
+    notes: 탐지 가능성과 사고 대응 추적성 중심

@@ -1,0 +1,17 @@
+[
+  {
+    "host": "portal.example.co.kr",
+    "ip": "203.0.113.10",
+    "port": "443",
+    "banner": "nginx",
+    "vulnerabilities": [
+      {
+        "id": "999999",
+        "method": "GET",
+        "url": "/phpinfo.php",
+        "msg": "phpinfo() file found.",
+        "references": "https://www.php.net/manual/en/function.phpinfo.php"
+      }
+    ]
+  }
+]

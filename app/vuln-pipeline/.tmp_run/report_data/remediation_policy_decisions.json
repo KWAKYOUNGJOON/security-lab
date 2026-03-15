@@ -1,0 +1,24 @@
+{
+  "owner_policy": "default_owner_mapping",
+  "due_policy": "default_due_rules",
+  "rows": [
+    {
+      "issue_id": "I-0001",
+      "recommended_owner": "Infra/Ops",
+      "target_due": "90d",
+      "surface": "api"
+    },
+    {
+      "issue_id": "I-0002",
+      "recommended_owner": "Frontend Dev",
+      "target_due": "30d",
+      "surface": "web"
+    },
+    {
+      "issue_id": "I-0003",
+      "recommended_owner": "Backend Dev",
+      "target_due": "14d",
+      "surface": "static"
+    }
+  ]
+}

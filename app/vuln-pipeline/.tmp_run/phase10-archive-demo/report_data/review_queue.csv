@@ -1,0 +1,3 @@
+﻿run_id,issue_id,finding_ids,title,weakness_family,primary_cwe,severity_level,confidence_level,review_reason,recommended_action,host,path_pattern,current_status,priority_score,priority_band,suggested_sla
+phase10-archive-demo,I-0003,['F-0005'],potential input reflection,IDOR/BOLA,CWE-639,High,Medium,"['high_severity_requires_review', 'override_not_applied', 'rule_conflict_detected']",Validate mapping and update override if needed.,portal.example.com,/files/1,open,95,P1,3d
+phase10-archive-demo,I-0002,"['F-0003', 'F-0004']",reflected xss,XSS,CWE-79,Medium,Medium,"['override_not_applied', 'rule_conflict_detected']",Validate mapping and update override if needed.,portal.example.com,/search,open,65,P3,7d

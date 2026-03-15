@@ -1,0 +1,19 @@
+review_resolutions:
+  - issue_id: I-0002
+    resolution_status: resolved
+    disposition: confirmed
+    reviewer: QA Lead
+    reviewed_at: 2026-03-15
+    action_taken: Output encoding and template escaping confirmed.
+    linked_override: I-0002
+    linked_suppression: null
+    note: Customer-facing XSS path was validated and remediation confirmed.
+  - issue_id: I-0003
+    resolution_status: resolved
+    disposition: confirmed
+    reviewer: QA Lead
+    reviewed_at: 2026-03-15
+    action_taken: Access control checks validated and remediation owner assigned.
+    linked_override: I-0003
+    linked_suppression: null
+    note: High severity item reviewed and closeout accepted for release.

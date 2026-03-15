@@ -1,0 +1,4 @@
+{
+  "min_findings": 1,
+  "contains_titles": ["보안 헤더 미설정"]
+}

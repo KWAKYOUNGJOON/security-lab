@@ -1,0 +1,4 @@
+{
+  "min_findings": 1,
+  "contains_titles": ["외부 도메인으로의 Referer 정보 노출"]
+}

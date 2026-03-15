@@ -1,0 +1,10 @@
+id: management_pack
+full_reports: false
+onepager: true
+onepager_audience: customer
+tracker: true
+handoff: false
+presentation: true
+presentation_audience: customer
+versioned_filenames: true
+customer_submission_include_presentation_fallback: false

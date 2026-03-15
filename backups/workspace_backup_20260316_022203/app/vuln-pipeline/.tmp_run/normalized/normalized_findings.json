@@ -1,0 +1,829 @@
+[
+  {
+    "schema_version": "1.0",
+    "run_id": "smoke",
+    "finding_id": "F-0001",
+    "source": "burp",
+    "asset": {
+      "url": "https://portal.example.com/api/v1/report/550e8400-e29b-41d4-a716-446655440000",
+      "host": "portal.example.com",
+      "path": "/api/v1/report/550e8400-e29b-41d4-a716-446655440000",
+      "normalized_path": "/api/v1/report/{uuid}",
+      "method": "GET",
+      "query_keys": [],
+      "port": 443,
+      "scheme": "https"
+    },
+    "classification": {
+      "weakness_family": "Error/Stack Trace Disclosure",
+      "primary_cwe": "CWE-209",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A05 Security Misconfiguration"
+      ],
+      "kisa_categories": [
+        "오류 정보 노출"
+      ],
+      "parameter_or_sink": null,
+      "matched_rule_id": "error-disclosure"
+    },
+    "severity": {
+      "raw": "Medium",
+      "score": 2.8,
+      "level": "Low",
+      "rationale": [
+        "family_base=1.0",
+        "exploitability=0.5",
+        "impact=0.8",
+        "exposure=0.5",
+        "business_modifier=0.0"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": "Firm",
+      "score": 0.8,
+      "level": "Medium",
+      "rationale": [
+        "source_default=0.6",
+        "burp_raw=firm"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "dedup": {
+      "exact_fingerprint": "239930b722dc",
+      "cluster_fingerprint": "a6cda234a4db",
+      "cluster_key": null,
+      "duplicate_of": null,
+      "is_duplicate": false,
+      "false_positive": false
+    },
+    "title": "error disclosure",
+    "description": "Framework stack trace and SQL syntax error strings were reflected in the response.",
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Captured HTTP request from Burp issue export.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\raw\\burp_001_error-disclosure_request.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\redacted\\burp_001_error-disclosure_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [
+          "Replay the saved request artifact against the same endpoint."
+        ],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\raw\\burp_001_error-disclosure_request.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\redacted\\burp_001_error-disclosure_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Captured HTTP response from Burp issue export.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\raw\\burp_001_error-disclosure_response.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\redacted\\burp_001_error-disclosure_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 500 Internal Server Error"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\raw\\burp_001_error-disclosure_response.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\redacted\\burp_001_error-disclosure_response.txt"
+        ]
+      },
+      {
+        "type": "background",
+        "summary": "Burp issue background preserved.",
+        "artifact": null,
+        "highlights": [
+          "운영 환경에서 상세 예외 정보가 외부 응답에 포함되고 있습니다."
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": []
+      },
+      {
+        "type": "variation",
+        "summary": "Burp variations preserved.",
+        "artifact": null,
+        "highlights": [
+          "Stack trace snippet returned in 500 response",
+          "SQL syntax error string reflected"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [
+      "운영 환경 상세 오류 응답을 비활성화합니다."
+    ],
+    "status": "needs_review",
+    "tags": [],
+    "references": [
+      "CWE-209"
+    ],
+    "raw": {
+      "raw_id": "1",
+      "kind": "finding",
+      "metadata": {
+        "serial_number": "101",
+        "type_index": "512",
+        "location": null,
+        "issue_background": "운영 환경에서 상세 예외 정보가 외부 응답에 포함되고 있습니다.",
+        "issue_detail": "Framework stack trace and SQL syntax error strings were reflected in the response.",
+        "variations": [
+          "Stack trace snippet returned in 500 response",
+          "SQL syntax error string reflected"
+        ]
+      },
+      "raw_title": "Error disclosure",
+      "source_file": "D:\\취약점 진단\\app\\vuln-pipeline\\tests\\fixtures\\realish\\burp_complex.xml",
+      "enrichment": {
+        "httpx": [
+          "httpx status=200 tech=nginx,python,react",
+          "httpx status=200 tech=nginx,python",
+          "httpx status=500 tech=nginx,python"
+        ]
+      }
+    },
+    "analyst": {
+      "note": "운영 환경 예외 메시지 노출로 판단되며 즉시 차단이 필요함.",
+      "override": {
+        "finding_id": "F-0001",
+        "analyst_note": "운영 환경 예외 메시지 노출로 판단되며 즉시 차단이 필요함.",
+        "manual_remediation": [
+          "운영 환경 상세 오류 응답을 비활성화합니다."
+        ]
+      }
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "run_id": "smoke",
+    "finding_id": "F-0002",
+    "source": "nuclei",
+    "asset": {
+      "url": "https://portal.example.com/static/abcdef1234567890abcdef1234567890/",
+      "host": "portal.example.com",
+      "path": "/static/abcdef1234567890abcdef1234567890/",
+      "normalized_path": "/static/{hex}/",
+      "method": "GET",
+      "query_keys": [],
+      "port": null,
+      "scheme": "https"
+    },
+    "classification": {
+      "weakness_family": "Directory Listing",
+      "primary_cwe": "CWE-548",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A05 Security Misconfiguration"
+      ],
+      "kisa_categories": [
+        "디렉터리 노출"
+      ],
+      "parameter_or_sink": "body-index-of",
+      "matched_rule_id": "directory-listing"
+    },
+    "severity": {
+      "raw": "low",
+      "score": 2.8,
+      "level": "Low",
+      "rationale": [
+        "family_base=0.8",
+        "exploitability=0.6",
+        "impact=0.7",
+        "exposure=0.4",
+        "business_modifier=0.0",
+        "evidence_bonus=0.3"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": null,
+      "score": 0.8,
+      "level": "Medium",
+      "rationale": [
+        "source_default=0.55",
+        "extracted_results_bonus=0.15",
+        "artifact_bonus=0.10"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "dedup": {
+      "exact_fingerprint": "019a1733a834",
+      "cluster_fingerprint": "ead7646a2468",
+      "cluster_key": null,
+      "duplicate_of": null,
+      "is_duplicate": false,
+      "false_positive": true
+    },
+    "title": "directory listing",
+    "description": "Rich directory listing sample.",
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><title>Index of /static</title><body>backup.zip config.old</body></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://portal.example.com/static/abcdef1234567890abcdef1234567890/",
+        "artifact": null,
+        "highlights": [
+          "body-index-of",
+          "True",
+          "Index of /static",
+          "backup.zip"
+        ],
+        "extracted_results": [
+          "Index of /static",
+          "backup.zip",
+          "config.old"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review",
+    "tags": [
+      "exposure",
+      "listing"
+    ],
+    "references": [
+      "CWE-548",
+      "directory-listing-rich"
+    ],
+    "raw": {
+      "raw_id": "directory-listing-rich",
+      "kind": "finding",
+      "metadata": {
+        "template_id": "directory-listing-rich",
+        "template_path": "http/misconfig/rich-listing.yaml",
+        "matcher_name": "body-index-of",
+        "curl_command": null,
+        "extracted_results": [
+          "Index of /static",
+          "backup.zip",
+          "config.old"
+        ],
+        "response_highlights": [
+          "Index of /static",
+          "backup.zip",
+          "config.old"
+        ]
+      },
+      "raw_title": "Directory Listing",
+      "source_file": "D:\\취약점 진단\\app\\vuln-pipeline\\tests\\fixtures\\realish\\nuclei_rich.jsonl",
+      "enrichment": {
+        "httpx": [
+          "httpx status=200 tech=nginx,python,react",
+          "httpx status=200 tech=nginx,python",
+          "httpx status=500 tech=nginx,python"
+        ]
+      }
+    },
+    "analyst": {
+      "note": "공개 정적 파일 배포 디렉터리로 확인됨.",
+      "override": {
+        "finding_id": "F-0002",
+        "false_positive": true,
+        "analyst_note": "공개 정적 파일 배포 디렉터리로 확인됨."
+      }
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "run_id": "smoke",
+    "finding_id": "F-0003",
+    "source": "nuclei",
+    "asset": {
+      "url": "https://portal.example.com/search?q=%3Cscript%3Ealert(1)%3C/script%3E",
+      "host": "portal.example.com",
+      "path": "/search",
+      "normalized_path": "/search",
+      "method": "GET",
+      "query_keys": [
+        "q"
+      ],
+      "port": null,
+      "scheme": "https"
+    },
+    "classification": {
+      "weakness_family": "XSS",
+      "primary_cwe": "CWE-79",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A03 Injection"
+      ],
+      "kisa_categories": [
+        "스크립트 실행"
+      ],
+      "parameter_or_sink": "q",
+      "matched_rule_id": "reflected-xss-specific"
+    },
+    "severity": {
+      "raw": "medium",
+      "score": 6.0,
+      "level": "Medium",
+      "rationale": [
+        "family_base=2.6",
+        "exploitability=1.2",
+        "impact=1.2",
+        "exposure=0.5",
+        "business_modifier=0.2",
+        "evidence_bonus=0.3"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": null,
+      "score": 0.8,
+      "level": "Medium",
+      "rationale": [
+        "source_default=0.55",
+        "extracted_results_bonus=0.15",
+        "artifact_bonus=0.10"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "dedup": {
+      "exact_fingerprint": "6c75710edbc0",
+      "cluster_fingerprint": "b15a88656357",
+      "cluster_key": null,
+      "duplicate_of": null,
+      "is_duplicate": false,
+      "false_positive": false
+    },
+    "title": "reflected xss",
+    "description": "Synthetic but realistic reflected XSS.",
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_response.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><body><script>alert(1)</script></body></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_response.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://portal.example.com/search?q=%3Cscript%3Ealert(1)%3C/script%3E",
+        "artifact": null,
+        "highlights": [
+          "reflected-payload",
+          "True",
+          "<script>alert(1)</script>",
+          "query=q"
+        ],
+        "extracted_results": [
+          "<script>alert(1)</script>",
+          "query=q"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review",
+    "tags": [
+      "web",
+      "xss"
+    ],
+    "references": [
+      "CWE-79",
+      "xss-rich"
+    ],
+    "raw": {
+      "raw_id": "xss-rich",
+      "kind": "finding",
+      "metadata": {
+        "template_id": "xss-rich",
+        "template_path": "http/xss/rich.yaml",
+        "matcher_name": "reflected-payload",
+        "curl_command": null,
+        "extracted_results": [
+          "<script>alert(1)</script>",
+          "query=q"
+        ],
+        "response_highlights": [
+          "<script>alert(1)</script>",
+          "query=q"
+        ]
+      },
+      "raw_title": "Reflected XSS",
+      "source_file": "D:\\취약점 진단\\app\\vuln-pipeline\\tests\\fixtures\\realish\\nuclei_rich.jsonl",
+      "enrichment": {
+        "httpx": [
+          "httpx status=200 tech=nginx,python,react",
+          "httpx status=200 tech=nginx,python",
+          "httpx status=500 tech=nginx,python"
+        ]
+      }
+    },
+    "analyst": {}
+  },
+  {
+    "schema_version": "1.0",
+    "run_id": "smoke",
+    "finding_id": "F-0004",
+    "source": "nuclei",
+    "asset": {
+      "url": "https://portal.example.com/search?q=%3Csvg%3E",
+      "host": "portal.example.com",
+      "path": "/search",
+      "normalized_path": "/search",
+      "method": "GET",
+      "query_keys": [
+        "q"
+      ],
+      "port": null,
+      "scheme": "https"
+    },
+    "classification": {
+      "weakness_family": "XSS",
+      "primary_cwe": "CWE-79",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A03 Injection"
+      ],
+      "kisa_categories": [
+        "스크립트 실행"
+      ],
+      "parameter_or_sink": "q",
+      "matched_rule_id": "reflected-xss-specific"
+    },
+    "severity": {
+      "raw": "low",
+      "score": 6.0,
+      "level": "Medium",
+      "rationale": [
+        "family_base=2.6",
+        "exploitability=1.2",
+        "impact=1.2",
+        "exposure=0.5",
+        "business_modifier=0.2",
+        "evidence_bonus=0.3"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": null,
+      "score": 0.8,
+      "level": "Medium",
+      "rationale": [
+        "source_default=0.55",
+        "extracted_results_bonus=0.15",
+        "artifact_bonus=0.10"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "dedup": {
+      "exact_fingerprint": "e0ffa026d4dd",
+      "cluster_fingerprint": "b15a88656357",
+      "cluster_key": null,
+      "duplicate_of": null,
+      "is_duplicate": false,
+      "false_positive": false
+    },
+    "title": "reflected xss",
+    "description": "Same endpoint, lower confidence variant.",
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_003_reflected-xss_request.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_003_reflected-xss_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_003_reflected-xss_request.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_003_reflected-xss_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_003_reflected-xss_response.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_003_reflected-xss_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><body><svg></body></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_003_reflected-xss_response.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_003_reflected-xss_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://portal.example.com/search?q=%3Csvg%3E",
+        "artifact": null,
+        "highlights": [
+          "possible-reflection",
+          "True",
+          "<svg>"
+        ],
+        "extracted_results": [
+          "<svg>"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review",
+    "tags": [
+      "xss"
+    ],
+    "references": [
+      "CWE-79",
+      "xss-rich-low-confidence"
+    ],
+    "raw": {
+      "raw_id": "xss-rich-low-confidence",
+      "kind": "finding",
+      "metadata": {
+        "template_id": "xss-rich-low-confidence",
+        "template_path": "http/xss/rich-low.yaml",
+        "matcher_name": "possible-reflection",
+        "curl_command": null,
+        "extracted_results": [
+          "<svg>"
+        ],
+        "response_highlights": [
+          "<svg>"
+        ]
+      },
+      "raw_title": "Reflected XSS",
+      "source_file": "D:\\취약점 진단\\app\\vuln-pipeline\\tests\\fixtures\\realish\\nuclei_rich.jsonl",
+      "enrichment": {
+        "httpx": [
+          "httpx status=200 tech=nginx,python,react",
+          "httpx status=200 tech=nginx,python",
+          "httpx status=500 tech=nginx,python"
+        ]
+      }
+    },
+    "analyst": {}
+  },
+  {
+    "schema_version": "1.0",
+    "run_id": "smoke",
+    "finding_id": "F-0005",
+    "source": "nuclei",
+    "asset": {
+      "url": "https://portal.example.com/files/1?id=1",
+      "host": "portal.example.com",
+      "path": "/files/1",
+      "normalized_path": "/files/1",
+      "method": "GET",
+      "query_keys": [
+        "id"
+      ],
+      "port": null,
+      "scheme": "https"
+    },
+    "classification": {
+      "weakness_family": "IDOR/BOLA",
+      "primary_cwe": "CWE-639",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A01 Broken Access Control"
+      ],
+      "kisa_categories": [
+        "접근통제 미흡"
+      ],
+      "parameter_or_sink": "id",
+      "matched_rule_id": "idor-bola"
+    },
+    "severity": {
+      "raw": "info",
+      "score": 7.4,
+      "level": "High",
+      "rationale": [
+        "family_base=3.0",
+        "exploitability=1.4",
+        "impact=1.8",
+        "exposure=0.7",
+        "business_modifier=0.2",
+        "evidence_bonus=0.3"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": null,
+      "score": 0.8,
+      "level": "Medium",
+      "rationale": [
+        "source_default=0.55",
+        "extracted_results_bonus=0.15",
+        "artifact_bonus=0.10"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "dedup": {
+      "exact_fingerprint": "0880257d24b9",
+      "cluster_fingerprint": "01a827b09696",
+      "cluster_key": null,
+      "duplicate_of": null,
+      "is_duplicate": false,
+      "false_positive": false
+    },
+    "title": "potential input reflection",
+    "description": "Should be blocked from SQLi mapping by negative tags.",
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_004_potential-input-reflection_request.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_004_potential-input-reflection_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_004_potential-input-reflection_request.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_004_potential-input-reflection_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_004_potential-input-reflection_response.txt",
+          "redacted_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_004_potential-input-reflection_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><title>Index of /files</title></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_004_potential-input-reflection_response.txt",
+          "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_004_potential-input-reflection_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://portal.example.com/files/1?id=1",
+        "artifact": null,
+        "highlights": [
+          "mixed-signal",
+          "True",
+          "Index of /files",
+          "id=1"
+        ],
+        "extracted_results": [
+          "Index of /files",
+          "id=1"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review",
+    "tags": [
+      "listing",
+      "xss"
+    ],
+    "references": [
+      "CWE-639",
+      "generic-sqli-lookalike"
+    ],
+    "raw": {
+      "raw_id": "generic-sqli-lookalike",
+      "kind": "finding",
+      "metadata": {
+        "template_id": "generic-sqli-lookalike",
+        "template_path": "http/misc/generic.yaml",
+        "matcher_name": "mixed-signal",
+        "curl_command": null,
+        "extracted_results": [
+          "Index of /files",
+          "id=1"
+        ],
+        "response_highlights": [
+          "Index of /files",
+          "id=1"
+        ]
+      },
+      "raw_title": "Potential Input Reflection",
+      "source_file": "D:\\취약점 진단\\app\\vuln-pipeline\\tests\\fixtures\\realish\\nuclei_rich.jsonl",
+      "enrichment": {
+        "httpx": [
+          "httpx status=200 tech=nginx,python,react",
+          "httpx status=200 tech=nginx,python",
+          "httpx status=500 tech=nginx,python"
+        ]
+      }
+    },
+    "analyst": {}
+  }
+]

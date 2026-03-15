@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "source_path": "tests\\fixtures\\realish\\burp_complex.xml",
+      "sha256": "2fe72ae7aed094b8384d58d7cb90b42ca2c91050aa2038d06f67dcf70b72f3fb",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\burp\\burp_complex.xml",
+      "selected_for_run": true
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\nuclei_rich.jsonl",
+      "sha256": "59dfccc750fa33e2f1245e238148ca0728c28c5edcdc800ff17c99d90182e8cb",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\nuclei\\nuclei_rich.jsonl",
+      "selected_for_run": true
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\httpx_rich.jsonl",
+      "sha256": "7d3c83559765a6e72e60f3e66153eb6e14d72e45017c8ad353901050bf9486f4",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\httpx\\httpx_rich.jsonl",
+      "selected_for_run": true
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\override_realish.yaml",
+      "sha256": "05a32c8b14490eab44ab2d5bf8e5caa4344b360e33808ffc63f2177a0b08841a",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\override_file\\override_realish.yaml",
+      "selected_for_run": true
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\suppressions.yaml",
+      "sha256": "022ad64335f8ec652a7bd72961ad5c6dcb97ee6622c10c83795de2dd6eb6565f",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\suppression_file\\suppressions.yaml",
+      "selected_for_run": true
+    },
+    {
+      "source_path": "tests\\fixtures\\realish\\review_resolution.yaml",
+      "sha256": "4c18895f950657eefec77be37163f1a085c463853e4b814e78574e655a73f404",
+      "snapshot_path": ".tmp_run11\\phase11-final-stage-demo\\input_snapshot\\review_resolution_file\\review_resolution.yaml",
+      "selected_for_run": true
+    }
+  ]
+}

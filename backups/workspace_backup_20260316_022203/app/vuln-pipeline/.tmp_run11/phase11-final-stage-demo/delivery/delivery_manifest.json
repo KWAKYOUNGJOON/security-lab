@@ -1,0 +1,92 @@
+{
+  "run_id": "phase11-final-stage-demo",
+  "zip_path": ".tmp_run11\\phase11-final-stage-demo\\delivery\\report_bundle_phase11-final-stage-demo.zip",
+  "included_files": [
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_internal_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_internal_customer_v1.0.docx",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_customer_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_customer_customer_v1.0.docx",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\executive_onepager_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\executive_onepager_customer_v1.0.docx",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\remediation_tracker_customer_v1.0.csv",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\remediation_tracker_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\analyst_handoff_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_outline_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_data_customer_v1.0.json",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_briefing_customer_v1.0_fallback.json",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\review_closure_checklist_customer_v1.0.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\submission_memo.md",
+    ".tmp_run11\\phase11-final-stage-demo\\deliverables\\real_data_rehearsal_summary.md"
+  ],
+  "raw_artifacts_excluded": true,
+  "report_version": "v1.0",
+  "delivery_date": "2026-03-15",
+  "deliverable_profile": "customer_pack",
+  "report_profile": "customer",
+  "report_template": "default_customer",
+  "readiness_policy": "customer_release",
+  "excluded_files": [],
+  "customer_outputs": {
+    "customer_full_report": [
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_customer_customer_v1.0.md",
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_customer_customer_v1.0.docx"
+    ],
+    "customer_onepager": [
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\executive_onepager_customer_v1.0.md",
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\executive_onepager_customer_v1.0.docx"
+    ],
+    "customer_tracker": [
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\remediation_tracker_customer_v1.0.csv",
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\remediation_tracker_customer_v1.0.md"
+    ]
+  },
+  "internal_outputs": {
+    "internal_full_report": [
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_internal_customer_v1.0.md",
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\full_report_internal_customer_v1.0.docx"
+    ],
+    "analyst_handoff": [
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\analyst_handoff_customer_v1.0.md"
+    ],
+    "presentation_support": [
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_outline_customer_v1.0.md",
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_data_customer_v1.0.json",
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_briefing_customer_v1.0_fallback.json"
+    ],
+    "review_closure_checklist": [
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\review_closure_checklist_customer_v1.0.md"
+    ],
+    "submission_memo": [
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\submission_memo.md"
+    ],
+    "real_data_rehearsal_summary": [
+      ".tmp_run11\\phase11-final-stage-demo\\deliverables\\real_data_rehearsal_summary.md"
+    ]
+  },
+  "packaging_time": "2026-03-15T09:26:04+00:00",
+  "checksums_ref": "delivery\\checksums.json",
+  "presentation_status": "fallback",
+  "pptx_generated": false,
+  "pptx_validation": {
+    "status": "fallback",
+    "pptx_generated": false,
+    "reason": "missing dependency: No module named 'pptx'",
+    "missing_dependency_reason": "No module named 'pptx'",
+    "install_hint": "pip install python-pptx",
+    "expected_output": ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_briefing_customer_v1.0.pptx",
+    "source_presentation_data": ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_data_customer_v1.0.json",
+    "expected_minimum_slide_count": 8,
+    "outline_path": ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_outline_customer_v1.0.md",
+    "data_path": ".tmp_run11\\phase11-final-stage-demo\\deliverables\\presentation_data_customer_v1.0.json"
+  },
+  "final_delivery_included": true,
+  "closeout_summary": {
+    "resolved_review_count": 2,
+    "accepted_risk_count": 0,
+    "remaining_blocker_count": 0
+  },
+  "customer_redaction_applied": true,
+  "branding_applied": true,
+  "submission_memo": ".tmp_run11\\phase11-final-stage-demo\\deliverables\\submission_memo.md",
+  "real_data_rehearsal_summary": ".tmp_run11\\phase11-final-stage-demo\\deliverables\\real_data_rehearsal_summary.md"
+}

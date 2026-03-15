@@ -1,0 +1,71 @@
+{
+  "status": "fail",
+  "checks": [
+    {
+      "name": "readiness_status_ready",
+      "result": "fail"
+    },
+    {
+      "name": "unresolved_review_count_zero",
+      "result": "fail"
+    },
+    {
+      "name": "customer_package_created",
+      "result": "pass"
+    },
+    {
+      "name": "final_delivery_manifest_exists",
+      "result": "pass"
+    },
+    {
+      "name": "customer_redaction_applied",
+      "result": "pass"
+    },
+    {
+      "name": "required_customer_files_present",
+      "result": "pass"
+    },
+    {
+      "name": "branding_metadata_applied",
+      "result": "warn"
+    },
+    {
+      "name": "pptx_requirement_satisfied_or_waived",
+      "result": "pass"
+    }
+  ],
+  "readiness_status": "conditionally_ready",
+  "unresolved_review_count": 3,
+  "customer_package_created": true,
+  "required_customer_files": [
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_customer_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_customer_customer_v1.0.docx",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\executive_onepager_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\executive_onepager_customer_v1.0.docx",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\remediation_tracker_customer_v1.0.csv",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\remediation_tracker_customer_v1.0.md"
+  ],
+  "required_customer_files_present": [
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_customer_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_customer_customer_v1.0.docx",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\executive_onepager_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\executive_onepager_customer_v1.0.docx",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\remediation_tracker_customer_v1.0.csv",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\remediation_tracker_customer_v1.0.md"
+  ],
+  "required_customer_files_missing": [],
+  "customer_redaction_applied": true,
+  "branding_metadata_applied": false,
+  "pptx_requirement": {
+    "required": false,
+    "pptx_generated": false,
+    "waived": true
+  },
+  "blocking_reasons": [
+    "readiness_status_ready",
+    "unresolved_review_count_zero"
+  ],
+  "warning_reasons": [
+    "branding_metadata_applied"
+  ]
+}

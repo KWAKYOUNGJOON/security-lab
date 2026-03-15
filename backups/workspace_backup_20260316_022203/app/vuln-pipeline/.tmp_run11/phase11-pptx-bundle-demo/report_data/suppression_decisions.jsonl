@@ -1,0 +1,2 @@
+{"issue_id": "I-0001", "cluster_key": "SQL Injection|demo.example.com|/users/{id}|userid|CWE-89", "action": "active", "status": null, "matched_rule": null, "match_reasons": []}
+{"issue_id": "I-0002", "cluster_key": "XSS|demo.example.com|/search|q|CWE-79", "action": "active", "status": null, "matched_rule": null, "match_reasons": []}

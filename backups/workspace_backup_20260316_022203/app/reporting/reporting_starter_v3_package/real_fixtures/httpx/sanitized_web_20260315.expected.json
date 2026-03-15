@@ -1,0 +1,4 @@
+{
+  "min_findings": 1,
+  "contains_titles": ["관리자 또는 인증 경로 노출"]
+}

@@ -1,0 +1,134 @@
+{
+  "final_ready": true,
+  "readiness_status": "ready",
+  "release_candidate_ref": ".tmp_run\\phase10-final-demo\\report_data\\release_candidate_manifest.json",
+  "included_files": [
+    ".tmp_run\\phase10-final-demo\\deliverables\\full_report_internal_customer_v1.0.md",
+    ".tmp_run\\phase10-final-demo\\deliverables\\full_report_internal_customer_v1.0.docx",
+    ".tmp_run\\phase10-final-demo\\deliverables\\full_report_customer_customer_v1.0.md",
+    ".tmp_run\\phase10-final-demo\\deliverables\\full_report_customer_customer_v1.0.docx",
+    ".tmp_run\\phase10-final-demo\\deliverables\\executive_onepager_customer_v1.0.md",
+    ".tmp_run\\phase10-final-demo\\deliverables\\executive_onepager_customer_v1.0.docx",
+    ".tmp_run\\phase10-final-demo\\deliverables\\remediation_tracker_customer_v1.0.csv",
+    ".tmp_run\\phase10-final-demo\\deliverables\\remediation_tracker_customer_v1.0.md",
+    ".tmp_run\\phase10-final-demo\\deliverables\\analyst_handoff_customer_v1.0.md",
+    ".tmp_run\\phase10-final-demo\\deliverables\\presentation_outline_customer_v1.0.md",
+    ".tmp_run\\phase10-final-demo\\deliverables\\presentation_data_customer_v1.0.json",
+    ".tmp_run\\phase10-final-demo\\deliverables\\presentation_briefing_customer_v1.0_fallback.json",
+    ".tmp_run\\phase10-final-demo\\deliverables\\review_closure_checklist_customer_v1.0.md",
+    ".tmp_run\\phase10-final-demo\\deliverables\\submission_memo.md",
+    ".tmp_run\\phase10-final-demo\\deliverables\\real_data_rehearsal_summary.md"
+  ],
+  "excluded_files": [],
+  "delivery_version": "v1.0",
+  "approval_metadata": {
+    "approver_name": "TBD",
+    "approver_title": "Security Lead",
+    "delivery_date": "",
+    "contact_email": "security@example.local"
+  },
+  "closeout_summary": {
+    "resolved_review_count": 2,
+    "accepted_risk_count": 0,
+    "remaining_blocker_count": 0
+  },
+  "review_resolution_file_ref": "tests\\fixtures\\realish\\review_resolution.yaml",
+  "submission_gate": {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "readiness_status_ready",
+        "result": "pass"
+      },
+      {
+        "name": "unresolved_review_count_zero",
+        "result": "pass"
+      },
+      {
+        "name": "customer_package_created",
+        "result": "pass"
+      },
+      {
+        "name": "final_delivery_manifest_exists",
+        "result": "pass"
+      },
+      {
+        "name": "customer_redaction_applied",
+        "result": "pass"
+      },
+      {
+        "name": "required_customer_files_present",
+        "result": "pass"
+      },
+      {
+        "name": "branding_metadata_applied",
+        "result": "pass"
+      },
+      {
+        "name": "pptx_requirement_satisfied_or_waived",
+        "result": "pass"
+      },
+      {
+        "name": "customer_package_privacy_audit",
+        "result": "pass"
+      }
+    ],
+    "readiness_status": "ready",
+    "unresolved_review_count": 0,
+    "customer_package_created": true,
+    "required_customer_files": [
+      ".tmp_run\\phase10-final-demo\\deliverables\\full_report_customer_customer_v1.0.md",
+      ".tmp_run\\phase10-final-demo\\deliverables\\full_report_customer_customer_v1.0.docx",
+      ".tmp_run\\phase10-final-demo\\deliverables\\executive_onepager_customer_v1.0.md",
+      ".tmp_run\\phase10-final-demo\\deliverables\\executive_onepager_customer_v1.0.docx",
+      ".tmp_run\\phase10-final-demo\\deliverables\\remediation_tracker_customer_v1.0.csv",
+      ".tmp_run\\phase10-final-demo\\deliverables\\remediation_tracker_customer_v1.0.md"
+    ],
+    "required_customer_files_present": [
+      ".tmp_run\\phase10-final-demo\\deliverables\\full_report_customer_customer_v1.0.md",
+      ".tmp_run\\phase10-final-demo\\deliverables\\full_report_customer_customer_v1.0.docx",
+      ".tmp_run\\phase10-final-demo\\deliverables\\executive_onepager_customer_v1.0.md",
+      ".tmp_run\\phase10-final-demo\\deliverables\\executive_onepager_customer_v1.0.docx",
+      ".tmp_run\\phase10-final-demo\\deliverables\\remediation_tracker_customer_v1.0.csv",
+      ".tmp_run\\phase10-final-demo\\deliverables\\remediation_tracker_customer_v1.0.md"
+    ],
+    "required_customer_files_missing": [],
+    "customer_redaction_applied": true,
+    "branding_metadata_applied": true,
+    "pptx_requirement": {
+      "required": false,
+      "pptx_generated": false,
+      "waived": true
+    },
+    "privacy_audit": {
+      "run_root": ".tmp_run\\phase10-final-demo",
+      "included_files": [
+        "deliverables/executive_onepager_customer_v1.0.docx",
+        "deliverables/executive_onepager_customer_v1.0.md",
+        "deliverables/full_report_customer_customer_v1.0.docx",
+        "deliverables/full_report_customer_customer_v1.0.md",
+        "deliverables/remediation_tracker_customer_v1.0.csv",
+        "deliverables/remediation_tracker_customer_v1.0.md",
+        "delivery/customer_submission_checksums.json",
+        "delivery/customer_submission_manifest.json",
+        "delivery/final_delivery_manifest.json"
+      ],
+      "excluded_files": [
+        "artifacts/raw/*",
+        "report_data/review_queue.*",
+        "report_data/override_template.yaml",
+        "deliverables/analyst_handoff*",
+        "report_data/*decisions*",
+        "internal-only appendix"
+      ],
+      "forbidden_patterns_detected": [],
+      "non_whitelist_files": [],
+      "audit_result": "pass"
+    },
+    "blocking_reasons": [],
+    "warning_reasons": []
+  },
+  "customer_submission_zip": ".tmp_run\\phase10-final-demo\\delivery\\customer_submission_v1.0.zip",
+  "internal_archive_zip": ".tmp_run\\phase10-final-demo\\delivery\\internal_archive_v1.0.zip",
+  "blocking_reasons": []
+}

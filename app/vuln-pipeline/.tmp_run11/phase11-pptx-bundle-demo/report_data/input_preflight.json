@@ -1,0 +1,119 @@
+{
+  "status": "blocked",
+  "auto_select_real_inputs": false,
+  "tool_checks": {
+    "burp": {
+      "tool": "burp",
+      "selected_input_count": 1,
+      "selection_source": "resolved_inputs",
+      "configured_directory": "D:\\취약점 진단\\data\\inputs\\burp",
+      "configured_directory_exists": true,
+      "eligible_file_count_in_directory": 1,
+      "selected_files": [
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\burp\\burp_sample.xml",
+          "tool": "burp",
+          "exists": true,
+          "extension_valid": true,
+          "sample_or_test": true,
+          "size_bytes": 772,
+          "modified_at": "2026-03-15T01:08:56+00:00",
+          "line_count": 24,
+          "warnings": [],
+          "blockers": [
+            "sample_or_test_file"
+          ],
+          "real_candidate": false,
+          "fingerprint": "d00d347137ee354453f68b24dbd0e497ba499be64ff5a5a090efd87cbe08ac22",
+          "duplicate_detected": false
+        }
+      ]
+    },
+    "nuclei": {
+      "tool": "nuclei",
+      "selected_input_count": 1,
+      "selection_source": "resolved_inputs",
+      "configured_directory": "D:\\취약점 진단\\data\\inputs\\nuclei",
+      "configured_directory_exists": true,
+      "eligible_file_count_in_directory": 1,
+      "selected_files": [
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+          "tool": "nuclei",
+          "exists": true,
+          "extension_valid": true,
+          "sample_or_test": true,
+          "size_bytes": 1059,
+          "modified_at": "2026-03-15T01:08:56+00:00",
+          "line_count": 3,
+          "warnings": [],
+          "blockers": [
+            "sample_or_test_file"
+          ],
+          "real_candidate": false,
+          "fingerprint": "7015bc08b9415386f37036377e56ead405a84bb93284863c2d3a72f267bad67a",
+          "duplicate_detected": false
+        }
+      ]
+    },
+    "httpx": {
+      "tool": "httpx",
+      "selected_input_count": 1,
+      "selection_source": "resolved_inputs",
+      "configured_directory": "D:\\취약점 진단\\data\\inputs\\httpx",
+      "configured_directory_exists": true,
+      "eligible_file_count_in_directory": 1,
+      "selected_files": [
+        {
+          "path": "D:\\취약점 진단\\data\\inputs\\httpx\\httpx_sample.jsonl",
+          "tool": "httpx",
+          "exists": true,
+          "extension_valid": true,
+          "sample_or_test": true,
+          "size_bytes": 560,
+          "modified_at": "2026-03-15T01:08:56+00:00",
+          "line_count": 3,
+          "warnings": [],
+          "blockers": [
+            "sample_or_test_file"
+          ],
+          "real_candidate": false,
+          "fingerprint": "6908cbd30615a9c632ac6390457f5179a3e804d0d14fe3c4eb71ba0270f9a8e7",
+          "duplicate_detected": false
+        }
+      ]
+    }
+  },
+  "manual_inputs": {
+    "override_file": {
+      "configured_path": "D:\\취약점 진단\\data\\inputs\\manual\\sample_override.yaml",
+      "exists": true,
+      "status": "present"
+    },
+    "suppression_file": {
+      "configured_path": "D:\\취약점 진단\\data\\inputs\\manual\\suppressions.yaml",
+      "exists": true,
+      "status": "present"
+    },
+    "review_resolution_file": {
+      "configured_path": "D:\\취약점 진단\\data\\inputs\\manual\\review_resolution.yaml",
+      "exists": true,
+      "status": "present"
+    }
+  },
+  "selected_run_inputs": [
+    "D:\\취약점 진단\\data\\inputs\\burp\\burp_sample.xml",
+    "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+    "D:\\취약점 진단\\data\\inputs\\httpx\\httpx_sample.jsonl"
+  ],
+  "warning_count": 0,
+  "blocker_count": 4,
+  "warnings": [],
+  "blockers": [
+    "burp: sample_or_test_file",
+    "nuclei: sample_or_test_file",
+    "httpx: sample_or_test_file",
+    "real scan inputs are not ready"
+  ],
+  "duplicate_groups": []
+}

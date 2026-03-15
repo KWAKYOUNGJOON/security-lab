@@ -1,0 +1,513 @@
+[
+  {
+    "source": "burp",
+    "source_file": "tests\\fixtures\\realish\\burp_complex.xml",
+    "parser": "burp_xml",
+    "raw_id": "1",
+    "kind": "finding",
+    "title": "Error disclosure",
+    "description": "Framework stack trace and SQL syntax error strings were reflected in the response.",
+    "asset": {
+      "url": "https://portal.example.com/api/v1/report/550e8400-e29b-41d4-a716-446655440000",
+      "host": "portal.example.com",
+      "path": "/api/v1/report/550e8400-e29b-41d4-a716-446655440000",
+      "normalized_path": "/api/v1/report/550e8400-e29b-41d4-a716-446655440000",
+      "method": null,
+      "query_keys": [],
+      "port": 443,
+      "scheme": "https"
+    },
+    "raw_severity": "Medium",
+    "raw_confidence": "Firm",
+    "tags": [],
+    "references": [],
+    "metadata": {
+      "serial_number": "101",
+      "type_index": "512",
+      "location": null,
+      "issue_background": "운영 환경에서 상세 예외 정보가 외부 응답에 포함되고 있습니다.",
+      "issue_detail": "Framework stack trace and SQL syntax error strings were reflected in the response.",
+      "variations": [
+        "Stack trace snippet returned in 500 response",
+        "SQL syntax error string reflected"
+      ]
+    },
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Captured HTTP request from Burp issue export.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\burp\\raw\\burp_001_error-disclosure_request.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\burp\\redacted\\burp_001_error-disclosure_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [
+          "Replay the saved request artifact against the same endpoint."
+        ],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\burp\\raw\\burp_001_error-disclosure_request.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\burp\\redacted\\burp_001_error-disclosure_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Captured HTTP response from Burp issue export.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\burp\\raw\\burp_001_error-disclosure_response.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\burp\\redacted\\burp_001_error-disclosure_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 500 Internal Server Error"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\burp\\raw\\burp_001_error-disclosure_response.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\burp\\redacted\\burp_001_error-disclosure_response.txt"
+        ]
+      },
+      {
+        "type": "background",
+        "summary": "Burp issue background preserved.",
+        "artifact": null,
+        "highlights": [
+          "운영 환경에서 상세 예외 정보가 외부 응답에 포함되고 있습니다."
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": []
+      },
+      {
+        "type": "variation",
+        "summary": "Burp variations preserved.",
+        "artifact": null,
+        "highlights": [
+          "Stack trace snippet returned in 500 response",
+          "SQL syntax error string reflected"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [
+      "운영 환경의 상세 오류 메시지 노출을 차단하십시오."
+    ],
+    "status": "needs_review"
+  },
+  {
+    "source": "nuclei",
+    "source_file": "tests\\fixtures\\realish\\nuclei_rich.jsonl",
+    "parser": "nuclei_jsonl",
+    "raw_id": "directory-listing-rich",
+    "kind": "finding",
+    "title": "Directory Listing",
+    "description": "Rich directory listing sample.",
+    "asset": {
+      "url": "https://portal.example.com/static/abcdef1234567890abcdef1234567890/",
+      "host": "portal.example.com",
+      "path": "/static/abcdef1234567890abcdef1234567890/",
+      "normalized_path": "/static/abcdef1234567890abcdef1234567890/",
+      "method": null,
+      "query_keys": [],
+      "port": null,
+      "scheme": null
+    },
+    "raw_severity": "low",
+    "raw_confidence": null,
+    "tags": [
+      "listing",
+      "exposure"
+    ],
+    "references": [
+      "directory-listing-rich"
+    ],
+    "metadata": {
+      "template_id": "directory-listing-rich",
+      "template_path": "http/misconfig/rich-listing.yaml",
+      "matcher_name": "body-index-of",
+      "curl_command": null,
+      "extracted_results": [
+        "Index of /static",
+        "backup.zip",
+        "config.old"
+      ],
+      "response_highlights": [
+        "Index of /static",
+        "backup.zip",
+        "config.old"
+      ]
+    },
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_request.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><title>Index of /static</title><body>backup.zip config.old</body></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_001_directory-listing_response.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_001_directory-listing_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://portal.example.com/static/abcdef1234567890abcdef1234567890/",
+        "artifact": null,
+        "highlights": [
+          "body-index-of",
+          "True",
+          "Index of /static",
+          "backup.zip"
+        ],
+        "extracted_results": [
+          "Index of /static",
+          "backup.zip",
+          "config.old"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review"
+  },
+  {
+    "source": "nuclei",
+    "source_file": "tests\\fixtures\\realish\\nuclei_rich.jsonl",
+    "parser": "nuclei_jsonl",
+    "raw_id": "xss-rich",
+    "kind": "finding",
+    "title": "Reflected XSS",
+    "description": "Synthetic but realistic reflected XSS.",
+    "asset": {
+      "url": "https://portal.example.com/search?q=%3Cscript%3Ealert(1)%3C/script%3E",
+      "host": "portal.example.com",
+      "path": "/search",
+      "normalized_path": "/search",
+      "method": null,
+      "query_keys": [],
+      "port": null,
+      "scheme": null
+    },
+    "raw_severity": "medium",
+    "raw_confidence": null,
+    "tags": [
+      "xss",
+      "web"
+    ],
+    "references": [
+      "xss-rich"
+    ],
+    "metadata": {
+      "template_id": "xss-rich",
+      "template_path": "http/xss/rich.yaml",
+      "matcher_name": "reflected-payload",
+      "curl_command": null,
+      "extracted_results": [
+        "<script>alert(1)</script>",
+        "query=q"
+      ],
+      "response_highlights": [
+        "<script>alert(1)</script>",
+        "query=q"
+      ]
+    },
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_response.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><body><script>alert(1)</script></body></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_response.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://portal.example.com/search?q=%3Cscript%3Ealert(1)%3C/script%3E",
+        "artifact": null,
+        "highlights": [
+          "reflected-payload",
+          "True",
+          "<script>alert(1)</script>",
+          "query=q"
+        ],
+        "extracted_results": [
+          "<script>alert(1)</script>",
+          "query=q"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review"
+  },
+  {
+    "source": "nuclei",
+    "source_file": "tests\\fixtures\\realish\\nuclei_rich.jsonl",
+    "parser": "nuclei_jsonl",
+    "raw_id": "xss-rich-low-confidence",
+    "kind": "finding",
+    "title": "Reflected XSS",
+    "description": "Same endpoint, lower confidence variant.",
+    "asset": {
+      "url": "https://portal.example.com/search?q=%3Csvg%3E",
+      "host": "portal.example.com",
+      "path": "/search",
+      "normalized_path": "/search",
+      "method": null,
+      "query_keys": [],
+      "port": null,
+      "scheme": null
+    },
+    "raw_severity": "low",
+    "raw_confidence": null,
+    "tags": [
+      "xss"
+    ],
+    "references": [
+      "xss-rich-low-confidence"
+    ],
+    "metadata": {
+      "template_id": "xss-rich-low-confidence",
+      "template_path": "http/xss/rich-low.yaml",
+      "matcher_name": "possible-reflection",
+      "curl_command": null,
+      "extracted_results": [
+        "<svg>"
+      ],
+      "response_highlights": [
+        "<svg>"
+      ]
+    },
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_003_reflected-xss_request.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_003_reflected-xss_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_003_reflected-xss_request.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_003_reflected-xss_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_003_reflected-xss_response.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_003_reflected-xss_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><body><svg></body></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_003_reflected-xss_response.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_003_reflected-xss_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://portal.example.com/search?q=%3Csvg%3E",
+        "artifact": null,
+        "highlights": [
+          "possible-reflection",
+          "True",
+          "<svg>"
+        ],
+        "extracted_results": [
+          "<svg>"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review"
+  },
+  {
+    "source": "nuclei",
+    "source_file": "tests\\fixtures\\realish\\nuclei_rich.jsonl",
+    "parser": "nuclei_jsonl",
+    "raw_id": "generic-sqli-lookalike",
+    "kind": "finding",
+    "title": "Potential Input Reflection",
+    "description": "Should be blocked from SQLi mapping by negative tags.",
+    "asset": {
+      "url": "https://portal.example.com/files/1?id=1",
+      "host": "portal.example.com",
+      "path": "/files/1",
+      "normalized_path": "/files/1",
+      "method": null,
+      "query_keys": [],
+      "port": null,
+      "scheme": null
+    },
+    "raw_severity": "info",
+    "raw_confidence": null,
+    "tags": [
+      "listing",
+      "xss"
+    ],
+    "references": [
+      "generic-sqli-lookalike"
+    ],
+    "metadata": {
+      "template_id": "generic-sqli-lookalike",
+      "template_path": "http/misc/generic.yaml",
+      "matcher_name": "mixed-signal",
+      "curl_command": null,
+      "extracted_results": [
+        "Index of /files",
+        "id=1"
+      ],
+      "response_highlights": [
+        "Index of /files",
+        "id=1"
+      ]
+    },
+    "evidence": [
+      {
+        "type": "request",
+        "summary": "Nuclei request captured in result output.",
+        "artifact": {
+          "kind": "request",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_004_potential-input-reflection_request.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_004_potential-input-reflection_request.txt",
+          "inline": null
+        },
+        "highlights": [],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_004_potential-input-reflection_request.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_004_potential-input-reflection_request.txt"
+        ]
+      },
+      {
+        "type": "response",
+        "summary": "Nuclei response captured in result output.",
+        "artifact": {
+          "kind": "response",
+          "raw_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_004_potential-input-reflection_response.txt",
+          "redacted_path": ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_004_potential-input-reflection_response.txt",
+          "inline": null
+        },
+        "highlights": [
+          "HTTP/1.1 200 OK",
+          "Content-Type: text/html",
+          "<html><title>Index of /files</title></html>"
+        ],
+        "extracted_results": [],
+        "reproduction_steps": [],
+        "artifact_links": [
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\raw\\nuclei_004_potential-input-reflection_response.txt",
+          ".tmp_run\\phase10-final-demo\\artifacts\\nuclei\\redacted\\nuclei_004_potential-input-reflection_response.txt"
+        ]
+      },
+      {
+        "type": "match",
+        "summary": "Nuclei matched at https://portal.example.com/files/1?id=1",
+        "artifact": null,
+        "highlights": [
+          "mixed-signal",
+          "True",
+          "Index of /files",
+          "id=1"
+        ],
+        "extracted_results": [
+          "Index of /files",
+          "id=1"
+        ],
+        "reproduction_steps": [
+          "Replay the saved nuclei request or issue the equivalent HTTP request to confirm the match."
+        ],
+        "artifact_links": []
+      }
+    ],
+    "remediation": [],
+    "status": "needs_review"
+  }
+]

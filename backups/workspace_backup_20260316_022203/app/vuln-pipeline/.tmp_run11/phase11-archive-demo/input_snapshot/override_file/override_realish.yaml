@@ -1,0 +1,9 @@
+overrides:
+  - finding_id: F-0001
+    analyst_note: 운영 환경 예외 메시지 노출로 판단되며 즉시 차단이 필요함.
+    manual_remediation:
+      - 운영 환경 상세 오류 응답을 비활성화합니다.
+  - finding_id: F-0002
+    false_positive: true
+    analyst_note: 공개 정적 파일 배포 디렉터리로 확인됨.
+

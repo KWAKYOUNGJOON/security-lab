@@ -1,0 +1,6 @@
+# Copy reviewed rows from draft_candidates into review_resolutions after closeout review.
+review_resolutions: []
+draft_candidates: []
+notes:
+  - This file is intentionally safe by default. The pipeline reads only review_resolutions.
+  - Do not place this template under data/inputs/real/manual.

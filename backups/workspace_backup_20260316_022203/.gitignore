@@ -1,0 +1,13 @@
+outputs/
+outputs/runs/
+reports/final/
+reports/evidence/
+notes/private/
+reference/
+**/__pycache__/
+*.egg-info/
+.pytest_cache/
+*.log
+*.tmp
+*.docx
+*.pdf

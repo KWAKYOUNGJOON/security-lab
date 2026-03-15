@@ -1,0 +1,10 @@
+id: internal_pack
+full_reports: true
+onepager: true
+onepager_audience: internal
+tracker: true
+handoff: true
+presentation: true
+presentation_audience: internal
+versioned_filenames: false
+customer_submission_include_presentation_fallback: true

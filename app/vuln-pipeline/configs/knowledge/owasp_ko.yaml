@@ -1,0 +1,38 @@
+entries:
+  - id: A01 Broken Access Control
+    title_ko: 접근통제 취약점
+    summary_ko: 권한 확인이 일관되지 않아 인가되지 않은 자원 접근이 가능한 범주입니다.
+    risk_ko: 데이터 노출과 권한 상승으로 연결될 수 있습니다.
+    validation_points_ko:
+      - 객체 단위 접근통제와 역할 검사를 확인합니다.
+    remediation_ko:
+      - 모든 민감 기능과 자원 접근에 중앙화된 인가 검사를 적용합니다.
+    references: ["OWASP Top 10 2025 A01"]
+  - id: A03 Injection
+    title_ko: 인젝션
+    summary_ko: 외부 입력이 명령이나 구문으로 해석되어 실행되는 범주의 취약점입니다.
+    risk_ko: 데이터베이스, 브라우저, 운영체제 등 다양한 실행 경로에 영향을 줍니다.
+    validation_points_ko:
+      - 구문 생성 시 외부 입력 연결 여부를 확인합니다.
+    remediation_ko:
+      - 입력 검증과 안전한 API 사용을 우선 적용합니다.
+    references: ["OWASP Top 10 2025 A03"]
+  - id: A05 Security Misconfiguration
+    title_ko: 보안 설정 오류
+    summary_ko: 기본 설정, 디버그 옵션, 디렉터리 인덱싱 등 운영 설정 미흡으로 인해 노출이 발생하는 범주입니다.
+    risk_ko: 직접 침해 전 단계의 유용한 단서를 제공할 수 있습니다.
+    validation_points_ko:
+      - 배포/운영 설정과 기본값을 점검합니다.
+    remediation_ko:
+      - 표준 보안 설정 기준을 수립하고 배포 전에 검증합니다.
+    references: ["OWASP Top 10 2025 A05"]
+  - id: A10 Server-Side Request Forgery
+    title_ko: 서버사이드 요청 위조
+    summary_ko: 서버가 의도하지 않은 대상과 통신하도록 유도되는 범주입니다.
+    risk_ko: 내부망 접근과 우회 경로 제공으로 이어질 수 있습니다.
+    validation_points_ko:
+      - 외부 입력을 사용하는 통신 기능에 대한 목적지 제한을 확인합니다.
+    remediation_ko:
+      - 목적지 허용 목록과 네트워크 차단 정책을 적용합니다.
+    references: ["OWASP Top 10 2025 A10"]
+

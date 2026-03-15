@@ -1,0 +1,6 @@
+{
+  "target": "https://portal.example.co.kr",
+  "author": "real-fixture-test",
+  "mapping": false,
+  "extra_args": []
+}

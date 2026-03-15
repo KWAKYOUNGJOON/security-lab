@@ -1,0 +1,5 @@
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/html
+
+java.lang.NullPointerException
+SQL syntax error near 'select'

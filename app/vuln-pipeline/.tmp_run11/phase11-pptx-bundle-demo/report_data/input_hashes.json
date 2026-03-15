@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "source_path": "D:\\취약점 진단\\data\\inputs\\burp\\burp_sample.xml",
+      "sha256": "d00d347137ee354453f68b24dbd0e497ba499be64ff5a5a090efd87cbe08ac22",
+      "snapshot_path": null,
+      "selected_for_run": true
+    },
+    {
+      "source_path": "D:\\취약점 진단\\data\\inputs\\nuclei\\nuclei_sample.jsonl",
+      "sha256": "7015bc08b9415386f37036377e56ead405a84bb93284863c2d3a72f267bad67a",
+      "snapshot_path": null,
+      "selected_for_run": true
+    },
+    {
+      "source_path": "D:\\취약점 진단\\data\\inputs\\httpx\\httpx_sample.jsonl",
+      "sha256": "6908cbd30615a9c632ac6390457f5179a3e804d0d14fe3c4eb71ba0270f9a8e7",
+      "snapshot_path": null,
+      "selected_for_run": true
+    },
+    {
+      "source_path": "D:\\취약점 진단\\data\\inputs\\manual\\sample_override.yaml",
+      "sha256": "a872856881aaa4cfebb50b78a6ba9ef09a15947feb7aa43edc91f22d4fb62b5e",
+      "snapshot_path": null,
+      "selected_for_run": true
+    },
+    {
+      "source_path": "D:\\취약점 진단\\data\\inputs\\manual\\suppressions.yaml",
+      "sha256": "abd81c258ee5b66fd93bae72eab1cb5b34e21c9f19f8c869a39ba67e30a5e689",
+      "snapshot_path": null,
+      "selected_for_run": true
+    },
+    {
+      "source_path": "D:\\취약점 진단\\data\\inputs\\manual\\review_resolution.yaml",
+      "sha256": "4b559737e499807de4ef2469ccbcdc61e3cd9bee2bfcff03909fcc00d8f6a74a",
+      "snapshot_path": null,
+      "selected_for_run": true
+    }
+  ]
+}

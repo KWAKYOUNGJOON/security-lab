@@ -1,0 +1,23 @@
+policy_name: default_due_rules
+default_due: TBD
+rules:
+  - id: critical_due
+    severity:
+      - Critical
+    due: 7d
+  - id: high_due
+    severity:
+      - High
+    due: 14d
+  - id: medium_due
+    severity:
+      - Medium
+    due: 30d
+  - id: low_due
+    severity:
+      - Low
+    due: 90d
+  - id: info_due
+    severity:
+      - Info
+    due: Backlog

@@ -1,0 +1,58 @@
+{
+  "status": "blocked",
+  "auto_select_real_inputs": true,
+  "tool_checks": {
+    "burp": {
+      "tool": "burp",
+      "selected_input_count": 0,
+      "selection_source": "none",
+      "configured_directory": "D:\\취약점 진단\\data\\inputs\\real\\burp",
+      "configured_directory_exists": true,
+      "eligible_file_count_in_directory": 0,
+      "selected_files": []
+    },
+    "nuclei": {
+      "tool": "nuclei",
+      "selected_input_count": 0,
+      "selection_source": "none",
+      "configured_directory": "D:\\취약점 진단\\data\\inputs\\real\\nuclei",
+      "configured_directory_exists": true,
+      "eligible_file_count_in_directory": 0,
+      "selected_files": []
+    },
+    "httpx": {
+      "tool": "httpx",
+      "selected_input_count": 0,
+      "selection_source": "none",
+      "configured_directory": "D:\\취약점 진단\\data\\inputs\\real\\httpx",
+      "configured_directory_exists": true,
+      "eligible_file_count_in_directory": 0,
+      "selected_files": []
+    }
+  },
+  "manual_inputs": {
+    "override_file": {
+      "configured_path": "D:\\취약점 진단\\data\\inputs\\manual\\sample_override.yaml",
+      "exists": true,
+      "status": "present"
+    },
+    "suppression_file": {
+      "configured_path": "D:\\취약점 진단\\data\\inputs\\manual\\suppressions.yaml",
+      "exists": true,
+      "status": "present"
+    },
+    "review_resolution_file": {
+      "configured_path": "D:\\취약점 진단\\data\\inputs\\manual\\review_resolution.yaml",
+      "exists": true,
+      "status": "present"
+    }
+  },
+  "selected_run_inputs": [],
+  "warning_count": 0,
+  "blocker_count": 1,
+  "warnings": [],
+  "blockers": [
+    "real scan inputs are not ready"
+  ],
+  "duplicate_groups": []
+}

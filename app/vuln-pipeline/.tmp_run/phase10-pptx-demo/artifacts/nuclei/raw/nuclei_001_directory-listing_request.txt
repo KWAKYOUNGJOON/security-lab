@@ -1,0 +1,2 @@
+GET /files/abcdef1234567890abcdef1234567890/ HTTP/1.1
+Host: demo.example.com

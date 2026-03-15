@@ -1,0 +1,10 @@
+id: customer
+title_suffix: Customer
+show_raw_artifacts: false
+show_analyst_note: false
+show_trace_paths: false
+show_artifact_index: true
+show_false_positive_details: false
+show_internal_paths: false
+tone: polished
+repro_detail: restrained

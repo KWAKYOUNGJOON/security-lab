@@ -1,0 +1,133 @@
+{
+  "report_meta": {
+    "project_name": "https://www.example.org 웹 취약점 진단 보고서",
+    "target": "https://www.example.org",
+    "generated_at": "2026-03-15T00:54:31.233242+09:00",
+    "assessment_scope": [
+      "웹 서버 점검",
+      "웹 애플리케이션",
+      "자동 진단 결과"
+    ],
+    "customer": null,
+    "author": "pipeline-test",
+    "template": "kisa_web",
+    "references": {
+      "kisa_guide": "주요정보통신기반시설 기술적 취약점 분석·평가 방법 상세가이드",
+      "owasp": "OWASP Top 10"
+    }
+  },
+  "findings": [
+    {
+      "id": "WEB-001",
+      "title": "보안 헤더 미설정",
+      "category": "보안설정",
+      "severity": "medium",
+      "confidence": "medium",
+      "status": "needs_review",
+      "asset": "https://www.example.org/",
+      "host": "www.example.org",
+      "url": "https://www.example.org/",
+      "method": "GET",
+      "parameter": null,
+      "port": 443,
+      "description": "The anti-clickjacking X-Frame-Options header is not present.",
+      "impact": "Nikto 결과는 웹 서버 또는 애플리케이션 구성에 대해 추가 보안 검토가 필요함을 의미합니다.",
+      "severity_reason": [
+        "nikto id: 999978",
+        "Nikto JSON 결과 기반"
+      ],
+      "evidence": [
+        {
+          "type": "text",
+          "content": "url: /",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "message: The anti-clickjacking X-Frame-Options header is not present.",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "references: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options",
+          "path": null
+        }
+      ],
+      "reproduction_steps": [
+        "GET 요청으로 / 경로를 확인합니다.",
+        "동일한 메시지 또는 관련 설정 상태가 재현되는지 검증합니다."
+      ],
+      "recommendation": [
+        "탐지된 설정 또는 노출 항목이 실제 위험인지 수동 검증합니다.",
+        "불필요한 테스트 페이지, 진단 페이지, 민감 파일은 제거하거나 접근을 제한합니다.",
+        "권장 보안 헤더와 최신 서버 구성을 적용합니다."
+      ],
+      "references": {},
+      "tools": [
+        "nikto"
+      ],
+      "raw_source": [
+        "sample_nikto.json"
+      ],
+      "manual_verified": false,
+      "duplicate_group": "www.example.org:/:보안 헤더 미설정",
+      "notes": "nginx/1.24.0"
+    },
+    {
+      "id": "WEB-002",
+      "title": "민감 파일 또는 기능 노출",
+      "category": "정보노출",
+      "severity": "high",
+      "confidence": "medium",
+      "status": "needs_review",
+      "asset": "https://www.example.org/phpinfo.php",
+      "host": "www.example.org",
+      "url": "https://www.example.org/phpinfo.php",
+      "method": "GET",
+      "parameter": null,
+      "port": 443,
+      "description": "phpinfo() file found.",
+      "impact": "Nikto 결과는 웹 서버 또는 애플리케이션 구성에 대해 추가 보안 검토가 필요함을 의미합니다.",
+      "severity_reason": [
+        "nikto id: 999999",
+        "Nikto JSON 결과 기반"
+      ],
+      "evidence": [
+        {
+          "type": "text",
+          "content": "url: /phpinfo.php",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "message: phpinfo() file found.",
+          "path": null
+        },
+        {
+          "type": "text",
+          "content": "references: https://www.php.net/manual/en/function.phpinfo.php",
+          "path": null
+        }
+      ],
+      "reproduction_steps": [
+        "GET 요청으로 /phpinfo.php 경로를 확인합니다.",
+        "동일한 메시지 또는 관련 설정 상태가 재현되는지 검증합니다."
+      ],
+      "recommendation": [
+        "탐지된 설정 또는 노출 항목이 실제 위험인지 수동 검증합니다.",
+        "불필요한 테스트 페이지, 진단 페이지, 민감 파일은 제거하거나 접근을 제한합니다.",
+        "권장 보안 헤더와 최신 서버 구성을 적용합니다."
+      ],
+      "references": {},
+      "tools": [
+        "nikto"
+      ],
+      "raw_source": [
+        "sample_nikto.json"
+      ],
+      "manual_verified": false,
+      "duplicate_group": "www.example.org:/phpinfo.php:민감 파일 또는 기능 노출",
+      "notes": "nginx/1.24.0"
+    }
+  ]
+}

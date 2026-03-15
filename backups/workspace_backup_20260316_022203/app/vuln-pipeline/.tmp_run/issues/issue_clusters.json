@@ -1,0 +1,197 @@
+[
+  {
+    "issue_id": "I-0001",
+    "cluster_key": "Error/Stack Trace Disclosure|portal.example.com|/api/v1/report/{uuid}|none|CWE-209",
+    "title": "error disclosure",
+    "weakness_family": "Error/Stack Trace Disclosure",
+    "affected_assets": [
+      "portal.example.com"
+    ],
+    "instances": [
+      "F-0001"
+    ],
+    "primary_cwe": "CWE-209",
+    "related_cwes": [],
+    "severity": {
+      "raw": null,
+      "score": 2.8,
+      "level": "Low",
+      "rationale": [
+        "cluster=max(member severity)"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": null,
+      "score": 0.8,
+      "level": "Medium",
+      "rationale": [
+        "cluster=average(member confidence)"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "evidence_summary": [
+      "Captured HTTP request from Burp issue export.",
+      "artifact: D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\raw\\burp_001_error-disclosure_request.txt",
+      "artifact: D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\burp\\redacted\\burp_001_error-disclosure_request.txt"
+    ],
+    "remediation": [
+      "운영 환경 상세 오류 응답을 비활성화합니다."
+    ],
+    "references": [
+      "CWE-209"
+    ],
+    "classification": {
+      "weakness_family": "Error/Stack Trace Disclosure",
+      "primary_cwe": "CWE-209",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A05 Security Misconfiguration"
+      ],
+      "kisa_categories": [
+        "오류 정보 노출"
+      ],
+      "parameter_or_sink": null,
+      "matched_rule_id": "error-disclosure"
+    },
+    "false_positive": false,
+    "suppressed": false,
+    "suppression_status": null,
+    "suppression_note": null,
+    "analyst_note": "운영 환경 예외 메시지 노출로 판단되며 즉시 차단이 필요함.",
+    "recommended_owner": "Infra/Ops",
+    "target_due": "90d",
+    "affected_instance_count": 1
+  },
+  {
+    "issue_id": "I-0002",
+    "cluster_key": "XSS|portal.example.com|/search|q|CWE-79",
+    "title": "reflected xss",
+    "weakness_family": "XSS",
+    "affected_assets": [
+      "portal.example.com"
+    ],
+    "instances": [
+      "F-0003",
+      "F-0004"
+    ],
+    "primary_cwe": "CWE-79",
+    "related_cwes": [],
+    "severity": {
+      "raw": null,
+      "score": 6.0,
+      "level": "Medium",
+      "rationale": [
+        "cluster=max(member severity)"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": null,
+      "score": 0.8,
+      "level": "Medium",
+      "rationale": [
+        "cluster=average(member confidence)"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "evidence_summary": [
+      "Nuclei request captured in result output.",
+      "artifact: D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_002_reflected-xss_request.txt",
+      "artifact: D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_002_reflected-xss_request.txt"
+    ],
+    "remediation": [],
+    "references": [
+      "CWE-79",
+      "xss-rich",
+      "xss-rich-low-confidence"
+    ],
+    "classification": {
+      "weakness_family": "XSS",
+      "primary_cwe": "CWE-79",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A03 Injection"
+      ],
+      "kisa_categories": [
+        "스크립트 실행"
+      ],
+      "parameter_or_sink": "q",
+      "matched_rule_id": "reflected-xss-specific"
+    },
+    "false_positive": false,
+    "suppressed": false,
+    "suppression_status": null,
+    "suppression_note": null,
+    "analyst_note": null,
+    "recommended_owner": "Frontend Dev",
+    "target_due": "30d",
+    "affected_instance_count": 2
+  },
+  {
+    "issue_id": "I-0003",
+    "cluster_key": "IDOR/BOLA|portal.example.com|/files/1|id|CWE-639",
+    "title": "potential input reflection",
+    "weakness_family": "IDOR/BOLA",
+    "affected_assets": [
+      "portal.example.com"
+    ],
+    "instances": [
+      "F-0005"
+    ],
+    "primary_cwe": "CWE-639",
+    "related_cwes": [],
+    "severity": {
+      "raw": null,
+      "score": 7.4,
+      "level": "High",
+      "rationale": [
+        "cluster=max(member severity)"
+      ],
+      "overridden": false
+    },
+    "confidence": {
+      "raw": null,
+      "score": 0.8,
+      "level": "Medium",
+      "rationale": [
+        "cluster=average(member confidence)"
+      ],
+      "analyst_override": null,
+      "overridden": false
+    },
+    "evidence_summary": [
+      "Nuclei request captured in result output.",
+      "artifact: D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\raw\\nuclei_004_potential-input-reflection_request.txt",
+      "artifact: D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\artifacts\\nuclei\\redacted\\nuclei_004_potential-input-reflection_request.txt"
+    ],
+    "remediation": [],
+    "references": [
+      "CWE-639",
+      "generic-sqli-lookalike"
+    ],
+    "classification": {
+      "weakness_family": "IDOR/BOLA",
+      "primary_cwe": "CWE-639",
+      "related_cwes": [],
+      "owasp_top10_2025": [
+        "A01 Broken Access Control"
+      ],
+      "kisa_categories": [
+        "접근통제 미흡"
+      ],
+      "parameter_or_sink": "id",
+      "matched_rule_id": "idor-bola"
+    },
+    "false_positive": false,
+    "suppressed": false,
+    "suppression_status": null,
+    "suppression_note": null,
+    "analyst_note": null,
+    "recommended_owner": "Backend Dev",
+    "target_due": "14d",
+    "affected_instance_count": 1
+  }
+]

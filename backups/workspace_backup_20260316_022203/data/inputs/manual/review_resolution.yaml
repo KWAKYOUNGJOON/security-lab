@@ -1,0 +1,10 @@
+review_resolutions:
+  - issue_id: I-0002
+    resolution_status: resolved
+    disposition: confirmed
+    reviewer: Security Lead
+    reviewed_at: 2026-03-15
+    action_taken: Remediation validated and accepted.
+    linked_override: I-0002
+    linked_suppression: null
+    note: Ready for customer delivery.

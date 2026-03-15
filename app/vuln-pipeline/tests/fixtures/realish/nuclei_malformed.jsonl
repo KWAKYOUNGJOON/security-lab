@@ -1,0 +1,3 @@
+{"template-id":"broken-1","info":{"name":"Broken payload","severity":"weird"},"matched-at":"https://broken.example.com/a"}
+{not valid json}
+

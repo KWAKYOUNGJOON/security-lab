@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues burpVersion="2026.1">
+  <issue>
+    <serialNumber>1</serialNumber>
+    <type>0x00100600</type>
+    <name>Cross-domain Referer leakage</name>
+    <host ip="203.0.113.10">https://portal.example.co.kr:443</host>
+    <path>/login</path>
+    <location>https://portal.example.co.kr/login</location>
+    <severity>Medium</severity>
+    <confidence>Certain</confidence>
+    <issueBackground>Referrer leakage may disclose sensitive paths.</issueBackground>
+    <remediationBackground>Use an appropriate Referrer-Policy header.</remediationBackground>
+  </issue>
+</issues>

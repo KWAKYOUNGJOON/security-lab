@@ -1,0 +1,20 @@
+{
+  "output_dir": "D:\\취약점 진단\\notes\\phase12-operator-workspace\\manual-drafts",
+  "templates_dir": "D:\\취약점 진단\\app\\vuln-pipeline\\docs\\examples\\real_manual_templates",
+  "source_run_root": null,
+  "source_review_queue": null,
+  "review_row_count": 0,
+  "unresolved_row_count": 0,
+  "triage_bucket_counts": {},
+  "written_files": [
+    "D:\\취약점 진단\\notes\\phase12-operator-workspace\\manual-drafts\\override_working.yaml",
+    "D:\\취약점 진단\\notes\\phase12-operator-workspace\\manual-drafts\\suppression_working.yaml",
+    "D:\\취약점 진단\\notes\\phase12-operator-workspace\\manual-drafts\\review_resolution_working.yaml",
+    "D:\\취약점 진단\\notes\\phase12-operator-workspace\\manual-drafts\\bootstrap_worklist.md"
+  ],
+  "notes": [
+    "The generated files are safe by default because overrides, suppressions, and review_resolutions stay empty.",
+    "Move only reviewed rows from draft_candidates into the actionable top-level list before using them as live manual inputs.",
+    "bootstrap_worklist.md maps triage buckets to the working draft file that should be reviewed first."
+  ]
+}

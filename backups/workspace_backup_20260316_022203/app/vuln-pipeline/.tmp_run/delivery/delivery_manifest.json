@@ -1,0 +1,92 @@
+{
+  "run_id": "smoke",
+  "zip_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\delivery\\report_bundle_smoke.zip",
+  "included_files": [
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_internal_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_internal_customer_v1.0.docx",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_customer_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_customer_customer_v1.0.docx",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\executive_onepager_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\executive_onepager_customer_v1.0.docx",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\remediation_tracker_customer_v1.0.csv",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\remediation_tracker_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\analyst_handoff_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_outline_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_data_customer_v1.0.json",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_briefing_customer_v1.0_fallback.json",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\review_closure_checklist_customer_v1.0.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\submission_memo.md",
+    "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\real_data_rehearsal_summary.md"
+  ],
+  "raw_artifacts_excluded": true,
+  "report_version": "v1.0",
+  "delivery_date": "2026-03-15",
+  "deliverable_profile": "customer_pack",
+  "report_profile": "customer",
+  "report_template": "default_customer",
+  "readiness_policy": "customer_release",
+  "excluded_files": [],
+  "customer_outputs": {
+    "customer_full_report": [
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_customer_customer_v1.0.md",
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_customer_customer_v1.0.docx"
+    ],
+    "customer_onepager": [
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\executive_onepager_customer_v1.0.md",
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\executive_onepager_customer_v1.0.docx"
+    ],
+    "customer_tracker": [
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\remediation_tracker_customer_v1.0.csv",
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\remediation_tracker_customer_v1.0.md"
+    ]
+  },
+  "internal_outputs": {
+    "internal_full_report": [
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_internal_customer_v1.0.md",
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\full_report_internal_customer_v1.0.docx"
+    ],
+    "analyst_handoff": [
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\analyst_handoff_customer_v1.0.md"
+    ],
+    "presentation_support": [
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_outline_customer_v1.0.md",
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_data_customer_v1.0.json",
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_briefing_customer_v1.0_fallback.json"
+    ],
+    "review_closure_checklist": [
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\review_closure_checklist_customer_v1.0.md"
+    ],
+    "submission_memo": [
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\submission_memo.md"
+    ],
+    "real_data_rehearsal_summary": [
+      "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\real_data_rehearsal_summary.md"
+    ]
+  },
+  "packaging_time": "2026-03-15T06:35:24+00:00",
+  "checksums_ref": "delivery\\checksums.json",
+  "presentation_status": "fallback",
+  "pptx_generated": false,
+  "pptx_validation": {
+    "status": "fallback",
+    "pptx_generated": false,
+    "reason": "missing dependency: No module named 'pptx'",
+    "missing_dependency_reason": "No module named 'pptx'",
+    "install_hint": "pip install python-pptx",
+    "expected_output": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_briefing_customer_v1.0.pptx",
+    "source_presentation_data": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_data_customer_v1.0.json",
+    "expected_minimum_slide_count": 8,
+    "outline_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_outline_customer_v1.0.md",
+    "data_path": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\presentation_data_customer_v1.0.json"
+  },
+  "final_delivery_included": false,
+  "closeout_summary": {
+    "resolved_review_count": 0,
+    "accepted_risk_count": 0,
+    "remaining_blocker_count": 3
+  },
+  "customer_redaction_applied": true,
+  "branding_applied": false,
+  "submission_memo": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\submission_memo.md",
+  "real_data_rehearsal_summary": "D:\\취약점 진단\\app\\vuln-pipeline\\.tmp_run\\deliverables\\real_data_rehearsal_summary.md"
+}

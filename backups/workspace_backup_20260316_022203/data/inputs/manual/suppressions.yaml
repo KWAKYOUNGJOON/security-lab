@@ -1,0 +1,6 @@
+suppressions:
+  - id: sample-accepted-risk
+    weakness_family: Error/Stack Trace Disclosure
+    host: portal.example.com
+    status: accepted_risk
+    note: Known internal debug endpoint managed outside standard remediation workflow.

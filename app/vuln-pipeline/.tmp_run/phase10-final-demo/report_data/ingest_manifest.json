@@ -1,0 +1,14 @@
+{
+  "ingested": {
+    "burp": [
+      "tests\\fixtures\\realish\\burp_complex.xml"
+    ],
+    "nuclei": [
+      "tests\\fixtures\\realish\\nuclei_rich.jsonl"
+    ],
+    "httpx": [
+      "tests\\fixtures\\realish\\httpx_rich.jsonl"
+    ]
+  },
+  "warnings": []
+}

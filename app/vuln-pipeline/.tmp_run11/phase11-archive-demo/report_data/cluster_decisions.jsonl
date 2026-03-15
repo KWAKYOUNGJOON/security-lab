@@ -1,0 +1,8 @@
+{"finding_id": "F-0001", "action": "cluster_candidate", "cluster_key": "Error/Stack Trace Disclosure|portal.example.com|/api/v1/report/{uuid}|none|CWE-209", "false_positive": false}
+{"finding_id": "F-0002", "action": "cluster_candidate", "cluster_key": "Directory Listing|portal.example.com|/static/{hex}/|body-index-of|CWE-548", "false_positive": true}
+{"finding_id": "F-0003", "action": "cluster_candidate", "cluster_key": "XSS|portal.example.com|/search|q|CWE-79", "false_positive": false}
+{"finding_id": "F-0004", "action": "cluster_candidate", "cluster_key": "XSS|portal.example.com|/search|q|CWE-79", "false_positive": false}
+{"finding_id": "F-0005", "action": "cluster_candidate", "cluster_key": "IDOR/BOLA|portal.example.com|/files/1|id|CWE-639", "false_positive": false}
+{"issue_id": "I-0001", "cluster_key": "Error/Stack Trace Disclosure|portal.example.com|/api/v1/report/{uuid}|none|CWE-209", "instances": ["F-0001"], "affected_assets": ["portal.example.com"], "title": "error disclosure"}
+{"issue_id": "I-0002", "cluster_key": "XSS|portal.example.com|/search|q|CWE-79", "instances": ["F-0003", "F-0004"], "affected_assets": ["portal.example.com"], "title": "reflected xss"}
+{"issue_id": "I-0003", "cluster_key": "IDOR/BOLA|portal.example.com|/files/1|id|CWE-639", "instances": ["F-0005"], "affected_assets": ["portal.example.com"], "title": "potential input reflection"}

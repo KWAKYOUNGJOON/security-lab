@@ -1,0 +1,48 @@
+{
+  "nuclei_templates": {
+    "http-missing-security-headers": {
+      "title_ko": "보안 헤더 미설정",
+      "category": "보안설정",
+      "owasp": [
+        "A05"
+      ],
+      "kisa": [
+        "III. 서비스 구성 > 보안 설정"
+      ]
+    },
+    "exposed-panels": {
+      "title_ko": "관리자 페이지 노출",
+      "category": "정보노출",
+      "owasp": [
+        "A01",
+        "A05"
+      ],
+      "kisa": [
+        "III. 서비스 구성 > 접근통제",
+        "X. Web Application > 정보 노출"
+      ]
+    }
+  },
+  "burp_issue_names": {
+    "Cross-domain Referer leakage": {
+      "title_ko": "외부 도메인으로의 Referer 정보 노출",
+      "category": "정보노출",
+      "owasp": [
+        "A02"
+      ],
+      "kisa": [
+        "III. 서비스 구성 > 보안 설정"
+      ]
+    },
+    "SQL injection": {
+      "title_ko": "SQL 인젝션",
+      "category": "입력값검증",
+      "owasp": [
+        "A03"
+      ],
+      "kisa": [
+        "X. Web Application > 입력값 검증"
+      ]
+    }
+  }
+}

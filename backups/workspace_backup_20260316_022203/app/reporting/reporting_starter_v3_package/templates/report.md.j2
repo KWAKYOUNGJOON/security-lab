@@ -1,0 +1,69 @@
+# 웹 취약점 진단 보고서
+
+## 1. 보고 개요
+- 프로젝트명: {{ report_meta.project_name }}
+- 대상: {{ report_meta.target }}
+- 생성 시각: {{ report_meta.generated_at }}
+- 고객사/기관: {{ report_meta.customer or "-" }}
+- 작성자: {{ report_meta.author or "-" }}
+
+## 2. 점검 범위
+{% for item in report_meta.assessment_scope %}
+- {{ item }}
+{% endfor %}
+
+## 3. 기준
+- KISA 기준: {{ report_meta.references.kisa_guide if report_meta.references else "-" }}
+- OWASP 기준: {{ report_meta.references.owasp if report_meta.references else "-" }}
+
+## 4. 결과 요약
+- 전체 취약점 수: {{ summary.total_findings }}
+- Critical: {{ summary.by_severity.critical }}
+- High: {{ summary.by_severity.high }}
+- Medium: {{ summary.by_severity.medium }}
+- Low: {{ summary.by_severity.low }}
+- Info: {{ summary.by_severity.info }}
+
+## 5. 취약점 상세
+{% for f in findings %}
+### {{ f.id }}. {{ f.title }}
+- 분류: {{ f.category }}
+- 위험도: {{ f.severity|upper }}
+- 신뢰도: {{ f.confidence|upper }}
+- 상태: {{ f.status }}
+- 자산: {{ f.asset }}
+- URL: {{ f.url or "-" }}
+- 파라미터: {{ f.parameter or "-" }}
+- 도구: {{ ", ".join(f.tools) }}
+
+#### 설명
+{{ f.description }}
+
+#### 영향
+{{ f.impact }}
+
+#### 위험도 판단 근거
+{% for item in f.severity_reason or [] %}
+- {{ item }}
+{% endfor %}
+
+#### 재현 절차
+{% for step in f.reproduction_steps %}
+{{ loop.index }}. {{ step }}
+{% endfor %}
+
+#### 증거
+{% for ev in f.evidence or [] %}
+- [{{ ev.type }}] {{ ev.content }}{% if ev.path %} ({{ ev.path }}){% endif %}
+{% endfor %}
+
+#### 권고 사항
+{% for rec in f.recommendation %}
+- {{ rec }}
+{% endfor %}
+
+#### 참고 분류
+- OWASP: {{ ", ".join(f.references.owasp) if f.references and f.references.owasp else "-" }}
+- KISA: {{ ", ".join(f.references.kisa) if f.references and f.references.kisa else "-" }}
+
+{% endfor %}

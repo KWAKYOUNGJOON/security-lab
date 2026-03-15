@@ -1,0 +1,145 @@
+entries:
+  - id: SQL Injection
+    title_ko: SQL 인젝션
+    summary_ko: 사용자 입력이 SQL 구문으로 해석되어 의도하지 않은 데이터 조회나 변경이 발생할 수 있는 취약점입니다.
+    risk_ko: 인증 우회, 민감정보 조회, 데이터 변조로 이어질 수 있어 업무 영향이 큽니다.
+    validation_points_ko:
+      - 입력값이 쿼리 문자열에 직접 연결되는지 확인합니다.
+      - 에러 메시지, 응답 차이, 비정상 데이터 노출 여부를 확인합니다.
+    remediation_ko:
+      - 모든 데이터 조회와 변경 구문에 파라미터 바인딩을 적용합니다.
+      - 입력값 형식 검증과 최소 권한 DB 계정을 함께 적용합니다.
+    references: [CWE-89, "OWASP Top 10 2025 A03", "KISA 웹 입력값 검증 항목"]
+  - id: Command Injection
+    title_ko: 명령어 삽입
+    summary_ko: 외부 입력이 운영체제 명령 실행에 영향을 주어 서버에서 의도하지 않은 명령이 수행될 수 있는 취약점입니다.
+    risk_ko: 원격 코드 실행, 시스템 훼손, 추가 침해 확대로 이어질 수 있습니다.
+    validation_points_ko:
+      - 쉘 명령 생성 시 사용자 입력이 포함되는지 확인합니다.
+      - 허용 목록 없이 명령 인자나 경로가 전달되는지 확인합니다.
+    remediation_ko:
+      - 쉘 호출을 제거하고 안전한 라이브러리 호출로 대체합니다.
+      - 불가피한 경우 허용 목록 기반 검증과 고정 인자 구성을 적용합니다.
+    references: [CWE-77, "OWASP Top 10 2025 A03"]
+  - id: XSS
+    title_ko: 크로스사이트 스크립팅
+    summary_ko: 사용자 입력이 적절히 인코딩되지 않고 브라우저에 반영되어 스크립트 실행이 가능해지는 취약점입니다.
+    risk_ko: 세션 탈취, 화면 변조, 사용자 행위 대행으로 이어질 수 있습니다.
+    validation_points_ko:
+      - 입력값이 HTML, 속성, 스크립트 컨텍스트에 그대로 반영되는지 확인합니다.
+      - 보안 헤더와 템플릿 인코딩 정책이 일관되게 적용되는지 확인합니다.
+    remediation_ko:
+      - 출력 위치별 인코딩 규칙을 적용합니다.
+      - CSP, 템플릿 자동 이스케이프, 입력값 검증을 함께 적용합니다.
+    references: [CWE-79, "OWASP Top 10 2025 A03", "KISA 스크립트 실행 항목"]
+  - id: Path Traversal
+    title_ko: 경로 조작
+    summary_ko: 파일 경로나 디렉터리 경계가 적절히 제한되지 않아 상위 경로나 임의 파일에 접근할 수 있는 취약점입니다.
+    risk_ko: 설정 파일, 인증 정보, 시스템 파일 노출로 이어질 수 있습니다.
+    validation_points_ko:
+      - 파일 다운로드나 조회 기능이 사용자 경로 입력을 받는지 확인합니다.
+      - 정규화 후에도 기준 디렉터리 밖으로 벗어날 수 있는지 확인합니다.
+    remediation_ko:
+      - 기준 디렉터리를 고정하고 허용 목록 기반 식별자를 사용합니다.
+      - 경로 정규화 후 경계 검증을 수행합니다.
+    references: [CWE-22, "OWASP Top 10 2025 A01"]
+  - id: File Inclusion
+    title_ko: 파일 포함
+    summary_ko: 애플리케이션이 포함할 파일을 외부 입력에 따라 결정해 의도하지 않은 코드나 파일을 읽는 취약점입니다.
+    risk_ko: 로컬 파일 노출 또는 원격 코드 실행으로 이어질 수 있습니다.
+    validation_points_ko:
+      - include, render, template 경로가 외부 입력에 의해 바뀌는지 확인합니다.
+      - 로컬 파일/원격 URL 포함이 가능한지 확인합니다.
+    remediation_ko:
+      - 포함 대상은 고정된 템플릿/식별자로 제한합니다.
+      - 동적 파일 포함 로직을 제거하거나 엄격한 허용 목록으로 통제합니다.
+    references: [CWE-98, "OWASP Top 10 2025 A01"]
+  - id: Open Redirect
+    title_ko: 오픈 리다이렉트
+    summary_ko: 리다이렉트 대상이 외부 입력에 의해 결정되어 사용자에게 의도하지 않은 사이트로 이동을 유도할 수 있는 취약점입니다.
+    risk_ko: 피싱, 인증 우회 보조, 신뢰도 저하로 이어질 수 있습니다.
+    validation_points_ko:
+      - redirect, next, returnUrl 같은 파라미터가 외부 URL을 허용하는지 확인합니다.
+      - 내부 경로 제한 및 허용 목록이 있는지 확인합니다.
+    remediation_ko:
+      - 리다이렉트 대상은 내부 경로 또는 사전 등록된 목록으로 제한합니다.
+      - 외부 URL은 직접 입력받지 않도록 설계합니다.
+    references: [CWE-601]
+  - id: SSRF
+    title_ko: 서버사이드 요청 위조
+    summary_ko: 서버가 외부 입력으로 지정된 위치에 요청을 보내 내부 자산이나 민감한 엔드포인트에 접근할 수 있는 취약점입니다.
+    risk_ko: 내부망 접근, 메타데이터 노출, 우회 통신 채널 확보로 이어질 수 있습니다.
+    validation_points_ko:
+      - URL, 호스트, 웹훅, 파일 fetch 기능이 외부 입력을 받는지 확인합니다.
+      - 내부 IP, loopback, 메타데이터 주소 차단이 있는지 확인합니다.
+    remediation_ko:
+      - 목적지 허용 목록, DNS/IP 재검증, 내부 대역 차단을 적용합니다.
+      - 서버 outbound 정책과 프록시 통제를 함께 적용합니다.
+    references: [CWE-918, "OWASP Top 10 2025 A10"]
+  - id: IDOR/BOLA
+    title_ko: 객체 직접 참조 접근통제 미흡
+    summary_ko: 사용자 식별자나 객체 ID를 변경했을 때 다른 사용자의 자원에 접근할 수 있는 취약점입니다.
+    risk_ko: 개인정보 노출, 권한 없는 데이터 변경, 업무 무결성 훼손으로 이어질 수 있습니다.
+    validation_points_ko:
+      - URL, 파라미터, 본문 내 식별자를 변경해도 서버가 권한을 다시 검증하는지 확인합니다.
+      - 객체 단위 권한 검사가 서비스 계층에서 강제되는지 확인합니다.
+    remediation_ko:
+      - 모든 객체 접근에 대해 소유권/역할 기반 검사를 수행합니다.
+      - 예측 가능한 식별자 사용을 줄이고 서버 측 권한 검사를 일관화합니다.
+    references: [CWE-639, "OWASP Top 10 2025 A01"]
+  - id: Directory Listing
+    title_ko: 디렉터리 목록 노출
+    summary_ko: 웹 서버 설정으로 인해 디렉터리 내부 파일 목록이 외부에 노출되는 상태입니다.
+    risk_ko: 파일 구조, 배포 산출물, 백업 파일 노출로 이어질 수 있습니다.
+    validation_points_ko:
+      - 정적 경로 접근 시 파일 목록이 표시되는지 확인합니다.
+      - 민감 파일이 함께 노출되는지 확인합니다.
+    remediation_ko:
+      - 디렉터리 인덱싱을 비활성화합니다.
+      - 공개가 필요한 파일만 명시적으로 제공하고 배포 산출물 점검을 수행합니다.
+    references: [CWE-548, "OWASP Top 10 2025 A05"]
+  - id: Error/Stack Trace Disclosure
+    title_ko: 오류 및 스택 트레이스 노출
+    summary_ko: 예외 메시지나 내부 스택 트레이스가 외부 응답에 포함되어 시스템 내부 정보가 노출되는 상태입니다.
+    risk_ko: 구조 파악, 추가 공격 단서 확보, 민감 정보 노출로 이어질 수 있습니다.
+    validation_points_ko:
+      - 예외 발생 시 상세 경로, SQL 오류, 프레임워크 버전이 노출되는지 확인합니다.
+      - 운영 환경에서 디버그 모드가 비활성화되어 있는지 확인합니다.
+    remediation_ko:
+      - 사용자 응답에는 일반화된 오류 메시지만 노출합니다.
+      - 상세 로그는 내부 로깅 채널로만 남기고 운영 디버그 기능을 비활성화합니다.
+    references: [CWE-209, "OWASP Top 10 2025 A05"]
+  - id: Missing HttpOnly
+    title_ko: HttpOnly 속성 누락
+    summary_ko: 세션 쿠키에 HttpOnly 속성이 없어 브라우저 스크립트에서 쿠키 접근이 가능한 상태입니다.
+    risk_ko: XSS 발생 시 세션 탈취 가능성이 높아집니다.
+    validation_points_ko:
+      - 인증/세션 쿠키에 HttpOnly가 적용되어 있는지 확인합니다.
+      - 프레임워크 기본 설정과 예외 경로를 함께 확인합니다.
+    remediation_ko:
+      - 인증과 세션성 쿠키에는 HttpOnly를 기본 적용합니다.
+      - 쿠키 발급 로직을 중앙화해 예외를 줄입니다.
+    references: [CWE-1004]
+  - id: Missing Secure cookie flag
+    title_ko: Secure 쿠키 속성 누락
+    summary_ko: 쿠키에 Secure 속성이 없어 HTTPS 외 통신 경로에서 쿠키가 노출될 수 있는 상태입니다.
+    risk_ko: 네트워크 구간에서 세션 탈취 위험이 증가합니다.
+    validation_points_ko:
+      - 인증/세션 쿠키에 Secure 속성이 적용되어 있는지 확인합니다.
+      - HTTPS 강제 및 프록시 환경 설정을 함께 확인합니다.
+    remediation_ko:
+      - 인증과 세션성 쿠키에는 Secure를 기본 적용합니다.
+      - HTTPS 강제와 HSTS 적용 여부를 함께 점검합니다.
+    references: [CWE-614]
+  - id: Unrestricted File Upload
+    title_ko: 제한되지 않은 파일 업로드
+    summary_ko: 업로드 파일 형식과 저장 위치에 대한 검증이 부족해 악성 파일 업로드가 가능한 상태입니다.
+    risk_ko: 원격 코드 실행, 악성 콘텐츠 유포, 저장소 오염으로 이어질 수 있습니다.
+    validation_points_ko:
+      - 확장자, MIME, 실제 파일 시그니처 검증이 모두 수행되는지 확인합니다.
+      - 업로드 파일이 실행 가능한 경로에 저장되는지 확인합니다.
+    remediation_ko:
+      - 확장자와 MIME, 파일 시그니처를 함께 검증하고 저장 경로를 분리합니다.
+      - 업로드 파일은 실행되지 않는 별도 저장소에 보관합니다.
+    references: [CWE-434, "OWASP Top 10 2025 A05"]
+

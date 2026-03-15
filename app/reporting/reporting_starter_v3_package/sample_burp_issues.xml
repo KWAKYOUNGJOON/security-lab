@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues burpVersion="2026.1">
+  <issue>
+    <serialNumber>1</serialNumber>
+    <type>0x00100600</type>
+    <name>Cross-domain Referer leakage</name>
+    <host ip="93.184.216.34">https://www.example.org:443</host>
+    <path>/login</path>
+    <location>https://www.example.org/login</location>
+    <severity>Medium</severity>
+    <confidence>Certain</confidence>
+    <issueBackground>Referrer leakage may disclose sensitive paths.</issueBackground>
+    <remediationBackground>Use an appropriate Referrer-Policy header.</remediationBackground>
+    <requestresponse>
+      <request base64="false">GET /login HTTP/1.1
+Host: www.example.org
+
+</request>
+      <response base64="false">HTTP/1.1 200 OK
+Content-Type: text/html
+
+&lt;html&gt;...&lt;/html&gt;</response>
+    </requestresponse>
+  </issue>
+</issues>

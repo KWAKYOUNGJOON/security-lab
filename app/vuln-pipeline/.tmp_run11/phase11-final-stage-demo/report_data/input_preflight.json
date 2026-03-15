@@ -1,0 +1,108 @@
+{
+  "status": "ready",
+  "auto_select_real_inputs": false,
+  "tool_checks": {
+    "burp": {
+      "tool": "burp",
+      "selected_input_count": 1,
+      "selection_source": "explicit",
+      "configured_directory": "D:\\취약점 진단\\data\\inputs\\burp",
+      "configured_directory_exists": true,
+      "eligible_file_count_in_directory": 1,
+      "selected_files": [
+        {
+          "path": "tests\\fixtures\\realish\\burp_complex.xml",
+          "tool": "burp",
+          "exists": true,
+          "extension_valid": true,
+          "sample_or_test": false,
+          "size_bytes": 1432,
+          "modified_at": "2026-03-15T01:52:48+00:00",
+          "line_count": 36,
+          "warnings": [],
+          "blockers": [],
+          "real_candidate": true,
+          "fingerprint": "2fe72ae7aed094b8384d58d7cb90b42ca2c91050aa2038d06f67dcf70b72f3fb",
+          "duplicate_detected": false
+        }
+      ]
+    },
+    "nuclei": {
+      "tool": "nuclei",
+      "selected_input_count": 1,
+      "selection_source": "explicit",
+      "configured_directory": "D:\\취약점 진단\\data\\inputs\\nuclei",
+      "configured_directory_exists": true,
+      "eligible_file_count_in_directory": 1,
+      "selected_files": [
+        {
+          "path": "tests\\fixtures\\realish\\nuclei_rich.jsonl",
+          "tool": "nuclei",
+          "exists": true,
+          "extension_valid": true,
+          "sample_or_test": false,
+          "size_bytes": 2427,
+          "modified_at": "2026-03-15T01:52:48+00:00",
+          "line_count": 5,
+          "warnings": [],
+          "blockers": [],
+          "real_candidate": true,
+          "fingerprint": "59dfccc750fa33e2f1245e238148ca0728c28c5edcdc800ff17c99d90182e8cb",
+          "duplicate_detected": false
+        }
+      ]
+    },
+    "httpx": {
+      "tool": "httpx",
+      "selected_input_count": 1,
+      "selection_source": "explicit",
+      "configured_directory": "D:\\취약점 진단\\data\\inputs\\httpx",
+      "configured_directory_exists": true,
+      "eligible_file_count_in_directory": 1,
+      "selected_files": [
+        {
+          "path": "tests\\fixtures\\realish\\httpx_rich.jsonl",
+          "tool": "httpx",
+          "exists": true,
+          "extension_valid": true,
+          "sample_or_test": false,
+          "size_bytes": 1042,
+          "modified_at": "2026-03-15T01:52:48+00:00",
+          "line_count": 4,
+          "warnings": [],
+          "blockers": [],
+          "real_candidate": true,
+          "fingerprint": "7d3c83559765a6e72e60f3e66153eb6e14d72e45017c8ad353901050bf9486f4",
+          "duplicate_detected": false
+        }
+      ]
+    }
+  },
+  "manual_inputs": {
+    "override_file": {
+      "configured_path": "tests\\fixtures\\realish\\override_realish.yaml",
+      "exists": true,
+      "status": "present"
+    },
+    "suppression_file": {
+      "configured_path": "tests\\fixtures\\realish\\suppressions.yaml",
+      "exists": true,
+      "status": "present"
+    },
+    "review_resolution_file": {
+      "configured_path": "tests\\fixtures\\realish\\review_resolution.yaml",
+      "exists": true,
+      "status": "present"
+    }
+  },
+  "selected_run_inputs": [
+    "tests\\fixtures\\realish\\burp_complex.xml",
+    "tests\\fixtures\\realish\\nuclei_rich.jsonl",
+    "tests\\fixtures\\realish\\httpx_rich.jsonl"
+  ],
+  "warning_count": 0,
+  "blocker_count": 0,
+  "warnings": [],
+  "blockers": [],
+  "duplicate_groups": []
+}

@@ -1,0 +1,32 @@
+policy_name: default_owner_mapping
+default_owner: AppSec
+rules:
+  - id: backend_injection
+    weakness_family:
+      - SQL Injection
+      - Command Injection
+      - Path Traversal
+      - File Inclusion
+      - SSRF
+      - Open Redirect
+      - Unrestricted File Upload
+      - IDOR/BOLA
+    owner: Backend Dev
+  - id: frontend_xss
+    weakness_family:
+      - XSS
+    owner: Frontend Dev
+  - id: infra_headers
+    weakness_family:
+      - Directory Listing
+      - Error/Stack Trace Disclosure
+      - Missing HttpOnly
+      - Missing Secure cookie flag
+    owner: Infra/Ops
+  - id: platform_api
+    surface:
+      - api
+    severity:
+      - Critical
+      - High
+    owner: Platform

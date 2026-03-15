@@ -1,0 +1,119 @@
+entries:
+  - id: CWE-89
+    title_ko: SQL 명령 내 특수 요소 중화 미흡
+    summary_ko: 입력값이 SQL 문장의 일부로 해석될 수 있는 상태입니다.
+    risk_ko: 데이터 유출과 무결성 훼손 가능성이 높습니다.
+    validation_points_ko:
+      - 파라미터 바인딩 적용 여부를 확인합니다.
+    remediation_ko:
+      - SQL은 반드시 준비된 구문으로 실행합니다.
+    references: [CWE-89]
+  - id: CWE-77
+    title_ko: 명령어 인자 중화 미흡
+    summary_ko: 외부 입력이 시스템 명령 실행에 영향을 줄 수 있는 상태입니다.
+    risk_ko: 서버 제어권이 확대될 수 있습니다.
+    validation_points_ko:
+      - 명령 실행 경로를 코드 수준에서 추적합니다.
+    remediation_ko:
+      - 쉘 명령 호출을 제거합니다.
+    references: [CWE-77]
+  - id: CWE-79
+    title_ko: 웹 페이지 생성 중 입력값 중화 미흡
+    summary_ko: 브라우저가 입력값을 코드처럼 해석할 수 있는 상태입니다.
+    risk_ko: 세션 탈취와 사용자 기만 가능성이 있습니다.
+    validation_points_ko:
+      - 컨텍스트별 인코딩 적용 여부를 확인합니다.
+    remediation_ko:
+      - 출력 위치에 맞는 인코딩을 적용합니다.
+    references: [CWE-79]
+  - id: CWE-22
+    title_ko: 제한된 경로 밖 파일 접근 허용
+    summary_ko: 파일 접근 경계가 적절히 고정되지 않은 상태입니다.
+    risk_ko: 내부 파일 노출이 가능할 수 있습니다.
+    validation_points_ko:
+      - 경로 정규화 후 기준 디렉터리 검증 여부를 확인합니다.
+    remediation_ko:
+      - 파일 식별자를 별도로 관리합니다.
+    references: [CWE-22]
+  - id: CWE-98
+    title_ko: 외부 제어 입력 기반 파일 포함
+    summary_ko: 외부 입력으로 포함 파일이 결정되는 상태입니다.
+    risk_ko: 코드 실행 또는 파일 노출로 이어질 수 있습니다.
+    validation_points_ko:
+      - include 대상이 외부 입력에 따라 달라지는지 확인합니다.
+    remediation_ko:
+      - 허용 목록 기반 매핑만 사용합니다.
+    references: [CWE-98]
+  - id: CWE-601
+    title_ko: 외부 사이트로의 URL 리다이렉트
+    summary_ko: 외부 입력에 따라 리다이렉트 대상이 결정됩니다.
+    risk_ko: 피싱 연계 가능성이 있습니다.
+    validation_points_ko:
+      - 외부 URL 리다이렉트 허용 여부를 확인합니다.
+    remediation_ko:
+      - 내부 경로만 허용합니다.
+    references: [CWE-601]
+  - id: CWE-918
+    title_ko: 서버사이드 요청 위조
+    summary_ko: 서버가 외부 입력으로 임의 대상에 요청할 수 있는 상태입니다.
+    risk_ko: 내부 자산 노출과 우회 통신이 발생할 수 있습니다.
+    validation_points_ko:
+      - 허용 목적지 정책이 있는지 확인합니다.
+    remediation_ko:
+      - 목적지 허용 목록과 내부 대역 차단을 적용합니다.
+    references: [CWE-918]
+  - id: CWE-639
+    title_ko: 사용자 제어 키 기반 권한 우회
+    summary_ko: 객체 ID 변경만으로 다른 자원 접근이 가능한 상태입니다.
+    risk_ko: 개인정보 및 업무 데이터 침해로 이어질 수 있습니다.
+    validation_points_ko:
+      - 객체 수준 권한 검사를 확인합니다.
+    remediation_ko:
+      - 객체 접근 시 소유권과 역할 검사를 강제합니다.
+    references: [CWE-639]
+  - id: CWE-548
+    title_ko: 디렉터리 목록 노출
+    summary_ko: 디렉터리 인덱싱으로 파일 목록이 외부에 표시됩니다.
+    risk_ko: 파일 구조와 배포 산출물이 노출될 수 있습니다.
+    validation_points_ko:
+      - 디렉터리 접근 시 목록 페이지가 노출되는지 확인합니다.
+    remediation_ko:
+      - 인덱싱을 비활성화합니다.
+    references: [CWE-548]
+  - id: CWE-209
+    title_ko: 오류 메시지를 통한 정보 노출
+    summary_ko: 내부 예외 정보가 사용자 응답으로 전달됩니다.
+    risk_ko: 추가 공격 단서가 제공됩니다.
+    validation_points_ko:
+      - 운영 환경에서 상세 오류가 비활성화되어 있는지 확인합니다.
+    remediation_ko:
+      - 응답에는 일반화된 오류만 제공합니다.
+    references: [CWE-209]
+  - id: CWE-1004
+    title_ko: 민감 쿠키의 HttpOnly 누락
+    summary_ko: 스크립트가 쿠키를 직접 읽을 수 있습니다.
+    risk_ko: XSS 결합 시 세션 탈취 위험이 커집니다.
+    validation_points_ko:
+      - 세션 쿠키에 HttpOnly 설정 여부를 확인합니다.
+    remediation_ko:
+      - 인증/세션 쿠키에 HttpOnly를 기본 적용합니다.
+    references: [CWE-1004]
+  - id: CWE-614
+    title_ko: 민감 쿠키의 Secure 속성 누락
+    summary_ko: 암호화되지 않은 전송 경로로 쿠키가 노출될 수 있습니다.
+    risk_ko: 세션 탈취 위험이 증가합니다.
+    validation_points_ko:
+      - Secure 속성과 HTTPS 강제 여부를 확인합니다.
+    remediation_ko:
+      - 세션 쿠키에 Secure를 기본 적용합니다.
+    references: [CWE-614]
+  - id: CWE-434
+    title_ko: 제한되지 않은 파일 업로드
+    summary_ko: 악성 파일 업로드를 막는 검증이 부족한 상태입니다.
+    risk_ko: 서버 악용과 저장소 오염으로 이어질 수 있습니다.
+    validation_points_ko:
+      - 파일 형식 검증과 저장 위치를 확인합니다.
+    remediation_ko:
+      - 업로드 정책과 저장소 분리를 적용합니다.
+    references: [CWE-434]
+
