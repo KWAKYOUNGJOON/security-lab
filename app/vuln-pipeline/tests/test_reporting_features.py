@@ -59,8 +59,10 @@ class ReportingFeatureTests(unittest.TestCase):
         _, customer_root = self._run("customer-compare", "customer", "default_customer")
         internal_report = (internal_root / "reports" / "report.md").read_text(encoding="utf-8")
         customer_report = (customer_root / "reports" / "report.md").read_text(encoding="utf-8")
-        self.assertIn("D:\\", internal_report)
-        self.assertNotIn("D:\\", customer_report)
+        self.assertTrue("/raw/" in internal_report or "\\raw\\" in internal_report)
+        self.assertNotIn("/raw/", customer_report)
+        self.assertNotIn("\\raw\\", customer_report)
+        self.assertIn("burp_001_error-disclosure_request.txt", customer_report)
 
     def test_template_and_package_output(self) -> None:
         _, output_root = self._run("packaged-customer", "customer", "default_customer", package_output=True)

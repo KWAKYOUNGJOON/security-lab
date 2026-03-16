@@ -2,6 +2,20 @@
 
 Python-based local vulnerability parsing and reporting pipeline for Burp XML, nuclei JSON/JSONL, and httpx JSONL.
 
+현재 이 저장소에서 재현 기준이 되는 메인 구현체는 `app/vuln-pipeline`이다. 승인 전 실데이터 준비보다 fixture/mock 기반 보고서 자동화 E2E 재현성을 먼저 고정한다.
+
+## Repro Contract
+
+- Python: `3.11+`
+- 작업 디렉터리: `app/vuln-pipeline`
+- 패키지 소스: `src/vuln_pipeline`
+- 로컬 import 호환 래퍼: `vuln_pipeline/__init__.py`
+- 기본 smoke E2E: `python -m pytest -q -m must_pass tests/test_fixture_smoke_e2e.py`
+- 전체 테스트: `python -m pytest -q`
+- CI smoke job: `.github/workflows/vuln-pipeline-must-pass.yml`
+
+`pytest`는 저장소 checkout 상태에서도 동작하도록 `tests/conftest.py`에서 로컬 `src` 레이아웃을 부트스트랩한다. CLI 사용이나 일반 개발 환경에서는 editable install을 권장한다.
+
 Default output root:
 - `D:\취약점 진단\outputs\runs\<run_id>\`
 
@@ -17,10 +31,20 @@ cd D:\취약점 진단\app\vuln-pipeline
 python -m pip install -e .
 ```
 
+Linux/macOS 예시:
+
+```bash
+cd app/vuln-pipeline
+python -m pip install -e .
+python -m pytest -q -m must_pass tests/test_fixture_smoke_e2e.py
+```
+
 Dependencies:
 - `python-docx`
 - `PyYAML`
 - `python-pptx`
+
+fixture 기반 재현만 필요하면 editable install 없이 `python -m pytest -q`로도 동작해야 한다.
 
 ## Encoding Troubleshooting
 
@@ -59,6 +83,8 @@ Legacy or mixed input directories:
 3. Continue excluding names containing `sample`, `fixture`, `test`, or `realish`.
 
 ## Preflight and Intake
+
+실데이터 전 단계에서는 `--preflight-only`와 fixture smoke E2E를 우선 사용한다. 실제 입력 디렉터리 연결이나 스테이징은 승인 이후 별도 작업으로 취급한다.
 
 Generated outputs:
 - `report_data\input_preflight.json`
@@ -195,6 +221,8 @@ Examples:
 ```
 
 ## Recommended Real Rehearsal Procedure
+
+이 절은 승인된 real rehearsal 준비용 참고 문서다. 기본 개발/CI 계약은 위의 fixture/mock 기반 smoke E2E다.
 
 Before real data:
 1. Place real Burp, nuclei, and httpx files only in `data\inputs\real\*`.

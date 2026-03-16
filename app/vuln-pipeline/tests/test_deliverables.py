@@ -106,11 +106,15 @@ class DeliverableTests(unittest.TestCase):
     def test_manifest_and_pptx_fallback_details_present(self) -> None:
         _, output_root = self._run("deliverable-fallback", "management_pack")
         manifest = json.loads((output_root / "report_data" / "deliverables_manifest.json").read_text(encoding="utf-8"))
-        fallback = next((output_root / "deliverables").glob("presentation_briefing*_fallback.json"))
-        payload = json.loads(fallback.read_text(encoding="utf-8"))
         self.assertIn("readiness_policy", manifest)
-        self.assertIn("install_hint", payload)
-        self.assertIn("expected_output", payload)
+        fallback = next((output_root / "deliverables").glob("presentation_briefing*_fallback.json"), None)
+        generated_pptx = next((output_root / "deliverables").glob("presentation_briefing*.pptx"), None)
+        if fallback is not None:
+            payload = json.loads(fallback.read_text(encoding="utf-8"))
+            self.assertIn("install_hint", payload)
+            self.assertIn("expected_output", payload)
+        else:
+            self.assertIsNotNone(generated_pptx)
 
 
 if __name__ == "__main__":

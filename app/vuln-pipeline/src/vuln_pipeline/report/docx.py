@@ -234,13 +234,14 @@ def _list_section(document: Document, title: str, items: list[str]) -> None:
 
 
 def _mask_path(value: str) -> str:
-    return value.split("\\")[-1] if value else value
+    return value.replace("\\", "/").split("/")[-1] if value else value
 
 
 def _sanitize_text(value: str, profile: dict) -> str:
     if profile.get("show_internal_paths"):
         return value
-    return re.sub(r"[A-Za-z]:\\[^;\s]+", lambda match: _mask_path(match.group(0)), value)
+    value = re.sub(r"[A-Za-z]:\\[^;\s]+", lambda match: _mask_path(match.group(0)), value)
+    return re.sub(r"(?:/tmp/|/mnt/)[^;\s]+", lambda match: _mask_path(match.group(0)), value)
 
 
 def _add_page_number(paragraph) -> None:

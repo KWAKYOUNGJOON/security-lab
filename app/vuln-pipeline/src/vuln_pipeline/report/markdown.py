@@ -158,13 +158,14 @@ def row_heading(context: dict, key: str) -> str:
 def _mask_path(value: str) -> str:
     if not value:
         return value
-    return value.split("\\")[-1]
+    return value.replace("\\", "/").split("/")[-1]
 
 
 def _sanitize_text(value: str, profile: dict) -> str:
     if profile.get("show_internal_paths"):
         return value
-    return re.sub(r"[A-Za-z]:\\[^;\s]+", lambda match: _mask_path(match.group(0)), value)
+    value = re.sub(r"[A-Za-z]:\\[^;\s]+", lambda match: _mask_path(match.group(0)), value)
+    return re.sub(r"(?:/tmp/|/mnt/)[^;\s]+", lambda match: _mask_path(match.group(0)), value)
 
 
 def _inline(value: str) -> str:

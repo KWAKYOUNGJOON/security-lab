@@ -22,3 +22,10 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "must_pass: fixture/mock 기반 재현성 smoke 경로",
+  "smoke_e2e: 최소 E2E 계약 검증",
+]

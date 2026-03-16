@@ -1,0 +1,32 @@
+name: vuln-pipeline must-pass
+
+on:
+  push:
+    paths:
+      - ".github/workflows/vuln-pipeline-must-pass.yml"
+      - "app/vuln-pipeline/**"
+  pull_request:
+    paths:
+      - ".github/workflows/vuln-pipeline-must-pass.yml"
+      - "app/vuln-pipeline/**"
+
+jobs:
+  must-pass-smoke:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/vuln-pipeline
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e .
+
+      - name: Run must-pass smoke E2E
+        run: python -m pytest -q -m must_pass tests/test_fixture_smoke_e2e.py

@@ -1,0 +1,79 @@
+{
+  "happy_path": {
+    "release_readiness_required_keys": [
+      "status",
+      "checks",
+      "summary",
+      "unresolved_review_items"
+    ],
+    "final_delivery_required_keys": [
+      "final_ready",
+      "readiness_status",
+      "submission_gate",
+      "customer_submission_zip",
+      "internal_archive_zip",
+      "privacy_audit"
+    ],
+    "customer_package_audit_required_keys": [
+      "audit_result",
+      "included_files",
+      "excluded_files",
+      "zip_entries",
+      "findings"
+    ],
+    "required_deliverables": [
+      "deliverables/full_report_customer_customer_vsmoke.md",
+      "deliverables/executive_onepager_customer_vsmoke.md",
+      "deliverables/remediation_tracker_customer_vsmoke.csv",
+      "deliverables/final_submission_check.md"
+    ],
+    "forbidden_paths": []
+  },
+  "preflight_blocked": {
+    "preflight_required_keys": [
+      "status",
+      "blocker_count",
+      "selected_run_inputs",
+      "tool_checks",
+      "manual_inputs"
+    ],
+    "forbidden_paths": [
+      "delivery/final_delivery_manifest.json",
+      "report_data/release_readiness.json",
+      "report_data/customer_package_audit.json"
+    ]
+  },
+  "archive_only": {
+    "archive_manifest_required_keys": [
+      "source_run_id",
+      "archive_zip_path",
+      "regenerated_files",
+      "skipped_customer_outputs"
+    ],
+    "required_paths": [
+      "delivery/internal_archive_varchive.zip",
+      "report_data/archive_only_manifest.json",
+      "delivery/final_delivery_manifest.json"
+    ],
+    "forbidden_paths": [
+      "delivery/customer_submission_varchive.zip",
+      "report_data/customer_package_audit.json"
+    ]
+  },
+  "pptx_capability": {
+    "pptx_required_keys": [
+      "dependency_found",
+      "import_check",
+      "expected_output_path",
+      "fallback_path",
+      "install_hint",
+      "require_pptx_would_block",
+      "status"
+    ],
+    "required_paths": [
+      "report_data/pptx_capability.json",
+      "deliverables/final_submission_check.md",
+      "delivery/final_delivery_manifest.json"
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -39,6 +40,8 @@ class Phase12FeatureTests(unittest.TestCase):
         )
 
     def _run_powershell(self, script: Path, *args: str, **kwargs: object) -> subprocess.CompletedProcess[str]:
+        if shutil.which("powershell") is None:
+            self.skipTest("powershell is not available in this environment")
         return self._run_command(
             [
                 "powershell",

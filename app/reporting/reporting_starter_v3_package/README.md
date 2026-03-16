@@ -1,5 +1,7 @@
 # reporting_starter_v3
 
+이 경로는 현재 기준으로 `legacy/reference` 패키지다. 현행 fixture 기반 E2E 안정화와 실행 계약은 `app/vuln-pipeline`을 기준으로 유지한다.
+
 HexStrike AI, Kali, Burp, nuclei, ffuf, httpx, Nikto 등의 웹 취약점 진단 결과를 공통 JSON 스키마로 정규화하고 Markdown/DOCX 보고서를 생성하는 패키지입니다.
 
 목표는 완전 무인 최종본이 아니라 자동 초안 생성 + 사람 검토입니다.

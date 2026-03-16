@@ -5,6 +5,7 @@ reports/evidence/
 notes/private/
 reference/
 backups/
+app/vuln-pipeline/.tmp_run*/
 **/__pycache__/
 *.egg-info/
 .pytest_cache/

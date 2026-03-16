@@ -1,11 +1,18 @@
 # 취약점 자동 분석 + 보고서 생성 프로젝트 작업 루트
 
-웹 취약점 스캔 결과를 수집, 정규화, 분석하고 Markdown/Docx/PDF 보고서로 변환하기 위한 작업 공간이다.
+현재 이 저장소의 메인 구현체와 재현 기준은 `app/vuln-pipeline`이다.
+
+승인된 실데이터 연결 전까지는 fixture/mock 기반 보고서 자동화 E2E를 우선하며, 실제 진단 준비나 실데이터 수집은 기본 작업 범위에 포함하지 않는다.
+
+## 현재 우선 경로
+
+- `app/vuln-pipeline`: 현행 구현체, 테스트, fixture 기반 E2E, 샘플 산출물 중심
+- `app/reporting/reporting_starter_v3_package`: legacy/reference 성격의 이전 보고서 패키지
 
 ## 폴더 구조
 
 - `app/scanner/hexstrike-ai`: 스캐너 또는 분석 엔진 원본 코드
-- `app/reporting/reporting_starter_v3_package`: 보고서 생성 패키지 원본 코드
+- `app/reporting/reporting_starter_v3_package`: legacy/reference 보고서 생성 패키지 원본 코드
 - `scripts/run`, `scripts/setup`, `scripts/utils`: 실행, 환경 준비, 유틸 스크립트 분류용 폴더
 - `data/fixtures/real_fixtures`: 실제 또는 정제된 테스트 입력
 - `data/schemas`, `data/samples`: 스키마와 샘플 데이터
