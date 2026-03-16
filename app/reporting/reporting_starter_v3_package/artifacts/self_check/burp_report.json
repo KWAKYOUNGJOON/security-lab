@@ -2,7 +2,7 @@
   "report_meta": {
     "project_name": "https://www.example.org 웹 취약점 진단 보고서",
     "target": "https://www.example.org",
-    "generated_at": "2026-03-15T03:09:36.797520+09:00",
+    "generated_at": "2026-03-16T18:45:13.293601+09:00",
     "assessment_scope": [
       "웹 애플리케이션",
       "웹 서버 설정",
