@@ -13,3 +13,15 @@ app/vuln-pipeline/.tmp_run*/
 *.tmp
 *.docx
 *.pdf
+__pycache__/
+*.pyc
+.env
+venv/
+
+# scan results
+artifacts/
+outputs/
+
+# reporting artifacts
+app/reporting/artifacts/
+app/reporting/reporting_starter_v3_package/artifacts/
