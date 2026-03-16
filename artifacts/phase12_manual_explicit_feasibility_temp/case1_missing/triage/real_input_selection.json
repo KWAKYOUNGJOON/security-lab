@@ -1,0 +1,235 @@
+{
+  "status": "incomplete",
+  "tools": {
+    "burp": {
+      "directory": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\burp",
+      "selected_path": null,
+      "reason": "no_eligible_candidates",
+      "evaluated_candidates": [],
+      "selection_rule": {
+        "latest_modified_first": true,
+        "minimum_size": 256,
+        "allowed_extensions": [
+          ".xml"
+        ],
+        "excluded_name_parts": [
+          "sample",
+          "fixture",
+          "test",
+          "realish"
+        ]
+      },
+      "source_priority": "real",
+      "fallback_available": true
+    },
+    "nuclei": {
+      "directory": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\nuclei",
+      "selected_path": null,
+      "reason": "no_eligible_candidates",
+      "evaluated_candidates": [],
+      "selection_rule": {
+        "latest_modified_first": true,
+        "minimum_size": 128,
+        "allowed_extensions": [
+          ".json",
+          ".jsonl"
+        ],
+        "excluded_name_parts": [
+          "sample",
+          "fixture",
+          "test",
+          "realish"
+        ]
+      },
+      "source_priority": "real",
+      "fallback_available": true
+    },
+    "httpx": {
+      "directory": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\httpx",
+      "selected_path": null,
+      "reason": "no_eligible_candidates",
+      "evaluated_candidates": [],
+      "selection_rule": {
+        "latest_modified_first": true,
+        "minimum_size": 128,
+        "allowed_extensions": [
+          ".jsonl"
+        ],
+        "excluded_name_parts": [
+          "sample",
+          "fixture",
+          "test",
+          "realish"
+        ]
+      },
+      "source_priority": "real",
+      "fallback_available": true
+    }
+  },
+  "manual_support": {
+    "override_file": {
+      "directory": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual",
+      "selected_path": null,
+      "reason": "no_eligible_candidates",
+      "evaluated_candidates": [
+        {
+          "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\review_resolution.yaml",
+          "eligible": false,
+          "reasons": [
+            "name_pattern_mismatch"
+          ],
+          "size": 24,
+          "modified_time": "2026-03-16T05:11:30+00:00",
+          "sha256": "c85bb888362738b47a1e058e064d9936f6d1e2504b98c65592b485cd81addfcd",
+          "sample_like": false
+        },
+        {
+          "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\sample_override.yaml",
+          "eligible": false,
+          "reasons": [
+            "excluded_name"
+          ],
+          "size": 15,
+          "modified_time": "2026-03-16T05:11:30+00:00",
+          "sha256": "584a0bd345157598223aa1ae1dd7a510e0750ff585e5a7e2c7c4842a3c15d9d1",
+          "sample_like": true
+        },
+        {
+          "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\suppressions.yaml",
+          "eligible": false,
+          "reasons": [
+            "name_pattern_mismatch"
+          ],
+          "size": 18,
+          "modified_time": "2026-03-16T05:11:30+00:00",
+          "sha256": "f0775c0f3b2a317161d099c06521efeda35b0c27603e313318ebb2dc786bd0b2",
+          "sample_like": false
+        }
+      ],
+      "source_priority": "legacy_fallback",
+      "fallback_available": false
+    },
+    "suppression_file": {
+      "directory": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual",
+      "selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\suppressions.yaml",
+      "reason": "selected_latest_eligible",
+      "evaluated_candidates": [
+        {
+          "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\review_resolution.yaml",
+          "eligible": false,
+          "reasons": [
+            "name_pattern_mismatch"
+          ],
+          "size": 24,
+          "modified_time": "2026-03-16T05:11:30+00:00",
+          "sha256": "c85bb888362738b47a1e058e064d9936f6d1e2504b98c65592b485cd81addfcd",
+          "sample_like": false
+        },
+        {
+          "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\sample_override.yaml",
+          "eligible": false,
+          "reasons": [
+            "excluded_name",
+            "name_pattern_mismatch"
+          ],
+          "size": 15,
+          "modified_time": "2026-03-16T05:11:30+00:00",
+          "sha256": "584a0bd345157598223aa1ae1dd7a510e0750ff585e5a7e2c7c4842a3c15d9d1",
+          "sample_like": true
+        },
+        {
+          "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\suppressions.yaml",
+          "eligible": true,
+          "reasons": [
+            "eligible"
+          ],
+          "size": 18,
+          "modified_time": "2026-03-16T05:11:30+00:00",
+          "sha256": "f0775c0f3b2a317161d099c06521efeda35b0c27603e313318ebb2dc786bd0b2",
+          "sample_like": false
+        }
+      ],
+      "source_priority": "legacy_fallback",
+      "fallback_available": false
+    },
+    "review_resolution_file": {
+      "directory": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual",
+      "selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\review_resolution.yaml",
+      "reason": "selected_latest_eligible",
+      "evaluated_candidates": [
+        {
+          "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\review_resolution.yaml",
+          "eligible": true,
+          "reasons": [
+            "eligible"
+          ],
+          "size": 24,
+          "modified_time": "2026-03-16T05:11:30+00:00",
+          "sha256": "c85bb888362738b47a1e058e064d9936f6d1e2504b98c65592b485cd81addfcd",
+          "sample_like": false
+        },
+        {
+          "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\sample_override.yaml",
+          "eligible": false,
+          "reasons": [
+            "excluded_name",
+            "name_pattern_mismatch"
+          ],
+          "size": 15,
+          "modified_time": "2026-03-16T05:11:30+00:00",
+          "sha256": "584a0bd345157598223aa1ae1dd7a510e0750ff585e5a7e2c7c4842a3c15d9d1",
+          "sample_like": true
+        },
+        {
+          "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\suppressions.yaml",
+          "eligible": false,
+          "reasons": [
+            "name_pattern_mismatch"
+          ],
+          "size": 18,
+          "modified_time": "2026-03-16T05:11:30+00:00",
+          "sha256": "f0775c0f3b2a317161d099c06521efeda35b0c27603e313318ebb2dc786bd0b2",
+          "sample_like": false
+        }
+      ],
+      "source_priority": "legacy_fallback",
+      "fallback_available": false
+    }
+  },
+  "selected_run_inputs": [],
+  "notes": [
+    "No eligible real input files were found in the configured input directories."
+  ],
+  "manual_resolution": {
+    "override_file": {
+      "configured_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+      "effective_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+      "default_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+      "exists": false,
+      "cli_explicit": true,
+      "manual_source": "real_explicit",
+      "support_selected_path": null,
+      "support_source_priority": "legacy_fallback"
+    },
+    "suppression_file": {
+      "configured_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+      "effective_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+      "default_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+      "exists": false,
+      "cli_explicit": true,
+      "manual_source": "real_explicit",
+      "support_selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\suppressions.yaml",
+      "support_source_priority": "legacy_fallback"
+    },
+    "review_resolution_file": {
+      "configured_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml",
+      "effective_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml",
+      "default_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml",
+      "exists": false,
+      "cli_explicit": true,
+      "manual_source": "real_explicit",
+      "support_selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\review_resolution.yaml",
+      "support_source_priority": "legacy_fallback"
+    }
+  }
+}

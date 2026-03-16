@@ -1,0 +1,304 @@
+{
+  "status": "no_live_apply_detected",
+  "generated_at": "2026-03-16T05:13:47+00:00",
+  "hard_facts": {
+    "run_id": "manual-explicit-repro",
+    "run_root": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+    "workspace_root": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace",
+    "live_root": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real",
+    "live_manual_dir": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual",
+    "previous_run_root": null,
+    "preflight": {
+      "status": "blocked",
+      "blocker_count": 1,
+      "blockers": [
+        "input_preflight status is `blocked`",
+        "input_preflight blocker_count is `1`",
+        "real_input_readiness is blocked",
+        "real_input_readiness blocker_count is `1`",
+        "input_preflight.manual_sources_ready is false"
+      ],
+      "manual_sources_ready": false,
+      "readiness_status": "blocked",
+      "readiness_blocker_count": 1,
+      "readiness_blockers": [
+        "real scan inputs are not ready"
+      ],
+      "selected_run_inputs": [],
+      "fresh_preflight_generated": true,
+      "refresh_requested": true,
+      "strict": true,
+      "warnings": []
+    },
+    "apply_detected": false,
+    "scan_apply_detected": false,
+    "manual_apply_detected": false,
+    "signoff_review_status": "missing",
+    "intent_validation_status": "missing",
+    "apply_reconciliation_status": "no_apply_detected",
+    "rollback_plan_status": "missing",
+    "operator_case_status": "missing",
+    "evidence_pack_status": "missing",
+    "tool_gate": {
+      "burp": {
+        "current_live_active_path": null,
+        "current_live_active_hash": null,
+        "eligible_file_count": 0,
+        "preflight_selected_path": null,
+        "selection_selected_path": null,
+        "receipt_present": false,
+        "receipt_target_path": null,
+        "receipt_after_hash": null,
+        "current_live_matches_preflight_selected": false,
+        "current_live_matches_selection_selected": false,
+        "current_live_matches_receipt_target": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "archive_all_present": true,
+        "archive_paths": [],
+        "blockers": [
+          "live eligible_file_count is `0`",
+          "current live active file is missing"
+        ],
+        "warnings": [],
+        "mismatch_summary": []
+      },
+      "nuclei": {
+        "current_live_active_path": null,
+        "current_live_active_hash": null,
+        "eligible_file_count": 0,
+        "preflight_selected_path": null,
+        "selection_selected_path": null,
+        "receipt_present": false,
+        "receipt_target_path": null,
+        "receipt_after_hash": null,
+        "current_live_matches_preflight_selected": false,
+        "current_live_matches_selection_selected": false,
+        "current_live_matches_receipt_target": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "archive_all_present": true,
+        "archive_paths": [],
+        "blockers": [
+          "live eligible_file_count is `0`",
+          "current live active file is missing"
+        ],
+        "warnings": [],
+        "mismatch_summary": []
+      },
+      "httpx": {
+        "current_live_active_path": null,
+        "current_live_active_hash": null,
+        "eligible_file_count": 0,
+        "preflight_selected_path": null,
+        "selection_selected_path": null,
+        "receipt_present": false,
+        "receipt_target_path": null,
+        "receipt_after_hash": null,
+        "current_live_matches_preflight_selected": false,
+        "current_live_matches_selection_selected": false,
+        "current_live_matches_receipt_target": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "archive_all_present": true,
+        "archive_paths": [],
+        "blockers": [
+          "live eligible_file_count is `0`",
+          "current live active file is missing"
+        ],
+        "warnings": [],
+        "mismatch_summary": []
+      }
+    },
+    "manual_gate": {
+      "override_file": {
+        "current_live_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+        "current_live_exists": false,
+        "current_live_hash": null,
+        "manual_source": "real_explicit",
+        "proof_status": "operator-confirmation-needed",
+        "proof_notes": [
+          "override_file: manual_source could not be proven from current artifacts"
+        ],
+        "receipt_present": false,
+        "receipt_after_path": null,
+        "receipt_after_hash": null,
+        "current_live_matches_receipt_path": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "backup_path": null,
+        "backup_present": false,
+        "blockers": [
+          "current live manual file is missing"
+        ],
+        "warnings": [],
+        "mismatch_summary": []
+      },
+      "suppression_file": {
+        "current_live_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+        "current_live_exists": false,
+        "current_live_hash": null,
+        "manual_source": "real_explicit",
+        "proof_status": "operator-confirmation-needed",
+        "proof_notes": [
+          "suppression_file: manual_source could not be proven from current artifacts"
+        ],
+        "receipt_present": false,
+        "receipt_after_path": null,
+        "receipt_after_hash": null,
+        "current_live_matches_receipt_path": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "backup_path": null,
+        "backup_present": false,
+        "blockers": [
+          "current live manual file is missing"
+        ],
+        "warnings": [],
+        "mismatch_summary": []
+      },
+      "review_resolution_file": {
+        "current_live_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml",
+        "current_live_exists": false,
+        "current_live_hash": null,
+        "manual_source": "real_explicit",
+        "proof_status": "operator-confirmation-needed",
+        "proof_notes": [
+          "review_resolution_file: manual_source could not be proven from current artifacts"
+        ],
+        "receipt_present": false,
+        "receipt_after_path": null,
+        "receipt_after_hash": null,
+        "current_live_matches_receipt_path": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "backup_path": null,
+        "backup_present": false,
+        "blockers": [
+          "current live manual file is missing"
+        ],
+        "warnings": [],
+        "mismatch_summary": []
+      }
+    },
+    "mismatch_summary": [],
+    "remaining_blockers": [
+      "input_preflight status is `blocked`",
+      "input_preflight blocker_count is `1`",
+      "real_input_readiness is blocked",
+      "real_input_readiness blocker_count is `1`",
+      "input_preflight.manual_sources_ready is false",
+      "manual_validation indicates the live manual context is not ready for rerun",
+      "burp: live eligible_file_count is `0`",
+      "burp: current live active file is missing",
+      "nuclei: live eligible_file_count is `0`",
+      "nuclei: current live active file is missing",
+      "httpx: live eligible_file_count is `0`",
+      "httpx: current live active file is missing",
+      "override_file: current live manual file is missing",
+      "suppression_file: current live manual file is missing",
+      "review_resolution_file: current live manual file is missing"
+    ],
+    "warnings": [
+      "phase12_signoff_review.json is missing",
+      "no live apply receipt was detected for this run"
+    ],
+    "fresh_artifacts": {
+      "generated": true,
+      "readiness_json": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\real_input_readiness.json",
+      "readiness_md": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\real_input_readiness.md",
+      "input_preflight_json": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\input_preflight.json",
+      "input_preflight_md": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\input_preflight.md",
+      "real_input_selection_json": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\real_input_selection.json",
+      "real_input_selection_md": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\real_input_selection.md",
+      "live_scan_inventory_json": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\scan_promotion\\live_scan_inventory.json",
+      "live_scan_inventory_md": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\scan_promotion\\live_scan_inventory.md"
+    },
+    "artifact_paths": {
+      "real_input_readiness_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\real_input_readiness.json",
+        "exists": true,
+        "status": "blocked"
+      },
+      "input_preflight_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\input_preflight.json",
+        "exists": true,
+        "status": "blocked"
+      },
+      "real_input_selection_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\real_input_selection.json",
+        "exists": true,
+        "status": "incomplete"
+      },
+      "live_scan_inventory_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\scan_promotion\\live_scan_inventory.json",
+        "exists": true,
+        "status": "warning"
+      },
+      "manual_validation_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\manual_validation.json",
+        "exists": true,
+        "status": "invalid"
+      },
+      "phase12_apply_reconciliation_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\phase12_apply_reconciliation.json",
+        "exists": true,
+        "status": "no_apply_detected"
+      },
+      "phase12_signoff_review_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\phase12_signoff_review.json",
+        "exists": false,
+        "status": "missing"
+      },
+      "phase12_apply_intent_validation_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\phase12_apply_intent_validation.json",
+        "exists": false,
+        "status": "missing"
+      },
+      "scan_input_promotion_receipt_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\scan_promotion\\scan_input_promotion_receipt.json",
+        "exists": false,
+        "status": "missing"
+      },
+      "manual_promotion_receipt_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\manual_promotion\\manual_promotion_receipt.json",
+        "exists": false,
+        "status": "missing"
+      },
+      "phase12_operator_case_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\phase12_operator_case.json",
+        "exists": false,
+        "status": "missing"
+      },
+      "phase12_evidence_pack_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\phase12_evidence_pack.json",
+        "exists": false,
+        "status": "missing"
+      },
+      "phase12_rollback_plan_json": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\phase12_rollback_plan.json",
+        "exists": false,
+        "status": "missing"
+      },
+      "intent_file": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\phase12_apply_intent.json",
+        "exists": false,
+        "status": "missing"
+      }
+    }
+  },
+  "inference": {
+    "rehearsal_allowed": false,
+    "real_explicit_proof_status": "operator-confirmation-needed",
+    "proof_notes": [
+      "override_file: manual_source could not be proven from current artifacts",
+      "suppression_file: manual_source could not be proven from current artifacts",
+      "review_resolution_file: manual_source could not be proven from current artifacts"
+    ],
+    "summary": "No live apply receipt was detected, so the final gate stayed informational and rehearsal remains blocked."
+  },
+  "suggestions": {
+    "rehearsal_command": "powershell -ExecutionPolicy Bypass -File \"D:\\취약점 진단\\app\\vuln-pipeline\\scripts\\run_phase12_iteration.ps1\" -RunId \"manual-explicit-repro\" -OutputBase \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\" -LiveRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\" -GenerateRealGate -RequireRealGateForRehearsal -RefreshPreflightBeforeGate -WorkspaceRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" -CustomerBundle \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml\" -BrandingFile \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml\" -ReadinessPolicy \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml\"",
+    "missing_input_fix_command": "powershell -ExecutionPolicy Bypass -File \"D:\\취약점 진단\\app\\vuln-pipeline\\scripts\\run_phase12_iteration.ps1\" -RunId \"manual-explicit-repro\" -OutputBase \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\" -LiveRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\" -GenerateRealGate -RequireRealGateForRehearsal -RefreshPreflightBeforeGate -WorkspaceRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" -CustomerBundle \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml\" -BrandingFile \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml\" -ReadinessPolicy \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml\" -StopAfterRealGate",
+    "rollback_plan_command": "powershell -ExecutionPolicy Bypass -File \"D:\\취약점 진단\\app\\vuln-pipeline\\scripts\\run_phase12_rollback.ps1\" -RunRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\" -WorkspaceRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" -LiveRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\"",
+    "exact_next_commands": [
+      "powershell -ExecutionPolicy Bypass -File \"D:\\취약점 진단\\app\\vuln-pipeline\\scripts\\run_phase12_iteration.ps1\" -RunId \"manual-explicit-repro\" -OutputBase \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\" -LiveRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\" -GenerateRealGate -RequireRealGateForRehearsal -RefreshPreflightBeforeGate -WorkspaceRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" -CustomerBundle \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml\" -BrandingFile \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml\" -ReadinessPolicy \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml\"",
+      "powershell -ExecutionPolicy Bypass -File \"D:\\취약점 진단\\app\\vuln-pipeline\\scripts\\run_phase12_iteration.ps1\" -RunId \"manual-explicit-repro\" -OutputBase \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\" -LiveRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\" -GenerateRealGate -RequireRealGateForRehearsal -RefreshPreflightBeforeGate -WorkspaceRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" -CustomerBundle \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml\" -BrandingFile \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml\" -ReadinessPolicy \"D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml\" -StopAfterRealGate",
+      "powershell -ExecutionPolicy Bypass -File \"D:\\취약점 진단\\app\\vuln-pipeline\\scripts\\run_phase12_rollback.ps1\" -RunRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\" -WorkspaceRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" -LiveRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\""
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "status": "warning",
+  "generated_at": "2026-03-16T05:13:44+00:00",
+  "live_root": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real",
+  "hard_facts": {
+    "active_valid_tool_count": 0,
+    "tool_count": 3
+  },
+  "inference": {
+    "operational_goal_met": false
+  },
+  "tools": {
+    "burp": {
+      "directory": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\burp",
+      "exists": true,
+      "active_file": null,
+      "eligible_file_count": 0,
+      "all_files": [],
+      "other_files": [],
+      "unexpected_entries": [],
+      "warnings": [
+        "no eligible live file currently auto-selects"
+      ],
+      "blockers": []
+    },
+    "nuclei": {
+      "directory": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\nuclei",
+      "exists": true,
+      "active_file": null,
+      "eligible_file_count": 0,
+      "all_files": [],
+      "other_files": [],
+      "unexpected_entries": [],
+      "warnings": [
+        "no eligible live file currently auto-selects"
+      ],
+      "blockers": []
+    },
+    "httpx": {
+      "directory": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\httpx",
+      "exists": true,
+      "active_file": null,
+      "eligible_file_count": 0,
+      "all_files": [],
+      "other_files": [],
+      "unexpected_entries": [],
+      "warnings": [
+        "no eligible live file currently auto-selects"
+      ],
+      "blockers": []
+    }
+  },
+  "warnings": [
+    "burp: no eligible live file currently auto-selects",
+    "nuclei: no eligible live file currently auto-selects",
+    "httpx: no eligible live file currently auto-selects"
+  ],
+  "blockers": []
+}

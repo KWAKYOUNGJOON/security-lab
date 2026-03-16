@@ -1,0 +1,243 @@
+{
+  "status": "ready_for_review",
+  "mode": "plan",
+  "generated_at": "2026-03-16T05:11:38+00:00",
+  "workspace_root": "D:\\취약점 진단",
+  "working_dir": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_working",
+  "live_manual_dir": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_live",
+  "output_dir": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output",
+  "review_queue_path": null,
+  "run_root": null,
+  "overwrite_requested": false,
+  "files": {
+    "override_file": {
+      "key": "override_file",
+      "working_name": "override_working.yaml",
+      "status": "ready_to_apply",
+      "working": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_working\\override_working.yaml",
+        "exists": true,
+        "format_valid": true,
+        "draft_candidate_count": 0,
+        "actionable_count": 0,
+        "actionable_entries": [],
+        "issues": [],
+        "warnings": [],
+        "unexpected_keys": []
+      },
+      "candidate": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_override_candidate.yaml",
+        "actionable_count": 0,
+        "hash": "5807867e425d13adc52d5250d29b8530043f64e5680b8f32c94971c10053f761"
+      },
+      "existing_live": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_live\\customer_override.yaml",
+        "exists": false,
+        "hash": null,
+        "entries": [],
+        "entry_count": 0,
+        "unexpected_keys": [],
+        "unexpected_structure": false,
+        "top_level_kind": null,
+        "issues": []
+      },
+      "target_live_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_live\\customer_override.yaml",
+      "staged_candidate_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_override_candidate.yaml",
+      "diff_summary": {
+        "has_changes": false,
+        "before_count": 0,
+        "after_count": 0,
+        "added_count": 0,
+        "removed_count": 0,
+        "changed_count": 0,
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "issues": [],
+      "warnings": [],
+      "overwrite_required": false,
+      "overwrite_requested": false
+    },
+    "suppression_file": {
+      "key": "suppression_file",
+      "working_name": "suppression_working.yaml",
+      "status": "ready_to_apply",
+      "working": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_working\\suppression_working.yaml",
+        "exists": true,
+        "format_valid": true,
+        "draft_candidate_count": 0,
+        "actionable_count": 0,
+        "actionable_entries": [],
+        "issues": [],
+        "warnings": [],
+        "unexpected_keys": []
+      },
+      "candidate": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_suppressions_candidate.yaml",
+        "actionable_count": 0,
+        "hash": "6188bc991a138503641b22da61a58c2cdd0e37f4e32c09438674492ab2c64cb9"
+      },
+      "existing_live": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_live\\customer_suppressions.yaml",
+        "exists": false,
+        "hash": null,
+        "entries": [],
+        "entry_count": 0,
+        "unexpected_keys": [],
+        "unexpected_structure": false,
+        "top_level_kind": null,
+        "issues": []
+      },
+      "target_live_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_live\\customer_suppressions.yaml",
+      "staged_candidate_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_suppressions_candidate.yaml",
+      "diff_summary": {
+        "has_changes": false,
+        "before_count": 0,
+        "after_count": 0,
+        "added_count": 0,
+        "removed_count": 0,
+        "changed_count": 0,
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "issues": [],
+      "warnings": [],
+      "overwrite_required": false,
+      "overwrite_requested": false
+    },
+    "review_resolution_file": {
+      "key": "review_resolution_file",
+      "working_name": "review_resolution_working.yaml",
+      "status": "ready_to_apply",
+      "working": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_working\\review_resolution_working.yaml",
+        "exists": true,
+        "format_valid": true,
+        "draft_candidate_count": 0,
+        "actionable_count": 0,
+        "actionable_entries": [],
+        "issues": [],
+        "warnings": [],
+        "unexpected_keys": []
+      },
+      "candidate": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_review_resolution_candidate.yaml",
+        "actionable_count": 0,
+        "hash": "502dbbe31a8adf54d8f8773007ab1b3a389df06219fcb17c823c534c40c27ab3"
+      },
+      "existing_live": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_live\\customer_review_resolution.yaml",
+        "exists": false,
+        "hash": null,
+        "entries": [],
+        "entry_count": 0,
+        "unexpected_keys": [],
+        "unexpected_structure": false,
+        "top_level_kind": null,
+        "issues": []
+      },
+      "target_live_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_live\\customer_review_resolution.yaml",
+      "staged_candidate_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_review_resolution_candidate.yaml",
+      "diff_summary": {
+        "has_changes": false,
+        "before_count": 0,
+        "after_count": 0,
+        "added_count": 0,
+        "removed_count": 0,
+        "changed_count": 0,
+        "added": [],
+        "removed": [],
+        "changed": []
+      },
+      "issues": [],
+      "warnings": [],
+      "overwrite_required": false,
+      "overwrite_requested": false
+    }
+  },
+  "candidate_validation": {
+    "name": "promotion_candidate_context",
+    "description": "Staged live candidates generated from reviewed working drafts.",
+    "required": true,
+    "format_valid": true,
+    "content_assessment": "human_review_required",
+    "files": {
+      "override_file": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_override_candidate.yaml",
+        "exists": true,
+        "format_valid": true,
+        "format_status": "valid",
+        "content_assessment": "human_review_required",
+        "expected_key": "overrides",
+        "top_level_kind": "dict",
+        "actionable_count": 0,
+        "draft_candidate_count": 0,
+        "issues": [],
+        "warnings": [
+          "Actionable list is empty. Format is valid, but operator review is still required before rerun."
+        ],
+        "selection": {
+          "selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_override_candidate.yaml"
+        }
+      },
+      "suppression_file": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_suppressions_candidate.yaml",
+        "exists": true,
+        "format_valid": true,
+        "format_status": "valid",
+        "content_assessment": "human_review_required",
+        "expected_key": "suppressions",
+        "top_level_kind": "dict",
+        "actionable_count": 0,
+        "draft_candidate_count": 0,
+        "issues": [],
+        "warnings": [
+          "Actionable list is empty. Format is valid, but operator review is still required before rerun."
+        ],
+        "selection": {
+          "selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_suppressions_candidate.yaml"
+        }
+      },
+      "review_resolution_file": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_review_resolution_candidate.yaml",
+        "exists": true,
+        "format_valid": true,
+        "format_status": "valid",
+        "content_assessment": "human_review_required",
+        "expected_key": "review_resolutions",
+        "top_level_kind": "dict",
+        "actionable_count": 0,
+        "draft_candidate_count": 0,
+        "issues": [],
+        "warnings": [
+          "Actionable list is empty. Format is valid, but operator review is still required before rerun."
+        ],
+        "selection": {
+          "selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output\\customer_review_resolution_candidate.yaml"
+        }
+      }
+    }
+  },
+  "status_flags": {
+    "has_material_change": false,
+    "has_human_selection_required": false
+  },
+  "blockers": [],
+  "warnings": [
+    "Staged promotion candidates are structurally valid, but content still needs operator review before rerun.",
+    "No actionable changes relative to the existing live files were detected."
+  ],
+  "summary": {
+    "material_change_file_count": 0,
+    "actionable_entry_count": 0,
+    "draft_candidate_count": 0
+  },
+  "operator_guidance": [
+    "draft_candidates are informational only and were not promoted automatically.",
+    "Only the top-level actionable lists from the reviewed working drafts were staged.",
+    "Apply mode stays blocked when staged candidates fail validation or when existing live files have unexpected structure."
+  ]
+}

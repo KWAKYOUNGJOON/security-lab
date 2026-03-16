@@ -53,6 +53,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--plan-only", action="store_true")
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
+    parser.add_argument("--allow-empty-explicit-seed", action="store_true")
     return parser
 
 
@@ -74,6 +75,7 @@ def main() -> int:
         plan_only=bool(args.plan_only or not args.apply),
         apply=bool(args.apply),
         overwrite=args.overwrite,
+        allow_empty_explicit_seed=args.allow_empty_explicit_seed,
     )
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 1 if summary["status"] in {"blocked", "invalid"} else 0
@@ -92,6 +94,7 @@ def execute_manual_promotion(
     plan_only: bool,
     apply: bool,
     overwrite: bool,
+    allow_empty_explicit_seed: bool,
 ) -> dict[str, Any]:
     if plan_only and apply:
         raise ValueError("Choose either plan-only or apply mode, not both.")
@@ -115,6 +118,7 @@ def execute_manual_promotion(
         review_queue_path=resolved_review_queue,
         run_root=run_root,
     )
+    promotion_report["allow_empty_explicit_seed_requested"] = bool(allow_empty_explicit_seed)
 
     write_json(output_dir / "manual_promotion_plan.json", promotion_report)
     write_markdown(output_dir / "manual_promotion_plan.md", render_manual_promotion_markdown(promotion_report))
@@ -126,6 +130,7 @@ def execute_manual_promotion(
         promotion_report=promotion_report,
         backup_dir=backup_dir or (output_dir / "backups"),
         receipt_out=receipt_out or (output_dir / "manual_promotion_receipt.json"),
+        allow_empty_explicit_seed=allow_empty_explicit_seed,
     )
     write_markdown(output_dir / "manual_promotion_receipt.md", render_manual_promotion_receipt_markdown(apply_summary))
     return apply_summary
@@ -214,11 +219,13 @@ def build_manual_promotion_report(
         "review_queue_path": str(review_queue_path) if review_queue_path else None,
         "run_root": str(run_root) if run_root else None,
         "overwrite_requested": overwrite,
+        "allow_empty_explicit_seed_requested": False,
         "files": file_reports,
         "candidate_validation": validation,
         "status_flags": {
             "has_material_change": has_material_change,
             "has_human_selection_required": any(item["status"] == "human_selection_required" for item in file_reports.values()),
+            "empty_explicit_seed_eligible": _is_empty_explicit_seed_eligible(file_reports),
         },
         "blockers": _dedupe_strings(blockers),
         "warnings": _dedupe_strings(warnings),
@@ -432,13 +439,18 @@ def apply_manual_promotion(
     promotion_report: dict[str, Any],
     backup_dir: Path,
     receipt_out: Path,
+    allow_empty_explicit_seed: bool,
 ) -> dict[str, Any]:
     blockers = list(promotion_report.get("blockers", []))
-    if not promotion_report["status_flags"]["has_material_change"]:
+    empty_explicit_seed_eligible = bool(promotion_report.get("status_flags", {}).get("empty_explicit_seed_eligible"))
+    allow_empty_seed_apply = bool(allow_empty_explicit_seed and empty_explicit_seed_eligible)
+    if not promotion_report["status_flags"]["has_material_change"] and not allow_empty_seed_apply:
         blockers.append("No actionable live changes were detected.")
     for key, item in promotion_report["files"].items():
         if item["status"] == "invalid":
             blockers.append(f"{key}: staged working draft is invalid.")
+        if item["status"] == "human_selection_required":
+            blockers.append(f"{key}: draft_candidates still require manual promotion into the actionable list.")
         if item["existing_live"]["unexpected_structure"]:
             blockers.append(f"{key}: existing live file has unexpected structure.")
         if item["overwrite_required"] and not item["overwrite_requested"]:
@@ -486,12 +498,28 @@ def apply_manual_promotion(
         **promotion_report,
         "status": "applied",
         "mode": "apply",
+        "allow_empty_explicit_seed_requested": bool(allow_empty_explicit_seed),
         "backup_dir": str(backup_dir),
         "receipt_path": str(receipt_out),
         "applied_files": receipts,
     }
     write_json(receipt_out, receipt)
     return receipt
+
+
+def _is_empty_explicit_seed_eligible(file_reports: dict[str, dict[str, Any]]) -> bool:
+    if not file_reports:
+        return False
+    for item in file_reports.values():
+        if item.get("status") == "human_selection_required":
+            return False
+        if item.get("working", {}).get("actionable_count") != 0:
+            return False
+        if item.get("working", {}).get("draft_candidate_count") != 0:
+            return False
+        if item.get("existing_live", {}).get("exists"):
+            return False
+    return True
 
 
 def render_manual_promotion_markdown(report: dict[str, Any]) -> str:
@@ -505,6 +533,8 @@ def render_manual_promotion_markdown(report: dict[str, Any]) -> str:
         f"- review_queue_path: `{report.get('review_queue_path')}`",
         f"- material_change_file_count: `{report['summary']['material_change_file_count']}`",
         f"- actionable_entry_count: `{report['summary']['actionable_entry_count']}`",
+        f"- allow_empty_explicit_seed_requested: `{report.get('allow_empty_explicit_seed_requested', False)}`",
+        f"- empty_explicit_seed_eligible: `{report.get('status_flags', {}).get('empty_explicit_seed_eligible', False)}`",
         "",
         "## Blockers",
     ]

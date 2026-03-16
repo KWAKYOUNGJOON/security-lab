@@ -1,0 +1,230 @@
+{
+  "status": "no_apply_detected",
+  "generated_at": "2026-03-16T05:13:47+00:00",
+  "hard_facts": {
+    "run_id": "manual-explicit-repro",
+    "run_root": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+    "workspace_root": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace",
+    "previous_run_root": null,
+    "live_root": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real",
+    "live_manual_dir": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual",
+    "apply_detected": false,
+    "scan_promotion_applied": false,
+    "manual_promotion_applied": false,
+    "intent_file": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\phase12_apply_intent.json",
+      "exists": false
+    },
+    "intent_validation_status": "missing",
+    "signoff_review_status": "missing",
+    "run_rollup": "unknown",
+    "readiness_blockers": [],
+    "missing_artifacts": [
+      "phase12_operator_case.json",
+      "post_run_triage.json",
+      "real_input_selection.json",
+      "input_preflight.json",
+      "manual_validation.json",
+      "phase12_apply_intent.json"
+    ],
+    "scan_reconciliation": {
+      "burp": {
+        "receipt_present": false,
+        "receipt_source_path": null,
+        "receipt_target_path": null,
+        "receipt_after_hash": null,
+        "planned_target_path": null,
+        "current_live_active_path": null,
+        "current_live_active_hash": null,
+        "preflight_selected_path": null,
+        "planned_target_matches_current_live": false,
+        "current_live_matches_preflight_selected": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "archive_ready": true,
+        "missing_or_mismatch": []
+      },
+      "nuclei": {
+        "receipt_present": false,
+        "receipt_source_path": null,
+        "receipt_target_path": null,
+        "receipt_after_hash": null,
+        "planned_target_path": null,
+        "current_live_active_path": null,
+        "current_live_active_hash": null,
+        "preflight_selected_path": null,
+        "planned_target_matches_current_live": false,
+        "current_live_matches_preflight_selected": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "archive_ready": true,
+        "missing_or_mismatch": []
+      },
+      "httpx": {
+        "receipt_present": false,
+        "receipt_source_path": null,
+        "receipt_target_path": null,
+        "receipt_after_hash": null,
+        "planned_target_path": null,
+        "current_live_active_path": null,
+        "current_live_active_hash": null,
+        "preflight_selected_path": null,
+        "planned_target_matches_current_live": false,
+        "current_live_matches_preflight_selected": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "archive_ready": true,
+        "missing_or_mismatch": []
+      }
+    },
+    "manual_reconciliation": {
+      "override_file": {
+        "receipt_present": false,
+        "current_live_path": null,
+        "current_live_exists": false,
+        "current_live_hash": null,
+        "receipt_after_path": null,
+        "receipt_after_hash": null,
+        "current_live_matches_receipt_path": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "backup_ready": false,
+        "backup_path": null,
+        "planned_candidate_path": null,
+        "missing_or_mismatch": []
+      },
+      "suppression_file": {
+        "receipt_present": false,
+        "current_live_path": null,
+        "current_live_exists": false,
+        "current_live_hash": null,
+        "receipt_after_path": null,
+        "receipt_after_hash": null,
+        "current_live_matches_receipt_path": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "backup_ready": false,
+        "backup_path": null,
+        "planned_candidate_path": null,
+        "missing_or_mismatch": []
+      },
+      "review_resolution_file": {
+        "receipt_present": false,
+        "current_live_path": null,
+        "current_live_exists": false,
+        "current_live_hash": null,
+        "receipt_after_path": null,
+        "receipt_after_hash": null,
+        "current_live_matches_receipt_path": false,
+        "current_live_hash_matches_receipt_after_hash": false,
+        "backup_ready": false,
+        "backup_path": null,
+        "planned_candidate_path": null,
+        "missing_or_mismatch": []
+      }
+    },
+    "current_live_inventory": {
+      "status": "warning",
+      "active_valid_tool_count": 0,
+      "tools": {
+        "burp": {
+          "active_file": null,
+          "eligible_file_count": 0
+        },
+        "nuclei": {
+          "active_file": null,
+          "eligible_file_count": 0
+        },
+        "httpx": {
+          "active_file": null,
+          "eligible_file_count": 0
+        }
+      }
+    }
+  },
+  "inference": {
+    "manual_source_real_explicit_assessment": {
+      "assessment": "operator-confirmation-needed",
+      "hard_facts": [],
+      "notes": [
+        "manual_source could not be proven from current artifacts."
+      ]
+    },
+    "reconciliation_summary": "No apply receipt was detected in this run, so live reconciliation stayed limited to artifact presence and current inventory."
+  },
+  "artifact_paths": {
+    "phase12_signoff_review_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\phase12_signoff_review.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "phase12_apply_intent_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\phase12_apply_intent.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "phase12_apply_intent_validation_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\phase12_apply_intent_validation.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "scan_input_promotion_receipt_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\scan_promotion\\scan_input_promotion_receipt.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "manual_promotion_receipt_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\manual_promotion\\manual_promotion_receipt.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "live_scan_inventory_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\scan_promotion\\live_scan_inventory.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "manual_validation_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\manual_validation.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "input_preflight_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\input_preflight.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "real_input_selection_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\real_input_selection.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "phase12_operator_case_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\phase12_operator_case.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "phase12_evidence_pack_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\phase12_evidence_pack.json",
+      "exists": false,
+      "status": "missing"
+    },
+    "post_run_triage_json": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\post_run_triage.json",
+      "exists": false,
+      "status": "missing"
+    }
+  },
+  "suggestions": {
+    "rerun_command": "powershell -ExecutionPolicy Bypass -File \"D:\\취약점 진단\\app\\vuln-pipeline\\scripts\\run_phase12_iteration.ps1\" -RunId \"manual-explicit-repro\" -WorkspaceRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" -GenerateSignoffReview",
+    "rollback_plan_command": "python -m vuln_pipeline.cli.phase12_rollback --run-root \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\" --workspace-root \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" --live-root \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\" --plan-only",
+    "inspect_paths": [
+      "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\phase12_signoff_review.json",
+      "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\phase12_apply_intent.json",
+      "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\phase12_apply_intent_validation.json",
+      "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\scan_promotion\\scan_input_promotion_receipt.json",
+      "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage\\manual_promotion\\manual_promotion_receipt.json",
+      "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\input_preflight.json",
+      "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\real_input_selection.json",
+      "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\manual_validation.json"
+    ],
+    "exact_next_commands": [
+      "powershell -ExecutionPolicy Bypass -File \"D:\\취약점 진단\\app\\vuln-pipeline\\scripts\\run_phase12_iteration.ps1\" -RunId \"manual-explicit-repro\" -WorkspaceRoot \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" -GenerateSignoffReview",
+      "python -m vuln_pipeline.cli.phase12_rollback --run-root \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\" --workspace-root \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\" --live-root \"D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\" --plan-only"
+    ]
+  }
+}

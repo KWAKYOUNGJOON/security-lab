@@ -197,6 +197,17 @@ python -m vuln_pipeline.cli.manual_promotion `
   --overwrite
 ```
 
+empty explicit live file seed, opt-in only:
+
+```powershell
+python -m vuln_pipeline.cli.manual_promotion `
+  --working-dir "D:\취약점 진단\notes\phase12-operator-workspace\manual-drafts" `
+  --live-manual-dir "D:\취약점 진단\data\inputs\real\manual" `
+  --output-dir "D:\취약점 진단\outputs\runs\<run-id>\report_data\manual_promotion" `
+  --apply `
+  --allow-empty-explicit-seed
+```
+
 plan mode 산출물:
 
 - `manual_promotion_plan.json`
@@ -213,6 +224,7 @@ guardrail:
 
 - plan-only는 live 파일을 수정하지 않는다
 - apply는 validation + diff + backup 후에만 진행된다
+- `--allow-empty-explicit-seed`는 기본값이 off이며, reviewed working draft 3종이 모두 empty actionable list + empty draft_candidates 이고 current live manual target이 아직 없을 때만 explicit empty live file 생성을 허용한다
 - existing live file에 unexpected key/structure가 있으면 block 또는 강한 경고를 남긴다
 - actionable list가 비어 있고 draft_candidates만 있으면 `human_selection_required` 상태가 될 수 있다
 

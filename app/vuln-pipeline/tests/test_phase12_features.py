@@ -472,6 +472,85 @@ class Phase12FeatureTests(unittest.TestCase):
         self.assertIn(plan["status"], {"human_selection_required", "ready_for_review"})
         self.assertFalse((output_dir / "manual_promotion_receipt.json").exists())
 
+    def test_manual_promotion_allow_empty_explicit_seed_applies_missing_live_files(self) -> None:
+        working_dir = self.output_base / "working"
+        live_dir = self.output_base / "live"
+        output_dir = self.output_base / "promotion-empty-seed"
+        working_dir.mkdir()
+        live_dir.mkdir()
+
+        (working_dir / "override_working.yaml").write_text("overrides: []\ndraft_candidates: []\n", encoding="utf-8")
+        (working_dir / "suppression_working.yaml").write_text("suppressions: []\ndraft_candidates: []\n", encoding="utf-8")
+        (working_dir / "review_resolution_working.yaml").write_text("review_resolutions: []\ndraft_candidates: []\n", encoding="utf-8")
+
+        run = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "vuln_pipeline.cli.manual_promotion",
+                "--working-dir",
+                str(working_dir),
+                "--live-manual-dir",
+                str(live_dir),
+                "--output-dir",
+                str(output_dir),
+                "--apply",
+                "--allow-empty-explicit-seed",
+            ],
+            cwd=self.project_root,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(run.returncode, 0, run.stderr)
+        receipt = json.loads((output_dir / "manual_promotion_receipt.json").read_text(encoding="utf-8"))
+        self.assertEqual(receipt["status"], "applied")
+        self.assertTrue(receipt["allow_empty_explicit_seed_requested"])
+        self.assertTrue(receipt["status_flags"]["empty_explicit_seed_eligible"])
+        self.assertEqual(yaml.safe_load((live_dir / "customer_override.yaml").read_text(encoding="utf-8")), {"overrides": []})
+        self.assertEqual(yaml.safe_load((live_dir / "customer_suppressions.yaml").read_text(encoding="utf-8")), {"suppressions": []})
+        self.assertEqual(
+            yaml.safe_load((live_dir / "customer_review_resolution.yaml").read_text(encoding="utf-8")),
+            {"review_resolutions": []},
+        )
+
+    def test_manual_promotion_allow_empty_explicit_seed_still_blocks_draft_candidates(self) -> None:
+        working_dir = self.output_base / "working"
+        live_dir = self.output_base / "live"
+        output_dir = self.output_base / "promotion-empty-seed-blocked"
+        working_dir.mkdir()
+        live_dir.mkdir()
+
+        (working_dir / "override_working.yaml").write_text("overrides: []\ndraft_candidates:\n  - issue_id: I-2\n", encoding="utf-8")
+        (working_dir / "suppression_working.yaml").write_text("suppressions: []\ndraft_candidates: []\n", encoding="utf-8")
+        (working_dir / "review_resolution_working.yaml").write_text("review_resolutions: []\ndraft_candidates: []\n", encoding="utf-8")
+
+        run = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "vuln_pipeline.cli.manual_promotion",
+                "--working-dir",
+                str(working_dir),
+                "--live-manual-dir",
+                str(live_dir),
+                "--output-dir",
+                str(output_dir),
+                "--apply",
+                "--allow-empty-explicit-seed",
+            ],
+            cwd=self.project_root,
+            capture_output=True,
+            text=True,
+        )
+        self.assertNotEqual(run.returncode, 0)
+        blocked = json.loads(run.stdout)
+        self.assertEqual(blocked["status"], "blocked")
+        self.assertIn(
+            "override_file: draft_candidates still require manual promotion into the actionable list.",
+            blocked["blockers"],
+        )
+        self.assertFalse((output_dir / "manual_promotion_receipt.json").exists())
+
     def test_scan_input_promotion_plan_mode_reports_inventory_without_touching_live(self) -> None:
         incoming_root = self.output_base / "incoming"
         live_root = self.output_base / "live"

@@ -1,0 +1,379 @@
+{
+  "results": {
+    "case1_missing": {
+      "readiness": {
+        "status": "blocked",
+        "manual_sources_ready": false,
+        "manual_sources": {
+          "override_file": "legacy_default",
+          "suppression_file": "legacy_default",
+          "review_resolution_file": "legacy_default"
+        },
+        "manual_support_selected": {
+          "override_file": null,
+          "suppression_file": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\suppressions.yaml",
+          "review_resolution_file": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\manual\\review_resolution.yaml"
+        }
+      },
+      "manual_validation": {
+        "status": "invalid",
+        "format_valid": false,
+        "content_assessment": "human_review_required",
+        "actionable_counts": {
+          "override_file": 0,
+          "suppression_file": 0,
+          "review_resolution_file": 0
+        }
+      },
+      "real_gate": {
+        "status": "no_live_apply_detected",
+        "proof_status": "operator-confirmation-needed",
+        "manual_gate": {
+          "override_file": {
+            "manual_source": "real_explicit",
+            "proof_status": "operator-confirmation-needed",
+            "current_live_exists": false
+          },
+          "suppression_file": {
+            "manual_source": "real_explicit",
+            "proof_status": "operator-confirmation-needed",
+            "current_live_exists": false
+          },
+          "review_resolution_file": {
+            "manual_source": "real_explicit",
+            "proof_status": "operator-confirmation-needed",
+            "current_live_exists": false
+          }
+        }
+      },
+      "returncodes": {
+        "readiness": 1,
+        "triage": 1,
+        "gate": 1
+      }
+    },
+    "case2_empty_explicit": {
+      "readiness": {
+        "status": "blocked",
+        "manual_sources_ready": true,
+        "manual_sources": {
+          "override_file": "real_explicit",
+          "suppression_file": "real_explicit",
+          "review_resolution_file": "real_explicit"
+        },
+        "manual_support_selected": {
+          "override_file": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+          "suppression_file": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+          "review_resolution_file": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml"
+        }
+      },
+      "manual_validation": {
+        "status": "valid",
+        "format_valid": true,
+        "content_assessment": "human_review_required",
+        "actionable_counts": {
+          "override_file": 0,
+          "suppression_file": 0,
+          "review_resolution_file": 0
+        }
+      },
+      "real_gate": {
+        "status": "no_live_apply_detected",
+        "proof_status": "hard_fact_real_explicit",
+        "manual_gate": {
+          "override_file": {
+            "manual_source": "real_explicit",
+            "proof_status": "hard_fact_real_explicit",
+            "current_live_exists": true
+          },
+          "suppression_file": {
+            "manual_source": "real_explicit",
+            "proof_status": "hard_fact_real_explicit",
+            "current_live_exists": true
+          },
+          "review_resolution_file": {
+            "manual_source": "real_explicit",
+            "proof_status": "hard_fact_real_explicit",
+            "current_live_exists": true
+          }
+        }
+      },
+      "returncodes": {
+        "readiness": 1,
+        "triage": 1,
+        "gate": 1
+      }
+    },
+    "case3_minimal_nonempty": {
+      "readiness": {
+        "status": "blocked",
+        "manual_sources_ready": true,
+        "manual_sources": {
+          "override_file": "real_explicit",
+          "suppression_file": "real_explicit",
+          "review_resolution_file": "real_explicit"
+        },
+        "manual_support_selected": {
+          "override_file": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+          "suppression_file": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+          "review_resolution_file": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml"
+        }
+      },
+      "manual_validation": {
+        "status": "valid",
+        "format_valid": true,
+        "content_assessment": "ready_for_operator_review",
+        "actionable_counts": {
+          "override_file": 1,
+          "suppression_file": 1,
+          "review_resolution_file": 1
+        }
+      },
+      "real_gate": {
+        "status": "no_live_apply_detected",
+        "proof_status": "hard_fact_real_explicit",
+        "manual_gate": {
+          "override_file": {
+            "manual_source": "real_explicit",
+            "proof_status": "hard_fact_real_explicit",
+            "current_live_exists": true
+          },
+          "suppression_file": {
+            "manual_source": "real_explicit",
+            "proof_status": "hard_fact_real_explicit",
+            "current_live_exists": true
+          },
+          "review_resolution_file": {
+            "manual_source": "real_explicit",
+            "proof_status": "hard_fact_real_explicit",
+            "current_live_exists": true
+          }
+        }
+      },
+      "returncodes": {
+        "readiness": 1,
+        "triage": 1,
+        "gate": 1
+      }
+    },
+    "promotion_empty_apply": {
+      "plan_status": "ready_for_review",
+      "apply_status": "blocked",
+      "has_material_change": false,
+      "warnings": [
+        "Staged promotion candidates are structurally valid, but content still needs operator review before rerun.",
+        "No actionable changes relative to the existing live files were detected."
+      ],
+      "blockers": [
+        "No actionable live changes were detected."
+      ],
+      "apply_returncode": 1,
+      "receipt_exists": false
+    }
+  },
+  "cmd_log": [
+    {
+      "case": "case1_missing",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.real_input_readiness",
+        "--workspace-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace",
+        "--json-out",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\real_input_readiness.json",
+        "--customer-bundle",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml",
+        "--branding-file",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+        "--readiness-policy",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    },
+    {
+      "case": "case1_missing",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.post_run_triage",
+        "--run-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+        "--manual-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual",
+        "--output-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    },
+    {
+      "case": "case1_missing",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.phase12_real_gate",
+        "--run-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+        "--workspace-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace",
+        "--live-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real",
+        "--output-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case1_missing\\triage",
+        "--refresh-preflight",
+        "--strict",
+        "--customer-bundle",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml",
+        "--branding-file",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+        "--readiness-policy",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    },
+    {
+      "case": "case2_empty_explicit",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.real_input_readiness",
+        "--workspace-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace",
+        "--json-out",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case2_empty_explicit\\real_input_readiness.json",
+        "--customer-bundle",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml",
+        "--branding-file",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+        "--readiness-policy",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    },
+    {
+      "case": "case2_empty_explicit",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.post_run_triage",
+        "--run-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+        "--manual-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual",
+        "--output-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case2_empty_explicit\\triage"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    },
+    {
+      "case": "case2_empty_explicit",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.phase12_real_gate",
+        "--run-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+        "--workspace-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace",
+        "--live-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real",
+        "--output-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case2_empty_explicit\\triage",
+        "--refresh-preflight",
+        "--strict",
+        "--customer-bundle",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml",
+        "--branding-file",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+        "--readiness-policy",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    },
+    {
+      "case": "case3_minimal_nonempty",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.real_input_readiness",
+        "--workspace-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace",
+        "--json-out",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\real_input_readiness.json",
+        "--customer-bundle",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml",
+        "--branding-file",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+        "--readiness-policy",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    },
+    {
+      "case": "case3_minimal_nonempty",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.post_run_triage",
+        "--run-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+        "--manual-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual",
+        "--output-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\triage"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    },
+    {
+      "case": "case3_minimal_nonempty",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.phase12_real_gate",
+        "--run-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+        "--workspace-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace",
+        "--live-root",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real",
+        "--output-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\triage",
+        "--refresh-preflight",
+        "--strict",
+        "--customer-bundle",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\customer_bundles\\default_customer_release.yaml",
+        "--branding-file",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\branding\\customer_branding.yaml",
+        "--readiness-policy",
+        "D:\\취약점 진단\\app\\vuln-pipeline\\configs\\readiness\\customer_release.yaml"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    },
+    {
+      "case": "promotion_empty_apply",
+      "cmd": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "vuln_pipeline.cli.manual_promotion",
+        "--working-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_working",
+        "--live-manual-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_live",
+        "--output-dir",
+        "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\promotion_output",
+        "--apply"
+      ],
+      "returncode": 1,
+      "stderr": ""
+    }
+  ]
+}

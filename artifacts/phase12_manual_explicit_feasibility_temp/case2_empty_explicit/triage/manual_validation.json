@@ -1,0 +1,247 @@
+{
+  "status": "valid",
+  "run_root": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+  "manual_dir": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual",
+  "review_queue_reference_count": 0,
+  "note": "Format validity and content assessment are reported separately. Empty actionable lists stay format-valid but still need operator judgment.",
+  "execution_context": {
+    "name": "execution_context",
+    "description": "Files actually referenced by the current run or preflight artifacts.",
+    "required": false,
+    "format_valid": false,
+    "content_assessment": "human_review_required",
+    "files": {
+      "override_file": {
+        "path": null,
+        "exists": false,
+        "format_valid": false,
+        "format_status": "unavailable",
+        "content_assessment": "human_review_required",
+        "expected_key": "overrides",
+        "top_level_kind": null,
+        "actionable_count": 0,
+        "draft_candidate_count": 0,
+        "issues": [],
+        "warnings": [],
+        "selection": {}
+      },
+      "suppression_file": {
+        "path": null,
+        "exists": false,
+        "format_valid": false,
+        "format_status": "unavailable",
+        "content_assessment": "human_review_required",
+        "expected_key": "suppressions",
+        "top_level_kind": null,
+        "actionable_count": 0,
+        "draft_candidate_count": 0,
+        "issues": [],
+        "warnings": [],
+        "selection": {}
+      },
+      "review_resolution_file": {
+        "path": null,
+        "exists": false,
+        "format_valid": false,
+        "format_status": "unavailable",
+        "content_assessment": "human_review_required",
+        "expected_key": "review_resolutions",
+        "top_level_kind": null,
+        "actionable_count": 0,
+        "draft_candidate_count": 0,
+        "issues": [],
+        "warnings": [],
+        "selection": {}
+      }
+    }
+  },
+  "rerun_live_context": {
+    "name": "rerun_live_context",
+    "description": "Latest eligible files under the live real/manual directory that would be used on the next real rehearsal rerun.",
+    "required": true,
+    "format_valid": true,
+    "content_assessment": "human_review_required",
+    "files": {
+      "override_file": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+        "exists": true,
+        "format_valid": true,
+        "format_status": "valid",
+        "content_assessment": "human_review_required",
+        "expected_key": "overrides",
+        "top_level_kind": "dict",
+        "actionable_count": 0,
+        "draft_candidate_count": 0,
+        "issues": [],
+        "warnings": [
+          "Actionable list is empty. Format is valid, but operator review is still required before rerun."
+        ],
+        "selection": {
+          "manual_dir": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual",
+          "exists": true,
+          "selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+          "eligible_candidate_count": 1,
+          "eligible_candidates": [
+            "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml"
+          ],
+          "candidate_count": 3,
+          "candidates": [
+            {
+              "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+              "eligible": true,
+              "reasons": [
+                "eligible"
+              ],
+              "size": 15,
+              "modified_time": "2026-03-16T05:13:47+00:00",
+              "sha256": "584a0bd345157598223aa1ae1dd7a510e0750ff585e5a7e2c7c4842a3c15d9d1",
+              "sample_like": false
+            },
+            {
+              "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml",
+              "eligible": false,
+              "reasons": [
+                "name_pattern_mismatch"
+              ],
+              "size": 24,
+              "modified_time": "2026-03-16T05:13:47+00:00",
+              "sha256": "c85bb888362738b47a1e058e064d9936f6d1e2504b98c65592b485cd81addfcd",
+              "sample_like": false
+            },
+            {
+              "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+              "eligible": false,
+              "reasons": [
+                "name_pattern_mismatch"
+              ],
+              "size": 18,
+              "modified_time": "2026-03-16T05:13:47+00:00",
+              "sha256": "f0775c0f3b2a317161d099c06521efeda35b0c27603e313318ebb2dc786bd0b2",
+              "sample_like": false
+            }
+          ]
+        }
+      },
+      "suppression_file": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+        "exists": true,
+        "format_valid": true,
+        "format_status": "valid",
+        "content_assessment": "human_review_required",
+        "expected_key": "suppressions",
+        "top_level_kind": "dict",
+        "actionable_count": 0,
+        "draft_candidate_count": 0,
+        "issues": [],
+        "warnings": [
+          "Actionable list is empty. Format is valid, but operator review is still required before rerun."
+        ],
+        "selection": {
+          "manual_dir": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual",
+          "exists": true,
+          "selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+          "eligible_candidate_count": 1,
+          "eligible_candidates": [
+            "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml"
+          ],
+          "candidate_count": 3,
+          "candidates": [
+            {
+              "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+              "eligible": false,
+              "reasons": [
+                "name_pattern_mismatch"
+              ],
+              "size": 15,
+              "modified_time": "2026-03-16T05:13:47+00:00",
+              "sha256": "584a0bd345157598223aa1ae1dd7a510e0750ff585e5a7e2c7c4842a3c15d9d1",
+              "sample_like": false
+            },
+            {
+              "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml",
+              "eligible": false,
+              "reasons": [
+                "name_pattern_mismatch"
+              ],
+              "size": 24,
+              "modified_time": "2026-03-16T05:13:47+00:00",
+              "sha256": "c85bb888362738b47a1e058e064d9936f6d1e2504b98c65592b485cd81addfcd",
+              "sample_like": false
+            },
+            {
+              "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+              "eligible": true,
+              "reasons": [
+                "eligible"
+              ],
+              "size": 18,
+              "modified_time": "2026-03-16T05:13:47+00:00",
+              "sha256": "f0775c0f3b2a317161d099c06521efeda35b0c27603e313318ebb2dc786bd0b2",
+              "sample_like": false
+            }
+          ]
+        }
+      },
+      "review_resolution_file": {
+        "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml",
+        "exists": true,
+        "format_valid": true,
+        "format_status": "valid",
+        "content_assessment": "human_review_required",
+        "expected_key": "review_resolutions",
+        "top_level_kind": "dict",
+        "actionable_count": 0,
+        "draft_candidate_count": 0,
+        "issues": [],
+        "warnings": [
+          "Actionable list is empty. Format is valid, but operator review is still required before rerun."
+        ],
+        "selection": {
+          "manual_dir": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual",
+          "exists": true,
+          "selected_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml",
+          "eligible_candidate_count": 1,
+          "eligible_candidates": [
+            "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml"
+          ],
+          "candidate_count": 3,
+          "candidates": [
+            {
+              "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_override.yaml",
+              "eligible": false,
+              "reasons": [
+                "name_pattern_mismatch"
+              ],
+              "size": 15,
+              "modified_time": "2026-03-16T05:13:47+00:00",
+              "sha256": "584a0bd345157598223aa1ae1dd7a510e0750ff585e5a7e2c7c4842a3c15d9d1",
+              "sample_like": false
+            },
+            {
+              "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_review_resolution.yaml",
+              "eligible": true,
+              "reasons": [
+                "eligible"
+              ],
+              "size": 24,
+              "modified_time": "2026-03-16T05:13:47+00:00",
+              "sha256": "c85bb888362738b47a1e058e064d9936f6d1e2504b98c65592b485cd81addfcd",
+              "sample_like": false
+            },
+            {
+              "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\data\\inputs\\real\\manual\\customer_suppressions.yaml",
+              "eligible": false,
+              "reasons": [
+                "name_pattern_mismatch"
+              ],
+              "size": 18,
+              "modified_time": "2026-03-16T05:13:47+00:00",
+              "sha256": "f0775c0f3b2a317161d099c06521efeda35b0c27603e313318ebb2dc786bd0b2",
+              "sample_like": false
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "run_root": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro",
+  "workspace_root": "D:\\취약점 진단",
+  "baseline_run_root": "D:\\취약점 진단\\outputs\\runs\\phase9-final-demo-v9",
+  "default_baseline_run_id": "phase9-final-demo-v9",
+  "rollup_status": "blocked",
+  "state_flags": {
+    "blocked": true,
+    "fail": false,
+    "pass": false,
+    "ready": false,
+    "final_ready": false
+  },
+  "hard_facts": {
+    "release_readiness_status": "missing",
+    "submission_gate_status": "missing",
+    "input_preflight_status": "missing",
+    "real_input_readiness_status": "missing",
+    "final_ready": false,
+    "unresolved_review_items": 0,
+    "missing_artifacts": [
+      "release_readiness",
+      "submission_gate",
+      "final_delivery_manifest",
+      "review_closure_status",
+      "real_input_selection",
+      "review_queue"
+    ],
+    "blockers": [],
+    "gate_failures": []
+  },
+  "triage_hints": [
+    {
+      "type": "rollup",
+      "message": "The current run is blocked. Resolve blockers first, then rerun the rehearsal before expecting release artifacts."
+    }
+  ],
+  "artifacts": {
+    "release_readiness": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\release_readiness.json",
+      "exists": false,
+      "required": true,
+      "type": "json",
+      "data": null,
+      "load_error": null
+    },
+    "submission_gate": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\submission_gate.json",
+      "exists": false,
+      "required": true,
+      "type": "json",
+      "data": null,
+      "load_error": null
+    },
+    "final_delivery_manifest": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\delivery\\final_delivery_manifest.json",
+      "exists": false,
+      "required": true,
+      "type": "json",
+      "data": null,
+      "load_error": null
+    },
+    "review_closure_status": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\review_closure_status.json",
+      "exists": false,
+      "required": true,
+      "type": "json",
+      "data": null,
+      "load_error": null
+    },
+    "real_rehearsal_blocked": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\deliverables\\real_rehearsal_blocked.md",
+      "exists": true,
+      "required": false,
+      "type": "markdown",
+      "data": "# Real Rehearsal Blocked\n",
+      "load_error": null,
+      "excerpt": [
+        "# Real Rehearsal Blocked"
+      ]
+    },
+    "release_readiness_summary": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\deliverables\\release_readiness_summary.md",
+      "exists": true,
+      "required": false,
+      "type": "markdown",
+      "data": "# Release Readiness Summary\n",
+      "load_error": null,
+      "excerpt": [
+        "# Release Readiness Summary"
+      ]
+    },
+    "input_preflight": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\input_preflight.json",
+      "exists": false,
+      "required": false,
+      "type": "json",
+      "data": null,
+      "load_error": null
+    },
+    "real_input_selection": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\real_input_selection.json",
+      "exists": false,
+      "required": true,
+      "type": "json",
+      "data": null,
+      "load_error": null
+    },
+    "real_input_readiness": {
+      "path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\workspace\\outputs\\runs\\manual-explicit-repro\\report_data\\real_input_readiness.json",
+      "exists": false,
+      "required": false,
+      "type": "json",
+      "data": null,
+      "load_error": null
+    },
+    "review_queue": {
+      "path": null,
+      "exists": false,
+      "required": true,
+      "type": "review_queue",
+      "rows": [],
+      "load_error": null
+    }
+  },
+  "worklist": {
+    "unresolved_count": 0,
+    "bucket_counts": {},
+    "rows": [],
+    "hint_policy": "Suggested action buckets are operator hints derived from review queue facts. They do not approve, suppress, or resolve anything automatically."
+  },
+  "baseline_comparison": {
+    "baseline_available": true,
+    "baseline_run_root": "D:\\취약점 진단\\outputs\\runs\\phase9-final-demo-v9",
+    "status_differences": [
+      {
+        "field": "release_readiness_status",
+        "current": "missing",
+        "baseline": "ready",
+        "differs": true
+      },
+      {
+        "field": "submission_gate_status",
+        "current": "missing",
+        "baseline": "pass",
+        "differs": true
+      },
+      {
+        "field": "input_preflight_status",
+        "current": "missing",
+        "baseline": "blocked",
+        "differs": true
+      },
+      {
+        "field": "real_input_readiness_status",
+        "current": "missing",
+        "baseline": "blocked",
+        "differs": true
+      },
+      {
+        "field": "final_ready",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "field": "unresolved_review_items",
+        "current": 0,
+        "baseline": 0,
+        "differs": false
+      }
+    ],
+    "artifact_differences": [
+      {
+        "artifact": "customer_submission_zip",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "artifact": "final_delivery_manifest",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "artifact": "input_preflight",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "artifact": "internal_archive_zip",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "artifact": "real_input_readiness",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "artifact": "real_input_selection",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "artifact": "real_rehearsal_blocked",
+        "current": true,
+        "baseline": false,
+        "differs": true
+      },
+      {
+        "artifact": "release_readiness",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "artifact": "release_readiness_summary",
+        "current": true,
+        "baseline": false,
+        "differs": true
+      },
+      {
+        "artifact": "review_closure_status",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "artifact": "review_queue",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      },
+      {
+        "artifact": "submission_gate",
+        "current": false,
+        "baseline": true,
+        "differs": true
+      }
+    ]
+  },
+  "output_paths": {
+    "triage_json": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\triage\\post_run_triage.json",
+    "triage_md": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\triage\\post_run_triage.md",
+    "triage_csv": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\triage\\post_run_triage_worklist.csv",
+    "manual_validation_json": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\triage\\manual_validation.json",
+    "manual_validation_md": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\triage\\manual_validation.md"
+  },
+  "manual_validation": {
+    "status": "valid",
+    "format_valid_for_rerun": true,
+    "content_assessment_for_rerun": "ready_for_operator_review",
+    "json_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\triage\\manual_validation.json",
+    "md_path": "D:\\취약점 진단\\artifacts\\phase12_manual_explicit_feasibility_temp\\case3_minimal_nonempty\\triage\\manual_validation.md"
+  }
+}
